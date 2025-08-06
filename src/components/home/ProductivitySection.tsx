@@ -152,8 +152,8 @@ const ProductivitySection = () => {
 						src="/assets/images/mockup_2.png"
 						alt="Social Feed Mockup"
 						className="mockup-image"
-						width={0}
-						height={0}
+						width={600}
+						height={800}
 						loading="lazy"
 					  />
 				</div>
@@ -233,7 +233,7 @@ const ProductivitySection = () => {
           left: 50%;
           top: 50%;
           transform: translate(-50%, -50%);
-          width: 600px !important; /* 125% of 480px */
+          width: 600px !important;
           height: auto !important;
           object-fit: contain;
           border-radius: 0;
