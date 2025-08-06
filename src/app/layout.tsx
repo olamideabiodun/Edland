@@ -1,0 +1,58 @@
+// src/app/layout.tsx
+
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import type { ReactNode } from "react";
+import { ThemeProvider } from "../providers/ThemeProvider";
+import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata = {
+	title: "Ednux | Learn. Grow. Lead.",
+	description:
+		"Africa’s next-generation learning platform for students, educators, and professionals.",
+	openGraph: {
+		title: "Ednux | Learn. Grow. Lead.",
+		description:
+			"Personalized, accessible, and impactful education for Africa.",
+		url: "https://ednux.com",
+		siteName: "Ednux",
+		images: [
+			{
+				url: "/assets/images/metadata_image.png",
+				width: 1200,
+				height: 630,
+				alt: "Ednux home preview",
+			},
+		],
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		site: "@ednux",
+		title: "Ednux | Learn. Grow. Lead.",
+		description: "Empowering African learners through technology.",
+		images: ["/assets/images/metadata_image.png"],
+	},
+};
+
+export default function RootLayout({
+	children,
+}: {
+	children: React.ReactNode;
+}) {
+	return (
+		<html lang="en">
+			<head>
+				<link rel="icon" href="/favicon.ico" />
+			</head>
+			<body className={inter.className}>
+					<ThemeProvider>
+								<ClerkProvider>{children}</ClerkProvider>
+					</ThemeProvider>
+			</body>
+		</html>
+	);
+}

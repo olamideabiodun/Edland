@@ -1,0 +1,37 @@
+# Node dependencies
+node_modules/
+
+# Environment variables
+.env.local
+
+# Build output
+build-output/
+dist/
+.next/
+
+# Logs
+*.log
+
+# IDE settings
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Testing
+coverage/
+
+# Misc
+*.swp
+.cache/
+turbo/
+
+# Custom files (if you want to ignore them)
+DEVELOPMENT_SUMMARY.md
+*.pack
+edm 3.rtf
+edn 1.txt
