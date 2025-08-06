@@ -152,8 +152,8 @@ const ProductivitySection = () => {
 						src="/assets/images/mockup_2.png"
 						alt="Social Feed Mockup"
 						className="mockup-image"
-						width={600}
-						height={800}
+						width={336}
+						height={336}
 						loading="lazy"
 					  />
 				</div>
