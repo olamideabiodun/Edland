@@ -148,14 +148,6 @@ const ProductivitySection = () => {
 						height={336}
 						loading="lazy"
 					/>
-					<Image
-						src="/assets/images/mockup_2.png"
-						alt="Social Feed Mockup"
-						className="mockup-image"
-						width={336}
-						height={336}
-						loading="lazy"
-					  />
 				</div>
 			</div>
 
@@ -226,21 +218,6 @@ const ProductivitySection = () => {
           opacity: 0.9;
           pointer-events: none;
           object-fit: contain;
-        }
-        
-        .mockup-image {
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          width: 600px !important;
-          height: auto !important;
-          object-fit: contain;
-          border-radius: 0;
-          box-shadow: none;
-          background: none;
-          z-index: 2;
-          max-width: 600px;
         }
         
         .features-card {
@@ -320,11 +297,6 @@ const ProductivitySection = () => {
             height: 196px !important;
           }
           
-          .mockup-image {
-            width: 350px !important; /* 125% of 280px */
-            max-width: 350px;
-          }
-          
           .features-card {
             margin-left: 0;
             min-width: 100%;
@@ -361,11 +333,6 @@ const ProductivitySection = () => {
             height: 245px !important;
           }
           
-          .mockup-image {
-            width: 437px !important; /* 125% of 350px */
-            max-width: 437px;
-          }
-          
           .features-card {
             padding: 32px 32px;
             min-height: 480px;
@@ -381,11 +348,6 @@ const ProductivitySection = () => {
           .ring-image {
             width: 294px !important; /* 70% of 420px */
             height: 294px !important;
-          }
-          
-          .mockup-image {
-            width: 525px !important; /* 125% of 420px */
-            max-width: 525px;
           }
           
           .features-card {
@@ -404,10 +366,6 @@ const ProductivitySection = () => {
             height: 336px !important;
           }
           
-          .mockup-image {
-            width: 600px !important; /* 125% of 480px */
-            max-width: 600px;
-          }
         }
       `}</style>
 		</div>
