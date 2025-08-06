@@ -130,7 +130,7 @@ const InteractiveDashboardSection = () => {
 	const currentItem = dashboardItems[activeIndex];
 
 	return (
-		<div className="interactive-dashboard-section">
+		<div className="interactive-dashboard-section" id="how-it-works">
 			<div className="container">
 				{/* Left side - Mockup */}
 				<div className="mockup-container">
@@ -217,7 +217,7 @@ const InteractiveDashboardSection = () => {
 
         .laptop-mockup {
           width: 100%;
-          max-width: 600px;
+          max-width: 800px;
           height: auto;
           opacity: 0;
           animation: fadeInUp 0.8s ease forwards;

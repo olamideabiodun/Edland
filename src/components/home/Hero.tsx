@@ -93,7 +93,7 @@ const Hero: React.FC = () => (
 			>
 				<Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 6 }}>
 					<Button
-						href="#waitlist"
+						href="/waitlist"
 						variant="text"
 						sx={{
 							color: "#2a5cff",
@@ -118,7 +118,7 @@ const Hero: React.FC = () => (
 						}}
 					/>
 					<Button
-						href="#how-it-works"
+						href="/#how-it-works"
 						variant="text"
 						sx={{
 							color: "#2a5cff",
