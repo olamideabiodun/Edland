@@ -144,11 +144,17 @@ const ProductivitySection = () => {
 						src="/assets/images/ring_color.png"
 						alt="Ring Color"
 						className="ring-image"
+						width={400}
+						height={400}
+						priority
 					/>
 					<Image
 						src="/assets/images/mockup_2.png"
 						alt="Social Feed Mockup"
 						className="mockup-image"
+						width={600}
+						height={800}
+						priority
 					/>
 				</div>
 			</div>
@@ -204,7 +210,6 @@ const ProductivitySection = () => {
           width: 480px;
           height: 480px;
           margin-top: 0;
-          z-index: 2;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -215,8 +220,8 @@ const ProductivitySection = () => {
           left: 50%;
           top: 50%;
           transform: translate(-50%, -50%);
-          width: 70%;
-          height: 70%;
+          width: 336px !important; /* 70% of 480px */
+          height: 336px !important;
           z-index: 1;
           opacity: 0.9;
           pointer-events: none;
@@ -228,8 +233,8 @@ const ProductivitySection = () => {
           left: 50%;
           top: 50%;
           transform: translate(-50%, -50%);
-          width: 125%;
-          height: auto;
+          width: 600px !important; /* 125% of 480px */
+          height: auto !important;
           object-fit: contain;
           border-radius: 0;
           box-shadow: none;
@@ -310,9 +315,14 @@ const ProductivitySection = () => {
             height: 280px;
           }
           
+          .ring-image {
+            width: 196px !important; /* 70% of 280px */
+            height: 196px !important;
+          }
+          
           .mockup-image {
-            width: 95%;
-            max-width: 335px;
+            width: 350px !important; /* 125% of 280px */
+            max-width: 350px;
           }
           
           .features-card {
@@ -346,9 +356,14 @@ const ProductivitySection = () => {
             height: 350px;
           }
           
+          .ring-image {
+            width: 245px !important; /* 70% of 350px */
+            height: 245px !important;
+          }
+          
           .mockup-image {
-            width: 97%;
-            max-width: 440px;
+            width: 437px !important; /* 125% of 350px */
+            max-width: 437px;
           }
           
           .features-card {
@@ -363,8 +378,13 @@ const ProductivitySection = () => {
             height: 420px;
           }
           
+          .ring-image {
+            width: 294px !important; /* 70% of 420px */
+            height: 294px !important;
+          }
+          
           .mockup-image {
-            width: 97%;
+            width: 525px !important; /* 125% of 420px */
             max-width: 525px;
           }
           
@@ -379,8 +399,13 @@ const ProductivitySection = () => {
             height: 480px;
           }
           
+          .ring-image {
+            width: 336px !important; /* 70% of 480px */
+            height: 336px !important;
+          }
+          
           .mockup-image {
-            width: 97%;
+            width: 600px !important; /* 125% of 480px */
             max-width: 600px;
           }
         }

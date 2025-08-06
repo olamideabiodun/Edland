@@ -84,7 +84,7 @@ const Footer = () => {
 					{/* Logo and Description Section */}
 					<Grid item xs={12} md={4}>
 						<Box sx={{ mb: 1 }}>
-							<EdnuxLogo size={120} withText />
+							<EdnuxLogo size={120} />
 						</Box>
 						<Typography
 							variant="body2"

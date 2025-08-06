@@ -51,7 +51,7 @@ const Hero: React.FC = () => (
 				<Typography
 					variant="h1"
 					sx={{
-						fontWeight: 200,
+						fontWeight: 500,
 						fontSize: { xs: "2.5rem", sm: "3.8rem", md: "4rem", lg: "4.5rem" },
 						lineHeight: 1.1,
 						mb: 3,
@@ -97,7 +97,7 @@ const Hero: React.FC = () => (
 						variant="text"
 						sx={{
 							color: "#2a5cff",
-							fontWeight: 200,
+							fontWeight: 300,
 							fontSize: 18,
 							textTransform: "none",
 							px: 0,
@@ -122,7 +122,7 @@ const Hero: React.FC = () => (
 						variant="text"
 						sx={{
 							color: "#2a5cff",
-							fontWeight: 200,
+							fontWeight: 300,
 							fontSize: 18,
 							textTransform: "none",
 							px: 0,
@@ -201,38 +201,7 @@ const Hero: React.FC = () => (
 				/>
 			</motion.div>
 		</Box>
-		{/* Arrow pointing from laptop to callout */}
-		<motion.div
-			initial={{ opacity: 0, y: 20 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.7, delay: 0.7, ease: "easeIn" }}
-		>
-			<Box
-				sx={{
-					position: { xs: "relative", md: "absolute" },
-					left: { xs: "8%", md: "75%" },
-					top: { xs: -155, md: "56%" },
-					width: { xs: 120, md: 190, sm: 200 },
-					height: { xs: 80, md: 250, sm: 300 },
-					zIndex: 11,
-					pointerEvents: "none",
-					display: "flex",
-					justifyContent: "center",
-					alignItems: "flex-start",
-					mb: 0,
-					mt: 0,
-					transform: { xs: "translateY(0)", md: "none" },
-				}}
-			>
-				<Image
-					src="/assets/images/arrow.png"
-					alt="Arrow"
-					width={190}
-					height={250}
-					style={{ maxWidth: 400, maxHeight: "auto" }}
-				/>
-			</Box>
-		</motion.div>
+
 		{/* Bottom right callout */}
 		<motion.div
 			initial={{ opacity: 0, scale: 0.97 }}
