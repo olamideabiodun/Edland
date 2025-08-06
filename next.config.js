@@ -34,7 +34,6 @@ const nextConfig = {
 	env: {
 		APP_ENV: process.env.APP_ENV || "development",
 	},
-	distDir: "build-output",
 };
 
 module.exports = nextConfig;
