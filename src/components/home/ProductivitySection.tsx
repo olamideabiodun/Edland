@@ -144,18 +144,18 @@ const ProductivitySection = () => {
 						src="/assets/images/ring_color.png"
 						alt="Ring Color"
 						className="ring-image"
-						width={400}
-						height={400}
-						priority
+						width={336}
+						height={336}
+						loading="lazy"
 					/>
 					<Image
 						src="/assets/images/mockup_2.png"
 						alt="Social Feed Mockup"
 						className="mockup-image"
-						width={600}
-						height={800}
-						priority
-					/>
+						width={0}
+						height={0}
+						loading="lazy"
+					  />
 				</div>
 			</div>
 
@@ -220,7 +220,7 @@ const ProductivitySection = () => {
           left: 50%;
           top: 50%;
           transform: translate(-50%, -50%);
-          width: 336px !important; /* 70% of 480px */
+          width: 336px !important;
           height: 336px !important;
           z-index: 1;
           opacity: 0.9;

@@ -19,7 +19,7 @@ const faqData = [
 		items: [
 			{
 				q: "What is Ednux?",
-				a: "Ednux is an AI-powered learning platform designed for African students, educators, and professionals. It streamlines access to personalized, practical learning across institutions.",
+				a: "Ednux is an AI-powered Social LMS designed for African students, educators, and professionals. It streamlines access to personalized, practical learning across institutions.",
 			},
 			{
 				q: "Who can use Ednux?",

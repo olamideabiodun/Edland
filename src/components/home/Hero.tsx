@@ -51,7 +51,7 @@ const Hero: React.FC = () => (
 				<Typography
 					variant="h1"
 					sx={{
-						fontWeight: 500,
+						fontWeight: 400,
 						fontSize: { xs: "2.5rem", sm: "3.8rem", md: "4rem", lg: "4.5rem" },
 						lineHeight: 1.1,
 						mb: 3,
@@ -97,7 +97,7 @@ const Hero: React.FC = () => (
 						variant="text"
 						sx={{
 							color: "#2a5cff",
-							fontWeight: 300,
+							fontWeight: 400,
 							fontSize: 18,
 							textTransform: "none",
 							px: 0,
@@ -122,7 +122,7 @@ const Hero: React.FC = () => (
 						variant="text"
 						sx={{
 							color: "#2a5cff",
-							fontWeight: 300,
+							fontWeight: 400,
 							fontSize: 18,
 							textTransform: "none",
 							px: 0,
