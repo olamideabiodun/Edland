@@ -316,17 +316,11 @@ export default function FeedbackPage() {
               <Paper
                 elevation={0}
                 sx={{
-                  p: 4,
-                  borderRadius: 3,
                   bgcolor: alpha(
                     theme.palette.background.paper,
                     theme.palette.mode === 'dark' ? 0.8 : 0.9
                   ),
                   backdropFilter: 'blur(20px)',
-                  border: `1px solid ${alpha(
-                    theme.palette.divider,
-                    theme.palette.mode === 'dark' ? 0.1 : 0.2
-                  )}`,
                   animation: `${fadeIn} 0.8s ease-out`,
                   animationDelay: '0.2s'
                 }}
@@ -364,7 +358,6 @@ export default function FeedbackPage() {
                     width: '100%',
                     minHeight: '500px',
                     '& iframe': {
-                      borderRadius: '8px',
                       boxShadow: theme.shadows[1]
                     }
                   }}
