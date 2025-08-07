@@ -14,26 +14,19 @@ export const metadata = {
 	description:
 		"Africa’s next-generation learning platform for students, educators, and professionals.",
 	openGraph: {
-		title: "Ednux | Learn. Grow. Lead.",
+		title: "Ednux | Social LMS for intuitive learners.",
 		description:
-			"Personalized, accessible, and impactful education for Africa.",
+			"Ednux is an AI-powered learning platform built for African students, educators, and professionals. Discover personalized tools, explore global learning experience, and a smarter way to learn, grow, and thrive.",
 		url: "https://ednux.com",
 		siteName: "Ednux",
-		images: [
-			{
-				url: "/assets/images/metadata_image.png",
-				width: 1200,
-				height: 630,
-				alt: "Ednux home preview",
-			},
-		],
+		images: ["/assets/images/metadata_image.png"],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
 		site: "@ednux",
-		title: "Ednux | Learn. Grow. Lead.",
-		description: "Empowering African learners through technology.",
+		title: "Ednux | Social LMS for intuitive learners.",
+		description: "Ednux is an AI-powered learning platform built for African students, educators, and professionals. Discover personalized tools, explore global learning experience, and a smarter way to learn, grow, and thrive.",
 		images: ["/assets/images/metadata_image.png"],
 	},
 };
