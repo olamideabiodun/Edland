@@ -316,7 +316,6 @@ export default function FeedbackPage() {
               <Paper
                 elevation={0}
                 sx={{
-                  backdropFilter: 'blur(20px)',
                   animation: `${fadeIn} 0.8s ease-out`,
                   animationDelay: '0.2s'
                 }}
