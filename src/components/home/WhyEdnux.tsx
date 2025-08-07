@@ -30,7 +30,7 @@ const WhyEdnux = () => {
         <Typography
           variant="h2"
           sx={{
-            fontWeight: 200,
+            fontWeight: 500,
             fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
             mb: 1.5,
             color: '#02071cff',
