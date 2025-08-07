@@ -32,6 +32,6 @@ export const config = {
 		"/profile/:path*",
 		"/files/:path*",
 		"/ai-assistant/:path*", // Exclude public routes and auth pages
-		"/((?!_next/static|_next/image|assets|favicon.ico|features(?:/.*)?|about|feedback|waitlist|contact|auth/signin|auth/signup|auth/forgot-password|auth/error|auth/reset-password|test-courses|$).*)",
+		"/((?!_next/static|_next/image|assets|favicon.ico|features(?:/.*)?|about|feedback|waitlist|sitemap.xml|contact|auth/signin|auth/signup|auth/forgot-password|auth/error|auth/reset-password|test-courses|$).*)",
 	],
 };
