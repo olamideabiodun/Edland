@@ -516,7 +516,7 @@ const HomeContent = () => {
               animation: `${fadeIn} 0.8s ease-out`
             }}
           >
-						Ready to Transform Your Learning?
+						Be Part of Africa’s Learning Revolution!
           </Typography>
           <Typography
             variant='h6'
