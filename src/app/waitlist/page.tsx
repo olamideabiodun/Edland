@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import type React from 'react';
 import { useEffect, useState } from 'react';
+import Script from 'next/script';
 
 const slides = [
   {
@@ -112,6 +113,15 @@ export default function WaitlistPage() {
 
   return (
     <div className='min-h-screen relative' style={{ fontFamily: 'Questrial' }}>
+      {/* Google tag (gtag.js) */}
+      <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-49F66DF463" async />
+      <Script id="ga-init-waitlist" strategy="afterInteractive">{`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);} 
+  gtag('js', new Date());
+
+  gtag('config', 'G-49F66DF463');
+`}</Script>
       {/* header */}
       <Header />
 

@@ -27,6 +27,7 @@ import {
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import Link from 'next/link';
+import Script from 'next/script';
 import React, { useState } from 'react';
 import EdnuxLogo from '../components/common/EdnuxLogo';
 import FaqSection from '../components/home/FaqSection';
@@ -267,8 +268,17 @@ const HomeContent = () => {
     }
   ];
 
-  return (
-    <>
+    return (
+      <>
+        {/* Google tag (gtag.js)  */}
+        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-49F66DF463" async />
+        <Script id="ga-init-home" strategy="afterInteractive">{`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-49F66DF463');
+`}</Script>
       <Header />
 
       <Hero />

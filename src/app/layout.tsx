@@ -1,12 +1,9 @@
-// src/app/layout.tsx
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import type { ReactNode } from "react";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import GoogleAnalytics from "../components/common/GoogleAnalytics";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from "@vercel/analytics/next";
 
@@ -45,7 +42,6 @@ export default function RootLayout({
 				<link rel="icon" href="/favicon.ico" />
 			</head>
 			<body className={inter.className}>
-					<GoogleAnalytics />
 					<SpeedInsights />
 					<Analytics />
 					<ThemeProvider>
