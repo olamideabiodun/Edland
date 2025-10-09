@@ -6,6 +6,7 @@ import type { ReactNode } from "react";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import GoogleAnalytics from "../components/common/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,6 +43,7 @@ export default function RootLayout({
 				<link rel="icon" href="/favicon.ico" />
 			</head>
 			<body className={inter.className}>
+					<GoogleAnalytics />
 					<ThemeProvider>
 								<ClerkProvider>{children}</ClerkProvider>
 					</ThemeProvider>
