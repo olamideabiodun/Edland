@@ -7,6 +7,8 @@ import { ThemeProvider } from "../providers/ThemeProvider";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import GoogleAnalytics from "../components/common/GoogleAnalytics";
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -44,6 +46,8 @@ export default function RootLayout({
 			</head>
 			<body className={inter.className}>
 					<GoogleAnalytics />
+					<SpeedInsights />
+					<Analytics />
 					<ThemeProvider>
 								<ClerkProvider>{children}</ClerkProvider>
 					</ThemeProvider>
