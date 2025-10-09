@@ -1,4 +1,3 @@
-// src/components/common/GoogleAnalytics.tsx
 import Script from "next/script";
 
 type GoogleAnalyticsProps = {
