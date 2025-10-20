@@ -36,6 +36,7 @@ import Header from '../components/home/Header';
 import Hero from '../components/home/Hero';
 import InteractiveDashboardSection from '../components/home/InteractiveDashboardSection';
 import ProductivitySection from '../components/home/ProductivitySection';
+import High_integrity from '../components/home/High_integrity';
 import WhyEdnux from '../components/home/WhyEdnux';
 import WorkspaceToolsSection from '../components/home/WorkspaceToolsSection';
 
@@ -283,6 +284,7 @@ const HomeContent = () => {
 
       <Hero />
       <WhyEdnux />
+      <High_integrity />
       <ProductivitySection />
       <InteractiveDashboardSection />
       <WorkspaceToolsSection />
