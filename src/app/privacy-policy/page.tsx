@@ -158,6 +158,28 @@ export default function PrivacyPolicyPage() {
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Data may be transferred to and processed in jurisdictions outside your country of residence. We ensure that any international data transfers are protected by adequate legal mechanisms (e.g., Standard Contractual Clauses, where applicable).
                 </p>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-4">
+                  <p className="text-gray-700 leading-relaxed mb-3">
+                    <strong>Outside the EU/EEA (including African countries):</strong> Where Personal Data is processed in countries that are not subject to the GDPR (for example, Nigeria, Kenya, South Africa, Ghana), Ednux aligns its practices to local privacy frameworks while maintaining GDPR-level safeguards.
+                  </p>
+                  <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                    <li>
+                      <strong>Nigeria (NDPR – Nigeria Data Protection Regulation):</strong> When processing data of Nigerian residents, we apply NDPR principles of lawfulness, purpose limitation, data minimization, and security; and we execute appropriate Data Processing Agreements (DPAs) and, where required, conduct DPIAs. Cross‑border transfers follow NDPR provisions on adequate protection and contractual safeguards.
+                    </li>
+                    <li>
+                      <strong>Kenya (Data Protection Act, 2019):</strong> We honor requirements on consent, purpose limitation, data subject rights, and registration of data controllers/processors where applicable, and use appropriate transfer mechanisms recognized by the Office of the Data Protection Commissioner (ODPC).
+                    </li>
+                    <li>
+                      <strong>South Africa (POPIA):</strong> We comply with the conditions for lawful processing, information quality, openness, and security safeguards. International transfers occur only where the recipient jurisdiction or contract provides an adequate level of protection as contemplated under POPIA.
+                    </li>
+                    <li>
+                      <strong>Other African jurisdictions:</strong> Where specific national privacy statutes apply, we map those obligations to our GDPR controls (access, rectification, erasure, portability, objection) and ensure contractual and technical measures meet or exceed local standards.
+                    </li>
+                  </ul>
+                  <p className="text-gray-700 leading-relaxed mt-3">
+                    In all cases, we implement encryption in transit and at rest, strict access controls, and minimum‑necessary processing. Where local law conflicts with GDPR, we adopt the more protective standard for the data subject.
+                  </p>
+                </div>
               </div>
             </section>
 
@@ -189,6 +211,55 @@ export default function PrivacyPolicyPage() {
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   You may request the deletion of your Personal Data from the Ednux centralized database. <strong>Limitation:</strong> You acknowledge that the cryptographic data (hash and revocation status) anchored to the immutable Stellar Soroban VDR cannot be deleted or modified due to the core principles of Distributed Ledger Technology.
+                </p>
+
+                <h3 className="text-xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'Questrial' }}>
+                  5.4. Restriction, Objection, and Direct Marketing Controls
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  You may request that we restrict processing in specific circumstances (e.g., while accuracy is contested) and you may object to processing based on legitimate interests, including profiling. Where we rely on legitimate interests, we will honor your objection unless we demonstrate compelling legitimate grounds that override your interests, rights, and freedoms. You can opt out of direct marketing at any time.
+                </p>
+
+                <h3 className="text-xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'Questrial' }}>
+                  5.5. Automated Decision‑Making and Profiling Transparency
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Ednux uses an Interpretable ML Engine to compute competency metrics. These scores are designed to be explainable and auditable. You have the right to obtain meaningful information about the logic involved, the significance, and the envisaged consequences of such processing, and to request human review where legally required.
+                </p>
+
+                <h3 className="text-xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'Questrial' }}>
+                  5.6. Withdrawal of Consent
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Where processing is based on consent (e.g., certain analytics or communications), you may withdraw consent at any time without affecting the lawfulness of processing before withdrawal.
+                </p>
+
+                <h3 className="text-xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'Questrial' }}>
+                  5.7. Complaints to Supervisory Authorities (Regional)
+                </h3>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-4">
+                  <p className="text-gray-700 leading-relaxed mb-2">You may lodge a complaint with a data protection authority in your jurisdiction:</p>
+                  <ul className="list-disc pl-6 text-gray-700 space-y-1">
+                    <li><strong>EU/EEA:</strong> Your local Data Protection Authority (DPA).</li>
+                    <li><strong>Nigeria:</strong> Nigeria Data Protection Commission (NDPC) under the NDPR/NDP Act.</li>
+                    <li><strong>Kenya:</strong> Office of the Data Protection Commissioner (ODPC).</li>
+                    <li><strong>South Africa:</strong> Information Regulator (POPIA).</li>
+                    <li><strong>Other regions:</strong> The competent supervisory authority defined by applicable law.</li>
+                  </ul>
+                </div>
+
+                <h3 className="text-xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'Questrial' }}>
+                  5.8. Identity Verification and Response Times
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  To protect your data, we may need to verify your identity before acting on a request. We aim to respond within one month (or the timeframe required by local law). Complex or numerous requests may take longer as permitted by law.
+                </p>
+
+                <h3 className="text-xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'Questrial' }}>
+                  5.9. How to Exercise Your Rights
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  You can submit requests via in‑app privacy settings or by emailing <a href="mailto:support@ednux.com" className="text-blue-600 underline">support@ednux.com</a>. Please specify the right you intend to exercise and any relevant context (e.g., course, Issuer, date range) to help us process your request efficiently.
                 </p>
               </div>
             </section>
