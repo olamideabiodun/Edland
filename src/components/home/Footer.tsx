@@ -23,7 +23,7 @@ const Footer = () => {
 			title: "Product",
 			links: [
 				{ label: "Features", href: "/#productivity-section" },
-				{ label: "Support", href: "/" },
+				{ label: "Support", href: "mailto:support@ednux.com" },
 			],
 		},
 		{
@@ -260,7 +260,7 @@ const Footer = () => {
 					>
 						<Button
 							component={Link}
-							href="/privacy"
+							href="/privacy-policy"
 							sx={{
 								textTransform: "none",
 								color:
@@ -285,7 +285,7 @@ const Footer = () => {
 						</Button>
 						<Button
 							component={Link}
-							href="/terms"
+							href="/terms-of-service"
 							sx={{
 								textTransform: "none",
 								color:
