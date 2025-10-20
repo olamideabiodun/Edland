@@ -1,317 +1,246 @@
 'use client';
 
-import {
-  Box,
-  Container,
-  Divider,
-  List,
-  ListItem,
-  ListItemText,
-  Link as MuiLink,
-  Paper,
-  Typography,
-  useTheme
-} from '@mui/material';
-import Link from 'next/link';
 import React from 'react';
+import Header from '../../components/home/Header';
+import Footer from '../../components/home/Footer';
 
 export default function PrivacyPolicyPage() {
-  const theme = useTheme();
-
   return (
-    <Box
-      sx={{
-        py: { xs: 4, md: 8 },
-        bgcolor:
-					theme.palette.mode === 'dark'
-					  ? theme.palette.background.default
-					  : '#f8f9fa'
-      }}
-    >
-      <Container maxWidth='lg'>
-        <Paper
-          elevation={3}
-          sx={{ p: { xs: 2, sm: 3, md: 5 }, borderRadius: 3 }}
-        >
-          <Typography
-            variant='h3'
-            component='h1'
-            gutterBottom
-            sx={{
-              fontWeight: 'bold',
-              color: theme.palette.primary.main,
-              textAlign: 'center'
-            }}
-          >
-						Privacy Policy
-          </Typography>
-          <Typography
-            variant='body2'
-            color='text.secondary'
-            sx={{ textAlign: 'center', mb: 4 }}
-          >
-						Last Updated: {new Date().toLocaleDateString()}
-          </Typography>
+    <div className="min-h-screen" style={{ fontFamily: 'Questrial' }}>
+      <Header />
+      
+      <div className="bg-white py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-12 mt-12">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Questrial' }}>
+              Privacy Policy
+            </h1>
+            <p className="text-lg text-gray-600">
+              Effective Date: October 10, 2025
+            </p>
+          </div>
 
-          <Typography variant='body1' paragraph>
-						Ednux ('we,' 'us,' or 'our') is committed to protecting your
-						privacy. This Privacy Policy explains how we collect, use, disclose,
-						and safeguard your information when you use our Ednux platform,
-						including our website, mobile applications, and any related services
-						(collectively, the 'Service'). Please read this privacy policy
-						carefully. If you do not agree with the terms of this privacy
-						policy, please do not access the service.
-          </Typography>
-          <Typography variant='body1' paragraph>
-						We reserve the right to make changes to this Privacy Policy at any
-						time and for any reason. We will alert you about any changes by
-						updating the 'Last Updated' date of this Privacy Policy. You are
-						encouraged to periodically review this Privacy Policy to stay
-						informed of updates.
-          </Typography>
+          <div className="prose prose-lg max-w-none">
+            <section className="mb-8">
+              <p className="text-gray-700 leading-relaxed mb-6">
+                This Privacy Policy details how Ednux processes Personal Data related to the operation of the LMS and the VCL. We are committed to processing data in accordance with GDPR and CCPA principles, emphasizing privacy-by-design and Self-Sovereign Identity (SSI) principles.
+              </p>
+            </section>
 
-          <Divider sx={{ my: 3 }} />
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Questrial' }}>
+                1. Data Controller and Legal Framework
+              </h2>
+              <div className="space-y-4">
+                <p className="text-gray-700 leading-relaxed">
+                  <strong>Data Controller:</strong> Ednux Technology Services.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  <strong>Joint Controllership:</strong> Where you are enrolled through an institution (Issuer), Ednux and the Issuer may operate as joint controllers for the purposes of educational data processing, with responsibilities delineated by separate agreement.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  <strong>Legal Basis:</strong> Processing is primarily based on Contractual Necessity (Article 6(1)(b) of GDPR) to deliver the LMS and VCL, and Legitimate Interest (Article 6(1)(f) of GDPR) for auditing and refining the Interpretable ML Engine's fairness.
+                </p>
+              </div>
+            </section>
 
-          <Typography
-            variant='h5'
-            component='h2'
-            gutterBottom
-            sx={{ fontWeight: 'medium' }}
-          >
-						1. Information We Collect
-          </Typography>
-          <Typography variant='body1' paragraph>
-						We may collect information about you in a variety of ways. The
-						information we may collect via the Service depends on the content
-						and materials you use, and includes:
-          </Typography>
-          <Typography variant='body1' component='div' paragraph>
-            <List dense>
-              <ListItem>
-                <ListItemText primary='Personal Data: Personally identifiable information, such as your name, email address, institutional affiliation, and other details you provide when you register for the Service or update your profile.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='Usage Data: Information automatically collected when you access the Service, such as your IP address, browser type, operating system, access times, and the pages you have viewed directly before and after accessing the Service.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='Device Data: Information about your computer or mobile device, such as your device ID, model, and manufacturer, and information about the location of your device, if you permit us to access this information.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='Content Data: Any content you create, share, or post on the Service, including files, messages, comments, and project details.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='Cookies and Tracking Technologies: We may use cookies, web beacons, tracking pixels, and other tracking technologies to help customize the Service and improve your experience.' />
-              </ListItem>
-            </List>
-          </Typography>
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Questrial' }}>
+                2. Categories of Personal Data Processed
+              </h2>
+              
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse border border-gray-300 rounded-lg overflow-hidden shadow-sm">
+                  <thead className="bg-gray-50">
+                    <tr>
+                      <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900" style={{ fontFamily: 'Questrial' }}>
+                        Data Category
+                      </th>
+                      <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900" style={{ fontFamily: 'Questrial' }}>
+                        Specific Data Points
+                      </th>
+                      <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900" style={{ fontFamily: 'Questrial' }}>
+                        Purpose of Processing
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="hover:bg-gray-50">
+                      <td className="border border-gray-300 px-4 py-3 text-gray-700 font-medium">
+                        A. Identity & Account Data
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-gray-700">
+                        Full Name, Email, Institutional ID, Hashed Password, Decentralized Identifier (DID).
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-gray-700">
+                        Account provisioning, identity resolution for VC issuance, and secure access via Clerk.
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-gray-50">
+                      <td className="border border-gray-300 px-4 py-3 text-gray-700 font-medium">
+                        B. Performance & Interaction Data
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-gray-700">
+                        Course completion rates, assessment results, submission frequency, collaborative efficacy metrics, time-on-task.
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-gray-700">
+                        Primary input for the Interpretable ML Engine to calculate objective competency metrics.
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-gray-50">
+                      <td className="border border-gray-300 px-4 py-3 text-gray-700 font-medium">
+                        C. Cryptographic Data
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-gray-700">
+                        Public Key, VC Hash, VC Revocation Status (on Stellar).
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-gray-700">
+                        Anchoring the proof of the VC on the Stellar Soroban VDR. This public data contains no direct identifying Personal Data.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
 
-          <Typography
-            variant='h5'
-            component='h2'
-            gutterBottom
-            sx={{ fontWeight: 'medium', mt: 3 }}
-          >
-						2. How We Use Your Information
-          </Typography>
-          <Typography variant='body1' paragraph>
-						Having accurate information about you permits us to provide you with
-						a smooth, efficient, and customized experience. Specifically, we may
-						use information collected about you via the Service to:
-          </Typography>
-          <Typography variant='body1' component='div' paragraph>
-            <List dense>
-              <ListItem>
-                <ListItemText primary='Create and manage your account.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='Provide, operate, and maintain our Service.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='Improve, personalize, and expand our Service.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='Understand and analyze how you use our Service.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='Develop new products, services, features, and functionality.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the Service, and for marketing and promotional purposes (with your consent, where required).' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='Process your transactions and manage your orders or subscriptions.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='Find and prevent fraud.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='Ensure compliance with our Terms of Service and applicable laws.' />
-              </ListItem>
-            </List>
-          </Typography>
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Questrial' }}>
+                3. Purpose of Processing and Data Minimization
+              </h2>
+              
+              <div className="ml-4">
+                <h3 className="text-xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'Questrial' }}>
+                  3.1. Core Service Delivery
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Data is processed to provide the personalized LMS experience and issue W3C-compliant VCs.
+                </p>
 
-          <Typography
-            variant='h5'
-            component='h2'
-            gutterBottom
-            sx={{ fontWeight: 'medium', mt: 3 }}
-          >
-						3. How We Share Your Information
-          </Typography>
-          <Typography variant='body1' paragraph>
-						We may share information we have collected about you in certain
-						situations. Your information may be disclosed as follows:
-          </Typography>
-          <Typography variant='body1' component='div' paragraph>
-            <List dense>
-              <ListItem>
-                <ListItemText primary='By Law or to Protect Rights: If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others, we may share your information as permitted or required by any applicable law, rule, or regulation.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='Third-Party Service Providers: We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='With Your Consent: We may disclose your personal information for any other purpose with your consent.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='Business Transfers: We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='Affiliates: We may share your information with our affiliates, in which case we will require those affiliates to honor this Privacy Policy.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='Other Users: If you interact with other users of the Service, those users may see your name, profile photo, and descriptions of your activity, including sending invitations to other users, chatting with other users, liking posts, following blogs.' />
-              </ListItem>
-            </List>
-          </Typography>
+                <h3 className="text-xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'Questrial' }}>
+                  3.2. Interpretable ML Engine Operation
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Performance Data is used to train and run the Interpretable ML Engine. This process is continuously audited to ensure algorithmic fairness and mitigate bias in competency scoring, aligning with ethical data practices.
+                </p>
 
-          <Typography
-            variant='h5'
-            component='h2'
-            gutterBottom
-            sx={{ fontWeight: 'medium', mt: 3 }}
-          >
-						4. Data Security
-          </Typography>
-          <Typography variant='body1' paragraph>
-						We use administrative, technical, and physical security measures to
-						help protect your personal information. While we have taken
-						reasonable steps to secure the personal information you provide to
-						us, please be aware that despite our efforts, no security measures
-						are perfect or impenetrable, and no method of data transmission can
-						be guaranteed against any interception or other type of misuse.
-          </Typography>
+                <h3 className="text-xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'Questrial' }}>
+                  3.3. Stellar VDR Usage (Data Minimization)
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  We adhere to strict data minimization. We only record the cryptographic hash and revocation status of the VC on the public Stellar Soroban ledger. Your name, scores, and private educational records remain securely in our off-chain database.
+                </p>
+              </div>
+            </section>
 
-          <Typography
-            variant='h5'
-            component='h2'
-            gutterBottom
-            sx={{ fontWeight: 'medium', mt: 3 }}
-          >
-						5. Data Retention
-          </Typography>
-          <Typography variant='body1' paragraph>
-						We will retain your personal information only for as long as is
-						necessary for the purposes set out in this Privacy Policy. We will
-						retain and use your information to the extent necessary to comply
-						with our legal obligations (for example, if we are required to
-						retain your data to comply with applicable laws), resolve disputes,
-						and enforce our legal agreements and policies.
-          </Typography>
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Questrial' }}>
+                4. Data Sharing and Transfer
+              </h2>
+              
+              <div className="ml-4">
+                <h3 className="text-xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'Questrial' }}>
+                  4.1. Issuing Institutions
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  We share Performance and Identity Data with your Issuer to comply with their pedagogical and regulatory requirements and to enable them to issue VCs.
+                </p>
 
-          <Typography
-            variant='h5'
-            component='h2'
-            gutterBottom
-            sx={{ fontWeight: 'medium', mt: 3 }}
-          >
-						6. Your Rights and Choices
-          </Typography>
-          <Typography variant='body1' paragraph>
-						Depending on your location, you may have the following rights
-						regarding your personal information:
-          </Typography>
-          <Typography variant='body1' component='div' paragraph>
-            <List dense>
-              <ListItem>
-                <ListItemText primary='The right to access – You have the right to request copies of your personal data.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='The right to rectification – You have the right to request that we correct any information you believe is inaccurate or complete information you believe is incomplete.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='The right to erasure – You have the right to request that we erase your personal data, under certain conditions.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='The right to restrict processing – You have the right to request that we restrict the processing of your personal data, under certain conditions.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='The right to object to processing – You have the right to object to our processing of your personal data, under certain conditions.' />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary='The right to data portability – You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.' />
-              </ListItem>
-            </List>
-            <Typography variant='body1' paragraph>
-							If you wish to exercise any of these rights, please contact us
-							using the contact information provided below.
-            </Typography>
-          </Typography>
+                <h3 className="text-xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'Questrial' }}>
+                  4.2. Holder-Controlled Disclosure (SSI)
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  When you, the Holder, choose to present a VC to a third-party Verifier (e.g., an employer), the sharing is executed under your control. Ednux facilitates this by supporting the use of Zero-Knowledge Proofs (ZKP), allowing you to prove a claim without disclosing the underlying raw, sensitive metric.
+                </p>
 
-          <Typography
-            variant='h5'
-            component='h2'
-            gutterBottom
-            sx={{ fontWeight: 'medium', mt: 3 }}
-          >
-						7. Children's Privacy
-          </Typography>
-          <Typography variant='body1' paragraph>
-						Our Service is not intended for use by children under the age of 13
-						(or a higher age threshold where applicable under local law). We do
-						not knowingly collect personally identifiable information from
-						children under this age. If you become aware that a child has
-						provided us with personal information without parental consent,
-						please contact us. If we become aware that a child under the
-						relevant age threshold has provided us with personal information
-						without parental consent, we take steps to remove that information
-						and terminate the child's account. For users between 13 and the age
-						of majority in their jurisdiction, we may require parental consent
-						for certain features or data processing activities.
-          </Typography>
+                <h3 className="text-xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'Questrial' }}>
+                  4.3. Data Transfer (International)
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Data may be transferred to and processed in jurisdictions outside your country of residence. We ensure that any international data transfers are protected by adequate legal mechanisms (e.g., Standard Contractual Clauses, where applicable).
+                </p>
+              </div>
+            </section>
 
-          <Typography
-            variant='h5'
-            component='h2'
-            gutterBottom
-            sx={{ fontWeight: 'medium', mt: 3 }}
-          >
-						8. Contact Information
-          </Typography>
-          <Typography variant='body1' paragraph>
-						If you have any questions or comments about this Privacy Policy,
-						please contact us at:
-            <br />
-						[Your Company Name, if applicable]
-            <br />
-						[Your Contact Email, e.g., privacy@ednux.com]
-            <br />
-						[Your Physical Address, if applicable]
-          </Typography>
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Questrial' }}>
+                5. Your Data Rights (GDPR/CCPA Alignment)
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                You maintain full control over your Personal Data, subject to the limitations imposed by the decentralized ledger:
+              </p>
+              
+              <div className="ml-4">
+                <h3 className="text-xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'Questrial' }}>
+                  5.1. Right of Access and Portability
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  You have the right to obtain confirmation of whether your data is being processed. Since Ednux VCs are built on SSI, your core verifiable data is inherently portable and available in your digital wallet.
+                </p>
 
-          <Divider sx={{ my: 3 }} />
-          <Box sx={{ textAlign: 'center', mt: 3 }}>
-            <MuiLink
-              component={Link}
-              href='/'
-              variant='body2'
-              sx={{ textDecoration: 'none' }}
-            >
-							Back to Home
-            </MuiLink>
-          </Box>
-        </Paper>
-      </Container>
-    </Box>
+                <h3 className="text-xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'Questrial' }}>
+                  5.2. Right to Rectification
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  You can request the correction of inaccurate data in our centralized LMS records.
+                </p>
+
+                <h3 className="text-xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'Questrial' }}>
+                  5.3. Right to Erasure ("Right to be Forgotten")
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  You may request the deletion of your Personal Data from the Ednux centralized database. <strong>Limitation:</strong> You acknowledge that the cryptographic data (hash and revocation status) anchored to the immutable Stellar Soroban VDR cannot be deleted or modified due to the core principles of Distributed Ledger Technology.
+                </p>
+              </div>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Questrial' }}>
+                6. Data Security and Retention
+              </h2>
+              
+              <div className="ml-4">
+                <h3 className="text-xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'Questrial' }}>
+                  Data Security
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  We employ industry-standard technical and organizational measures, including encryption, pseudonymization, and tokenization, to protect Personal Data from unauthorized access or breach.
+                </p>
+
+                <h3 className="text-xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'Questrial' }}>
+                  Data Retention
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  We retain Personal Data for the duration of your active account relationship or as required by our agreement with your Issuer. Pseudonymized, non-identifiable data may be retained indefinitely for the purpose of maintaining and auditing the historical integrity of the Interpretable ML Engine.
+                </p>
+              </div>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Questrial' }}>
+                7. Contact Information
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                If you have any questions about this Privacy Policy or our data practices, please contact us at:
+              </p>
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="text-gray-700">
+                  <strong>Email:</strong> support@ednux.com
+                </p>
+              </div>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Questrial' }}>
+                8. Updates to This Policy
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new Privacy Policy on this page and updating the "Effective Date" at the top of this policy.
+              </p>
+            </section>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </div>
   );
 }

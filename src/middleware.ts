@@ -31,7 +31,8 @@ export const config = {
 		"/calendar/:path*",
 		"/profile/:path*",
 		"/files/:path*",
-		"/ai-assistant/:path*", // Exclude public routes and auth pages
-		"/((?!_next/static|_next/image|assets|favicon.ico|features(?:/.*)?|about|feedback|waitlist|privacy-policy|terms-of-service|sitemap.xml|sitemap-0.xml|contact|auth/signin|auth/signup|auth/forgot-password|auth/error|auth/reset-password|test-courses|$).*)",
+		"/ai-assistant/:path*",
+		// Exclude public routes and auth pages
+		"/((?!_next/static|_next/image|assets|favicon.ico|features|about|feedback|waitlist|privacy-policy|terms-of-service|sitemap.xml|sitemap-0.xml|contact|auth/signin|auth/signup|auth/forgot-password|auth/error|auth/reset-password|test-courses|$).*)",
 	],
 };
