@@ -53,27 +53,30 @@ const WhyEdnux = () => {
         >
           The Learning System You Actually Understand.
         </Typography>
+        <Typography
+          variant="h6"
+          sx={{
+            fontWeight: 300,
+            color: '#232946',
+            mb: 3,
+            fontSize: { xs: '0.8rem', md: '1.1rem' }
+          }}
+        >
+          Ednux is an advanced, social Learning Management System (LMS) that replaces the outdated, subjective grade-based assessment prevalent in Africa with a Competency-Based Education (CBE) model. Our platform is designed not just to deliver learning, but to generate verifiable, lifelong data assets—Verifiable Credentials (VCs)—that are owned and controlled entirely by the individual user.
+        </Typography>
         <Box>
           {[
             {
-              title: 'Localized Learning, Global standards',
-              desc: 'Deliver curriculum and assessments tailored to African contexts—with the quality and flexibility of world-class systems.'
+              title: 'High-Integrity Assessment and Personalized Learning',
+              desc: 'We move beyond the single, abstract grade to provide actionable, objective proof of skill mastery. Our technology is designed to not only measure what a student knows, but how they learn, ensuring assessment is accurate, fair, and transparent.
             },
             {
-              title: 'Smart Automation for Educators',
-              desc: 'Auto-grade, analyze, and improve learning outcomes without added stress. Focus on teaching, not admin.'
+              title: 'Lifelong Ownership and Data Privacy (SSI)',
+              desc: 'We address the fundamental failure of trust and portability in traditional credential systems by giving individuals full, perpetual control over their academic and professional history.
             },
             {
-              title: 'Data You Can Act On',
-              desc: 'From attendance to performance trends—see the story behind your numbers with visual dashboards built for impact.'
-            },
-            {
-              title: 'Seamless, Scalable, Secure',
-              desc: 'Whether it&apos; a single classroom or national rollout, Ednux adapts to your needs with encrypted infrastructure and modular design.'
-            },
-            {
-              title: 'Built in Africa, for every learner.',
-              desc: 'Created by African developers who understand your obstacles—and your aspirations. Ednux is a platform designed to meet real needs, with tools that scale alongside your ambition.'
+              title: 'Unmatched Verification Efficiency',
+              desc: 'Our strategic choice of infrastructure directly solves the regional problem of bureaucratic delay, providing institutions and employers with instantaneous, fraud-proof verification capability.
             }
           ].map((item, idx) => (
             <Box key={item.title} sx={{ mb: 2 }}>
