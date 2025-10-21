@@ -68,15 +68,15 @@ const WhyEdnux = () => {
           {[
             {
               title: 'High-Integrity Assessment and Personalized Learning',
-              desc: 'We move beyond the single, abstract grade to provide actionable, objective proof of skill mastery. Our technology is designed to not only measure what a student knows, but how they learn, ensuring assessment is accurate, fair, and transparent.
+              desc: 'We move beyond the single, abstract grade to provide actionable, objective proof of skill mastery. Our technology is designed to not only measure what a student knows, but how they learn, ensuring assessment is accurate, fair, and transparent.',
             },
             {
               title: 'Lifelong Ownership and Data Privacy (SSI)',
-              desc: 'We address the fundamental failure of trust and portability in traditional credential systems by giving individuals full, perpetual control over their academic and professional history.
+              desc: 'We address the fundamental failure of trust and portability in traditional credential systems by giving individuals full, perpetual control over their academic and professional history.',
             },
             {
               title: 'Unmatched Verification Efficiency',
-              desc: 'Our strategic choice of infrastructure directly solves the regional problem of bureaucratic delay, providing institutions and employers with instantaneous, fraud-proof verification capability.
+              desc: 'Our strategic choice of infrastructure directly solves the regional problem of bureaucratic delay, providing institutions and employers with instantaneous, fraud-proof verification capability.',
             }
           ].map((item, idx) => (
             <Box key={item.title} sx={{ mb: 2 }}>
