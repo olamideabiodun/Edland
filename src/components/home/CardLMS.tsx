@@ -133,7 +133,7 @@ const CardLMS = () => {
                             <Card>
                                 <div className="card-content">
                                     <img 
-                                        src="/assets/images/dash_card-3.png" 
+                                        src="/assets/images/dash_card-4.png" 
                                         alt="Personalized Learning" 
                                         className="card-image"
                                     />
