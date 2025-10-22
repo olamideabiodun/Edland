@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 
 const dashboardItems = [
 	{
@@ -135,7 +134,7 @@ const InteractiveDashboardSection = () => {
 				{/* Left side - Mockup */}
 				<div className="mockup-container">
 					<div className="mockup-wrapper">
-						<Image
+						<img
 							src={currentItem.mockupImage}
 							alt={currentItem.title}
 							className="laptop-mockup"

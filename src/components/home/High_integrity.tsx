@@ -52,7 +52,7 @@ It is a closed-loop system where social interaction is treated as a critical dat
 				</div>
 			</div>
 			<div className="standalone-hero">
-				<img src="/assets/images/Cbe_3.png" alt="Ednux Dashboard" className="standalone-img" />
+				<img src="/assets/images/Cbe_3.png" alt="CBE Dashbaord" className="standalone-img" />
 			</div>
 			
 

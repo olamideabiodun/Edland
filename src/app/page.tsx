@@ -39,6 +39,8 @@ import ProductivitySection from '../components/home/ProductivitySection';
 import High_integrity from '../components/home/High_integrity';
 import WhyEdnux from '../components/home/WhyEdnux';
 import WorkspaceToolsSection from '../components/home/WorkspaceToolsSection';
+import SSI_Section from '../components/home/SSI_Section';
+import CardLMS from '../components/home/CardLMS';
 
 // Define animations
 const fadeIn = keyframes`
@@ -284,7 +286,9 @@ const HomeContent = () => {
 
       <Hero />
       <WhyEdnux />
+      <CardLMS />
       <High_integrity />
+      {/* <SSI_Section /> */}
       <ProductivitySection />
       <InteractiveDashboardSection />
       <WorkspaceToolsSection />
