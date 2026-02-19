@@ -172,14 +172,19 @@ const ProductivitySection = () => {
           flex-direction: row;
           align-items: center;
           justify-content: center;
-          padding: 80px 96px;
-          background: linear-gradient(120deg, #fafdff 0%, #d2eaff 100%);
+          padding: 120px 64px;
+          background:
+            radial-gradient(circle at 20% 30%, rgb(237, 239, 248) 0%, transparent 60%),
+            radial-gradient(circle at 80% 70%, rgba(226, 244, 253, 0.94) 0%, transparent 55%),
+            linear-gradient(180deg, #90a7da 0%, #a2b2ec 45%, #5b6899 100%);
+
           position: relative;
           overflow: hidden;
         }
         
         .left-content {
-          flex: 1;
+          flex: unset;
+          width: 520px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
@@ -187,14 +192,17 @@ const ProductivitySection = () => {
         }
         
         .main-title {
-          font-size: 54px;
-          font-weight: 500;
+          font-size: 64px;
+          font-weight: 600;
           color: #232946;
-          margin-bottom: 24px;
+          margin-bottom: 32px;
+          margin-top: -50px;
           text-align: left;
           margin-left: 70px;
-          line-height: 1.1;
+          line-height: 1.05;
           font-family: 'Questrial', sans-serif;
+          white-space: nowrap;
+          width: max-content;
         }
         
         .mockup-container {
@@ -212,22 +220,26 @@ const ProductivitySection = () => {
           left: 50%;
           top: 50%;
           transform: translate(-50%, -50%);
-          width: 336px !important;
-          height: 336px !important;
+          width: 360px !important;
+          height: 360px !important;
           z-index: 1;
-          opacity: 0.9;
+          opacity: 0.8;
+          filter: blur(1.5px);
           pointer-events: none;
           object-fit: contain;
         }
         
         .features-card {
-          flex: 1.2;
-          margin-left: 48px;
-          background: linear-gradient(120deg, #eaf6ff 60%, #b3e0ff 100%);
-          border-radius: 33.6px;
-          border: 2.5px solid #e3f0ff;
-          box-shadow: 0 8px 32px 0 rgba(80,100,180,0.10);
-          padding: 40px 48px;
+          flex: unset;
+          width: 520px;
+          margin-left: 32px;
+          margin-top: 120px;
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 32px;
+          border: 1px solid rgba(0,0,0,0.05);
+          backdrop-filter: blur(20px);
+          box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+          padding: 56px;
           display: flex;
           flex-direction: column;
           gap: 36px;
@@ -251,18 +263,18 @@ const ProductivitySection = () => {
         }
         
         .feature-title {
-          font-weight: 500;
+          font-weight: 600;
           font-size: 20px;
-          color: #232946;
+          color: #0b2e5c;
           margin-bottom: 4px;
           font-family: 'Questrial', sans-serif;
         }
         
         .feature-description {
           font-size: 15px;
-          color: #232946;
-          opacity: 0.85;
-          line-height: 1.5;
+          color: rgba(3, 7, 12, 0.85);
+          opacity: 0.85;filter: blur(0px);
+          line-height: 1.6;
           margin: 0;
           font-family: 'Questrial', sans-serif;
         }
@@ -271,20 +283,26 @@ const ProductivitySection = () => {
         @media (max-width: 768px) {
           .productivity-section {
             flex-direction: column;
-            padding: 48px 16px;
+            padding: 80px 16px;
             min-height: 600px;
           }
           
           .left-content {
             align-items: center;
-            margin-bottom: 48px;
+            margin-bottom: 16px;
           }
           
           .main-title {
-            font-size: 32px;
+            font-size: 36px;
+            font-weight: 600;
             text-align: center;
             white-space: nowrap;
-            margin-left: 0;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Questrial', sans-serif;
+            margin-bottom: 20px;
+            line-height: 1.15;
           }
           
           .mockup-container {
@@ -300,9 +318,10 @@ const ProductivitySection = () => {
           .features-card {
             margin-left: 0;
             min-width: 100%;
-            padding: 24px 20px;
+            padding: 28px 24px;
             min-height: 420px;
             gap: 28px;
+            margin-top: -8px;
           }
           
           .feature-title {

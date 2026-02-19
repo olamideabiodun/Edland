@@ -35,3 +35,6 @@ DEVELOPMENT_SUMMARY.md
 *.pack
 edm 3.rtf
 edn 1.txt
+
+# clerk configuration (can include secrets)
+/.clerk/

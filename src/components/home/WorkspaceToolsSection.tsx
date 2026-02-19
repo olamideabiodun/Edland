@@ -78,9 +78,9 @@ const WorkspaceToolsSection = () => (
         right: 50%;
         margin-left: -50vw;
         margin-right: -50vw;
-        padding: 80px 0 80px 0;
+        padding: 120px 0;
         box-sizing: border-box;
-        background: radial-gradient(ellipse 60% 70% at 20% 80%, rgba(70, 139, 249, 0.3) 0%, transparent 70%), #000000;
+        background: radial-gradient(circle at 30% 70%, #f0f0f5 0%, #f9f8f7 80%);
         overflow: hidden;
       }
       
@@ -90,7 +90,7 @@ const WorkspaceToolsSection = () => (
         left: 0;
         width: 100vw;
         height: 100%;
-        background: radial-gradient(ellipse 60% 70% at 50% 30%, rgba(106, 188, 255, 0.15) 0%, transparent 70%);
+        background: radial-gradient(circle at 50% 30%, rgba(106, 188, 255, 0.1) 0%, transparent 70%);
         z-index: 0;
       }
       
@@ -98,15 +98,16 @@ const WorkspaceToolsSection = () => (
         position: relative;
         z-index: 1;
         border-radius: 32px;
-        background: rgba(255,255,255,0.08);
+        background: rgba(255,255,255,0.8);
         border: 2px solid transparent;
         background-clip: padding-box;
-        padding: 56px 48px 48px 48px;
+        padding: 60px;
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         max-width: 1200px;
         margin: 0 auto;
         box-sizing: border-box;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
       }
       
       .workspace-tools-card::before {
@@ -147,9 +148,12 @@ const WorkspaceToolsSection = () => (
       }
       
       .workspace-tools-title {
-        font-size: 48px;
-        font-weight: 500;
+        font-size: 52px;
+        font-weight: 700;
         color: #ffffff;
+        background: linear-gradient(90deg, #4f46e5 0%, #000000 100%); /* Ednux-style gradient */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         font-family: 'Questrial', sans-serif;
         margin: 0;
         text-align: center;
@@ -170,7 +174,7 @@ const WorkspaceToolsSection = () => (
       .workspace-tool-item h3 {
         font-size: 24px;
         font-weight: 600;
-        color: #ffffff;
+        color: #1f2937;
         margin-bottom: 12px;
         font-family: 'Questrial', sans-serif;
         line-height: 1.3;
@@ -178,7 +182,7 @@ const WorkspaceToolsSection = () => (
       
       .workspace-tool-item p {
         font-size: 16px;
-        color: rgba(255,255,255,0.85);
+        color: #4b5563;
         line-height: 1.6;
         margin: 0;
         font-family: 'Questrial', sans-serif;

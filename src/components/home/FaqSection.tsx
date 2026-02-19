@@ -159,7 +159,8 @@ const FaqSection = () => {
 					sx={{
 						mb: 3,
 						fontSize: { xs: "1.3rem", sm: "1.7rem", md: "2.1rem" },
-						background: "linear-gradient(90deg, #4361ee 0%, #c16ef4ff 100%)",
+						background: "linear-gradient(90deg, #2563eb 0%, #000000 100%)",
+
 						WebkitBackgroundClip: "text",
 						WebkitTextFillColor: "transparent",
 						letterSpacing: "-1px",

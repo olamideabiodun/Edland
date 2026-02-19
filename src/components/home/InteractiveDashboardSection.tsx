@@ -184,8 +184,8 @@ const InteractiveDashboardSection = () => {
           right: 50%;
           margin-left: -50vw;
           margin-right: -50vw;
-          padding: 100px 0;
-          background: radial-gradient(ellipse 60% 70% at 20% 80%, rgba(70, 139, 249, 0.3) 0%, transparent 70%), #000000;
+          padding: 120px 0;
+          background: radial-gradient(circle at 30% 70%, #f0f0f5 0%, #f9f8f7 80%);
           overflow: hidden;
         }
 
@@ -228,13 +228,10 @@ const InteractiveDashboardSection = () => {
         }
 
         .content-card {
-          background: rgba(255, 255, 255, 0.05);
-          border: 2px solid transparent;
-          background-clip: padding-box;
+          background: rgba(255, 255, 255, 0.8); /* semi-transparent, bright card like UsePDFX */
           border-radius: 32px;
-          padding: 48px;
-          backdrop-filter: blur(20px);
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+          padding: 60px; /* slightly more spacious padding */
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08); /* lighter shadow for a cleaner look */
           position: relative;
         }
 
@@ -256,10 +253,10 @@ const InteractiveDashboardSection = () => {
         }
 
         .main-title {
-          font-size: 48px;
-          font-weight: 600;
-          margin: 0 0 16px 0;
-          background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+          font-size: 52px;
+          font-weight: 700;
+          margin: 0 0 20px 0;
+          background: linear-gradient(90deg, #4f46e5 0%, #6b7280 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           font-family: 'Questrial', sans-serif;
@@ -268,7 +265,7 @@ const InteractiveDashboardSection = () => {
         .subtitle {
           font-size: 24px;
           font-weight: 500;
-          color: rgba(255, 255, 255, 0.8);
+          color: #4b5563;
           margin: 0 0 24px 0;
           font-family: 'Questrial', sans-serif;
         }
@@ -276,7 +273,7 @@ const InteractiveDashboardSection = () => {
         .description {
           font-size: 18px;
           line-height: 1.6;
-          color: rgba(255, 255, 255, 0.7);
+          color: #6b7280;
           margin: 0 0 32px 0;
           font-family: 'Questrial', sans-serif;
         }

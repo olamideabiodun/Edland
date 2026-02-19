@@ -99,20 +99,22 @@ const AdvancedLearningToolsSection = () => {
           flex-direction: row;
           align-items: flex-start;
           justify-content: center;
-          padding: 80px 96px;
-          background: radial-gradient(ellipse 70% 80% at 40% 50%, #6abcff 0%, transparent 80%);
+          padding: 120px 80px;
+          radial-gradient(circle at 30% 40%, rgba(99,102,241,0.35) 0%, transparent 70%),
+    #f8f8f8;
           position: relative;
           overflow: hidden;
         }
         .features-card {
           flex: 1.2;
           margin-right: 48px;
-          backdrop-filter: blur(15px);
-          -webkit-backdrop-filter: blur(15px);
-          border-radius: 33.6px;
-          border: 2px solid transparent;
-          box-shadow: 0 8px 32px 0 rgba(106, 188, 255, 0.15);
-          padding: 40px 48px;
+          background: rgba(255,255,255,0.85);
+          border: 1px solid rgba(0,0,0,0.05);
+          -webkit-backdrop-filter: blur(20px);
+          border-radius: 32px;
+          border: 1px solid transparent;
+          box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+          padding: 56px;
           display: flex;
           flex-direction: column;
           gap: 36px;
@@ -122,18 +124,6 @@ const AdvancedLearningToolsSection = () => {
           justify-content: center;
           align-items: flex-start;
           position: relative;
-        }
-
-        .features-card::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          padding: 1px;
-          background: linear-gradient(135deg, #6abcff, rgba(255, 255, 255, 0.8));
-          border-radius: inherit;
-          mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-          mask-composite: xor;
-          -webkit-mask-composite: xor;
         }
 
         .feature-item {
@@ -158,7 +148,7 @@ const AdvancedLearningToolsSection = () => {
           position: absolute;
           inset: 0;
           padding: 0.5px;
-          background: linear-gradient(90deg, #ff5757, #8c52ff);
+          background: linear-gradient(90deg, #60a5fa, #020617);
           border-radius: inherit;
           mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
           mask-composite: xor;
@@ -175,8 +165,8 @@ const AdvancedLearningToolsSection = () => {
           margin: 0 8px 0 0;
         }
         .feature-title {
-          font-weight: 500;
-          font-size: 22px;
+          font-weight: 600;
+          font-size: 20px;
           color: #232946;
           background: transparent;
           border-radius: 15px;
@@ -189,7 +179,7 @@ const AdvancedLearningToolsSection = () => {
           font-size: 15px;
           color: #232946;
           opacity: 0.85;
-          line-height: 1.5;
+          line-height: 1.6;
           margin: 0;
           font-family: 'Questrial', sans-serif;
         }
@@ -201,13 +191,13 @@ const AdvancedLearningToolsSection = () => {
           position: relative;
         }
         .main-title {
-          font-size: 54px;
-          font-weight: 500;
+          font-size: 60px;
+          font-weight: 600;
           color: #232946;
-          margin-bottom: 24px;
+          margin-bottom: 32px;
           text-align: left;
           margin-left: 0;
-          line-height: 1.1;
+          line-height: 1.05;
           font-family: 'Questrial', sans-serif;
         }
         .main-title-singleline {
@@ -293,10 +283,10 @@ const AdvancedLearningToolsSection = () => {
           }
         }
         .main-title-multiline {
-          display: block;
+          display: none;
         }
         .main-title-singleline {
-          display: none;
+          display: block;
         }
         @media (min-width: 901px) and (max-width: 1024px) {
           .advanced-learning-section {
