@@ -167,9 +167,9 @@ export default function AboutPage() {
           </div>
 
           <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
-            <div className="grid grid-cols-1 lg:grid-cols-5">
+            <div className="grid grid-cols-1">
               {/* Text side */}
-              <div className="lg:col-span-3 p-8 sm:p-12">
+              <div className="p-8 sm:p-12">
                 <h3 className="text-[1.8rem] font-bold text-slate-900">Faruq Olamide Sokunbi</h3>
                 <p className="mt-1 text-[0.9rem] text-slate-500">Architecture Student & Software Engineer</p>
                 <div className="mt-3 flex items-center gap-3">
@@ -211,15 +211,6 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Image side */}
-              <div className="lg:col-span-2 relative bg-blue-50 flex items-center justify-center p-8 min-h-[300px]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/assets/images/founder.png"
-                  alt="Faruq Olamide Sokunbi, Founder of Ednux"
-                  className="w-full max-w-[320px] object-contain drop-shadow-lg"
-                />
-              </div>
             </div>
           </div>
         </div>
