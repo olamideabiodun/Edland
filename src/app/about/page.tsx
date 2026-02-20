@@ -5,167 +5,165 @@ import { motion } from 'framer-motion';
 import Header from '@/components/home/Header';
 import Footer from '@/components/home/Footer';
 
-const values = [
-  {
-    title: 'Innovation First',
-    description:
-      'We relentlessly explore new frontiers in educational technology, building tools that empower, adapt, and evolve with the needs of African learners.',
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Learner-Centric',
-    description:
-      'Every feature, decision, and design begins with one question: Does this help students succeed? Their growth is our north star.',
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.905 59.905 0 0 1 12 3.493a59.902 59.902 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Accessibility for All',
-    description:
-      'Quality education should never be gated by geography, income, or device. Ednux is built to reach every learner, everywhere.',
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5a17.92 17.92 0 0 1-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Community Driven',
-    description:
-      'Learning thrives in connection. We champion collaboration, peer support, and shared knowledge across institutions and borders.',
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
-      </svg>
-    ),
-  },
-];
-
-const features = [
-  { title: 'AI-Powered Learning', desc: 'Intelligent algorithms personalize learning paths and provide instant feedback to optimize educational outcomes.' },
-  { title: 'Social Learning Hub', desc: 'Connect learners, educators, and professionals in collaborative spaces that foster knowledge sharing.' },
-  { title: 'Advanced Analytics', desc: 'Comprehensive insights into learning progress, engagement metrics, and performance optimization.' },
-  { title: 'Enterprise Security', desc: 'Bank-level security protocols ensure your educational data remains protected and compliant.' },
-  { title: '24/7 Support', desc: 'Round-the-clock assistance from our dedicated team of education technology specialists.' },
-  { title: 'Scalable Platform', desc: 'From individual learners to enterprise organizations, our platform grows with your needs.' },
-];
-
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white font-poppins">
       <Header />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800 pt-[70px]">
+      <section className="relative w-full overflow-hidden bg-white pt-[70px]">
+        {/* Faded grid background */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage: `linear-gradient(rgba(37,99,235,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,0.07) 1px, transparent 1px)`,
+            backgroundSize: '48px 48px',
+            maskImage: 'radial-gradient(ellipse 80% 70% at 50% 30%, black 40%, transparent 100%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 80% 70% at 50% 30%, black 40%, transparent 100%)',
+          }}
+        />
+        {/* Soft glow blobs */}
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-blue-600 opacity-10 blur-3xl" />
-          <div className="absolute bottom-0 left-0 h-60 w-60 rounded-full bg-indigo-600 opacity-10 blur-3xl" />
+          <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[700px] rounded-full bg-blue-100 opacity-40 blur-3xl" />
         </div>
-        <div className="relative z-10 mx-auto max-w-[1240px] px-4 py-24 sm:px-6 lg:px-8">
-          <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-[13px] font-medium text-white/80 mb-6">
-            About Ednux
-          </span>
-          <h1 className="max-w-3xl text-[2.8rem] font-semibold leading-tight text-white sm:text-[3.6rem]">
-            Transforming Education Through{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-              AI Innovation
-            </span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-[1.1rem] leading-relaxed text-slate-300">
-            We&apos;re building the future of education, where artificial intelligence meets
-            social learning, creating personalized experiences that adapt to every learner&apos;s
-            unique journey across Africa.
-          </p>
-          <Link
-            href="/waitlist"
-            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-[15px] font-semibold text-slate-900 shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
-          >
-            Join Our Mission
-          </Link>
-        </div>
-      </section>
 
-      {/* Vision */}
-      <section className="py-24">
-        <div className="mx-auto max-w-[900px] px-4 sm:px-6 text-center">
-          <h2 className="text-[2rem] font-semibold text-slate-900 sm:text-[2.4rem]">Our Vision</h2>
-          <p className="mx-auto mt-6 max-w-[780px] text-[1.05rem] leading-[1.8] text-slate-600">
-            At Ednux, we envision a future where every African learner, regardless of background,
-            location, or circumstance, has access to personalized, high-quality education that
-            unlocks their full potential. We are building more than a platform. We are building a
-            movement: one that redefines how students learn, how educators teach, and how institutions
-            grow.
-          </p>
-          <p className="mx-auto mt-5 max-w-[780px] text-[1.05rem] leading-[1.8] text-slate-600">
-            Our vision is to transform education across Africa by harnessing AI, making learning
-            mobile-first, connecting learners through collaboration, and equipping institutions with
-            data-driven insights. We believe the future of education is not imported, it&apos;s built
-            locally, with global standards and deep cultural relevance.
-          </p>
-        </div>
-      </section>
+        <div className="relative z-10 mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center justify-start pt-16 pb-20 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5"
+            >
+              <span className="text-[13px] font-medium text-blue-700">About Ednux</span>
+            </motion.div>
 
-      {/* Core Values */}
-      <section className="bg-slate-50 py-24">
-        <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <h2 className="text-[2rem] font-semibold text-slate-900 sm:text-[2.4rem]">Our Core Values</h2>
-          </div>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {values.map((v) => (
-              <motion.div
-                key={v.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-7"
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="font-poppins max-w-[820px] text-[2.6rem] font-semibold leading-[1.1] tracking-tight text-slate-900 sm:text-[3.4rem] md:text-[4rem]"
+            >
+              Africa doesn&apos;t have a{' '}
+              <span className="text-blue-600">talent problem</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.25 }}
+              className="mt-6 max-w-[600px] text-[1.05rem] leading-relaxed text-slate-500 md:text-[1.1rem]"
+            >
+              It has a documentation problem. A visibility problem. A proof problem. We built Ednux to fix that.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="mt-8"
+            >
+              <Link
+                href="/waitlist"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-8 py-4 text-[15px] font-medium text-white transition-all duration-200 hover:bg-blue-700 hover:-translate-y-0.5"
               >
-                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
-                  {v.icon}
-                </div>
-                <div>
-                  <h3 className="text-[1rem] font-semibold text-slate-900">{v.title}</h3>
-                  <p className="mt-1.5 text-[0.9rem] leading-relaxed text-slate-500">{v.description}</p>
-                </div>
-              </motion.div>
-            ))}
+                Join the Mission
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Features grid */}
+      {/* Why Ednux Exists */}
       <section className="py-24">
-        <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <h2 className="text-[2rem] font-semibold text-slate-900 sm:text-[2.4rem]">What We&apos;re Building</h2>
-            <p className="mt-3 text-slate-500">Cutting-edge capabilities for the modern African learner.</p>
+        <div className="mx-auto max-w-[900px] px-4 sm:px-6">
+          <div className="mb-10 text-center">
+            <span className="inline-block rounded-full bg-blue-50 px-4 py-1.5 text-[13px] font-medium text-blue-700 mb-4">
+              Our origin
+            </span>
+            <h2 className="font-poppins text-[2rem] font-semibold text-slate-900 sm:text-[2.4rem]">
+              Why Ednux Exists
+            </h2>
           </div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((f) => (
-              <div key={f.title} className="rounded-2xl border border-slate-200 bg-white p-7 hover:shadow-lg transition-shadow duration-300">
-                <div className="mb-3 h-1.5 w-10 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600" />
-                <h3 className="text-[1rem] font-semibold text-slate-900">{f.title}</h3>
-                <p className="mt-2 text-[0.88rem] leading-relaxed text-slate-500">{f.desc}</p>
-              </div>
-            ))}
+          <div className="space-y-5 text-[1rem] leading-[1.85] text-slate-600">
+            <p>
+              Every year, millions of African students graduate with real skills, real knowledge, and real potential. But employers cannot trust what they cannot verify. Students spend four or more years learning, growing, leading, and building, only to graduate with a one page CV that anyone can exaggerate and no one can verify.
+            </p>
+            <p>
+              The old system is breaking down fast. Traditional learning platforms were built for course delivery, not career development. They track assignments for lecturers, but everything stays locked inside the school. Students cannot build portfolios. They cannot showcase growth. They cannot prove what they actually know.
+            </p>
+            <p>
+              We watched this happen to our classmates. We watched it happen to ourselves. We saw talented students struggle for years after graduation, not because they lacked skills, but because they lacked proof.
+            </p>
+            <p className="font-medium text-slate-900">So we decided to fix it.</p>
           </div>
         </div>
       </section>
 
-      {/* Founder section */}
+      {/* Who We Are */}
+      <section className="bg-slate-50 py-24">
+        <div className="mx-auto max-w-[900px] px-4 sm:px-6">
+          <div className="mb-10 text-center">
+            <span className="inline-block rounded-full bg-blue-50 px-4 py-1.5 text-[13px] font-medium text-blue-700 mb-4">
+              The team
+            </span>
+            <h2 className="font-poppins text-[2rem] font-semibold text-slate-900 sm:text-[2.4rem]">
+              Who We Are
+            </h2>
+          </div>
+          <div className="space-y-5 text-[1rem] leading-[1.85] text-slate-600">
+            <p>
+              We are not observers studying the market like outsiders. We are not researchers analyzing students from a distance. We are the students who were failed by the system, building the tool that stops the failure.
+            </p>
+            <p>
+              Ednux was born from frustration, from watching brilliant minds go unnoticed, from seeing hard work disappear into WhatsApp chats and forgotten folders, from graduating into a world that demanded proof we were never given the tools to create.
+            </p>
+            <p className="font-medium text-slate-900">
+              We built Ednux because we needed Ednux. And because millions of students across Africa need it too.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Are Building */}
+      <section className="py-24">
+        <div className="mx-auto max-w-[900px] px-4 sm:px-6">
+          <div className="mb-10 text-center">
+            <span className="inline-block rounded-full bg-blue-50 px-4 py-1.5 text-[13px] font-medium text-blue-700 mb-4">
+              The vision
+            </span>
+            <h2 className="font-poppins text-[2rem] font-semibold text-slate-900 sm:text-[2.4rem]">
+              What We Are Building
+            </h2>
+          </div>
+          <div className="space-y-5 text-[1rem] leading-[1.85] text-slate-600">
+            <p>
+              Ednux is more than an app. It is the digital rails for the next generation of the African workforce. It is the empowerment layer missing in African education. It is the bridge between learning and opportunity.
+            </p>
+            <p>
+              We are building the ecosystem where students become visible, verified, and employable. Where every class, every project, every leadership role, every skill learned becomes permanent, verifiable career proof.
+            </p>
+            <p className="font-medium text-slate-900">
+              We are building the tool we wish existed when we were students fighting the system. And we will not stop until every African student has the power to prove exactly who they are and what they can do.
+            </p>
+            <p className="font-semibold text-slate-900">
+              This is why Ednux exists. This is what we do. This is why we win.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder */}
       <section className="bg-slate-50 py-24">
         <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-[2rem] font-semibold text-slate-900 sm:text-[2.4rem]">Meet Our Founder</h2>
-            <p className="mt-3 text-slate-500">Architect, technologist, and innovator with a vision for African education.</p>
+            <span className="inline-block rounded-full bg-blue-50 px-4 py-1.5 text-[13px] font-medium text-blue-700 mb-4">
+              The founder
+            </span>
+            <h2 className="font-poppins text-[2rem] font-semibold text-slate-900 sm:text-[2.4rem]">Meet Our Founder</h2>
           </div>
 
           <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
@@ -214,7 +212,8 @@ export default function AboutPage() {
               </div>
 
               {/* Image side */}
-              <div className="lg:col-span-2 relative bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-8 min-h-[300px]">
+              <div className="lg:col-span-2 relative bg-blue-50 flex items-center justify-center p-8 min-h-[300px]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/assets/images/founder.png"
                   alt="Faruq Olamide Sokunbi, Founder of Ednux"
@@ -228,7 +227,7 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="bg-gradient-to-br from-blue-600 to-indigo-700 py-20 text-center">
-        <h2 className="text-[2rem] font-semibold text-white sm:text-[2.4rem]">Join Us in Building the Future</h2>
+        <h2 className="font-poppins text-[2rem] font-semibold text-white sm:text-[2.4rem]">Join Us in Building the Future</h2>
         <p className="mx-auto mt-4 max-w-md text-[1rem] text-blue-100">
           Be part of the movement redefining education across Africa. Early access starts with you.
         </p>

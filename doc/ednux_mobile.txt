@@ -44,3 +44,34 @@ Learn Excel, Python, writing, or any skill, and watch your competency graph upda
 
 Career Timeline
 Your entire academic and extracurricular journey displayed as a visual, verified, tamper proof timeline. Every course completed, every skill gained, every leadership role, all in one undeniable record that grows with you forever.
+
+
+
+About Section
+Why Ednux Exists
+Africa doesn't have a talent problem. It has a documentation problem. A visibility problem. A proof problem.
+
+Every year, millions of African students graduate with real skills, real knowledge, and real potential. But employers cannot trust what they cannot verify. Students spend four or more years learning, growing, leading, and building, only to graduate with a one page CV that anyone can exaggerate and no one can verify.
+
+The old system is breaking down fast. Traditional learning platforms were built for course delivery, not career development. They track assignments for lecturers, but everything stays locked inside the school. Students cannot build portfolios. They cannot showcase growth. They cannot prove what they actually know.
+
+We watched this happen to our classmates. We watched it happen to ourselves. We saw talented students struggle for years after graduation, not because they lacked skills, but because they lacked proof.
+
+So we decided to fix it.
+
+Who We Are
+We are not observers studying the market like outsiders. We are not researchers analyzing students from a distance. We are the students who were failed by the system, building the tool that stops the failure.
+
+Ednux was born from frustration, from watching brilliant minds go unnoticed, from seeing hard work disappear into WhatsApp chats and forgotten folders, from graduating into a world that demanded proof we were never given the tools to create.
+
+We built Ednux because we needed Ednux. And because millions of students across Africa need it too.
+
+
+What We Are Building
+Ednux is more than an app. It is the digital rails for the next generation of the African workforce. It is the empowerment layer missing in African education. It is the bridge between learning and opportunity.
+
+We are building the ecosystem where students become visible, verified, and employable. Where every class, every project, every leadership role, every skill learned becomes permanent, verifiable career proof.
+
+We are building the tool we wish existed when we were students fighting the system. And we will not stop until every African student has the power to prove exactly who they are and what they can do.
+
+This is why Ednux exists. This is what we do. This is why we win.
