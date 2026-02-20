@@ -94,7 +94,7 @@ const Footer = () => {
 					{/* Logo and Description */}
 					<Grid item xs={12} md={4}>
 						<Box sx={{ mb: 1 }}>
-							<EdnuxLogo size={120} />
+							<Link href="/"><EdnuxLogo size={120} /></Link>
 						</Box>
 						<Typography
 							variant="body2"
@@ -256,7 +256,7 @@ const Footer = () => {
 							fontSize: "0.9rem",
 						}}
 					>
-						2025 Ednux. All rights reserved.
+						© 2026 Ednux. All rights reserved.
 					</Typography>
 
 					<Box sx={{ display: "flex", gap: { xs: 2, sm: 4 }, flexWrap: "wrap" }}>

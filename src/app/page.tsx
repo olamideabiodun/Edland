@@ -15,9 +15,17 @@ import MockupCarousel from '../components/home/MockupCarousel';
 ──────────────────────────────────────────────── */
 const CTASection = () => (
   <section className="w-full overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-700 py-24 relative">
-    <div className="pointer-events-none absolute inset-0">
+    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      {/* Original circles */}
       <div className="absolute -top-32 -right-32 h-80 w-80 rounded-full bg-white opacity-5" />
       <div className="absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-white opacity-5" />
+      {/* Subtle box elements */}
+      <div className="absolute top-8 left-10 w-16 h-16 border border-white/10 rounded-lg rotate-12" />
+      <div className="absolute top-12 right-14 w-10 h-10 border border-white/8 rounded-lg rotate-45" />
+      <div className="absolute bottom-10 left-1/4 w-8 h-8 bg-white/5 rounded-lg rotate-12" />
+      <div className="absolute bottom-8 right-10 w-14 h-14 border border-white/8 rounded-lg -rotate-12" />
+      <div className="absolute top-1/3 right-1/3 w-5 h-5 border border-white/8 rounded-md -rotate-6" />
+      <div className="absolute bottom-1/3 left-1/3 w-12 h-12 border border-white/6 rounded-xl rotate-6" />
     </div>
 
     <div className="relative z-10 mx-auto max-w-[760px] px-4 text-center sm:px-6">

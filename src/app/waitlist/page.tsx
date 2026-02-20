@@ -3,16 +3,12 @@
 import { Waitlist } from '@clerk/nextjs';
 import Footer from '../../components/home/Footer';
 import Header from '../../components/home/Header';
-import { EmojiEvents, GroupWorkOutlined } from '@mui/icons-material';
 import {
-  ArrowLeft,
   BarChart3,
   Calendar,
   FileText,
   Gauge,
   Inbox,
-  Languages,
-  LightbulbIcon,
   MessageCircle,
   School,
   Sparkles,
@@ -24,43 +20,43 @@ import Script from 'next/script';
 
 const slides = [
   {
-    title: 'First Social LMS',
+    title: 'Verified Skill Identity',
     subtitle:
-			'Connect, collaborate, and learn together with progress tracking, course management, and social learning tools.',
+      'Every assignment, project, and endorsement becomes real, verifiable proof. Employers see evidence, not empty claims.',
     features: [
-      { icon: GroupWorkOutlined, text: 'Collaborative Learning' },
-      { icon: School, text: 'Course Management' },
-      { icon: EmojiEvents, text: 'Global Leaderboard' },
-      { icon: LightbulbIcon, text: 'Guided Learning Experience (GLE)' }
+      { icon: FileText, text: 'Tamper-Proof Records' },
+      { icon: School, text: 'Institutional Authentication' },
+      { icon: Users, text: 'Employer-Ready Proof' },
     ]
   },
   {
-    title: 'AI-Powered Education',
-    subtitle: 'Advanced course authoring and automated grading for educators',
+    title: 'Living Portfolio Builder',
+    subtitle:
+      'Your portfolio grows automatically as you learn. By graduation, you have a complete talent graph showing who you have become.',
     features: [
-      { icon: Sparkles, text: 'AI-powered Course Creation' },
-      { icon: FileText, text: 'Smart Grading' },
-      { icon: Users, text: 'Personalized Learning' }
+      { icon: FileText, text: 'Auto-Generated Portfolio' },
+      { icon: Calendar, text: 'Timestamped Achievements' },
+      { icon: BarChart3, text: 'Complete Talent Graph' },
     ]
   },
   {
-    title: 'Cross-Border Collaboration',
+    title: 'Organized Learning Spaces',
     subtitle:
-			'Connect African students and educators across language and connectivity barriers',
+      'All your lectures, files, teams, chats, and tasks in one structured hub. No more scattered WhatsApp groups.',
     features: [
-      { icon: Languages, text: 'Multi-Language Support' },
-      { icon: MessageCircle, text: 'Real-time Collaboration' },
-      { icon: Inbox, text: 'Resource Sharing' }
+      { icon: Inbox, text: 'Structured Course Hubs' },
+      { icon: MessageCircle, text: 'Team Collaboration' },
+      { icon: Sparkles, text: 'Everything Builds Career Proof' },
     ]
   },
   {
-    title: 'Professional Development',
+    title: 'Real-Time Skill Tracking',
     subtitle:
-			'Career-accelerating courses and collaborative tools for professionals',
+      'Watch your competency graph update with real abilities, not self-reported claims. See exactly how you compare to industry standards.',
     features: [
-      { icon: Calendar, text: 'Career Planning' },
-      { icon: Users, text: 'Professional Networks' },
-      { icon: BarChart3, text: 'Skill Assessment' }
+      { icon: BarChart3, text: 'Live Competency Graph' },
+      { icon: Gauge, text: 'Industry Benchmarks' },
+      { icon: Users, text: 'Student Identity Layer' },
     ]
   }
 ];
@@ -77,12 +73,6 @@ const ActivityIndicator: React.FC<ActivityIndicatorProps> = ({ isActive }) => (
   />
 );
 
-const PulsingDot = ({ delay = 0 }) => (
-  <div
-    className='w-1 h-1 rounded-full bg-blue-300 animate-pulse'
-    style={{ animationDelay: `${delay}s` }}
-  />
-);
 
 export default function WaitlistPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -112,7 +102,7 @@ export default function WaitlistPage() {
   const currentSlideData = slides[currentSlide];
 
   return (
-    <div className='min-h-screen relative' style={{ fontFamily: 'Questrial' }}>
+    <div className='min-h-screen relative font-poppins'>
       {/* Google tag (gtag.js) */}
       <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-49F66DF463" async />
       <Script id="ga-init-waitlist" strategy="afterInteractive">{`
@@ -198,14 +188,10 @@ export default function WaitlistPage() {
           </div>
 
           {/* Content container */}
-          <div
-            className='relative z-10 mt-16'
-            style={{ fontFamily: 'Questrial' }}
-          >
+          <div className='relative z-10 mt-16'>
             {/* Animated title */}
             <h2
-              style={{ fontFamily: 'Questrial' }}
-              className={`text-4xl md:text-5xl font-extrabold mb-6 leading-tight font-sans transition-all duration-500 ${
+              className={`text-4xl md:text-5xl font-semibold mb-6 leading-tight font-poppins transition-all duration-500 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-5'
@@ -261,7 +247,7 @@ export default function WaitlistPage() {
             {/* Activity indicators */}
             <div className='flex items-center gap-4 mb-8'>
               <span className='text-sm text-white/70 mr-4'>
-								Empowering African Education
+                Career OS for African Students
               </span>
               {slides.map((_, index) => (
                 <ActivityIndicator
@@ -288,26 +274,24 @@ export default function WaitlistPage() {
             id='waitlist_info'
             className='w-full max-w-md py-12 md:py-0 relative z-10'
           >
-            <h3 className='text-3xl font-bold text-gray-800 mb-4'>
-							Join the Ednux Waitlist
+            <h3 className='text-3xl font-semibold text-gray-800 mb-4'>
+              Join the Waitlist
             </h3>
             <p className='text-gray-600 mb-8 text-lg'>
-							Be the first to experience Africa's next-generation learning
-							platform
+              Be among the first African students to own your skills, prove your growth, and become visible to opportunity.
             </p>
 
             <Waitlist />
 
             {/* Additional info */}
             <div className='mt-8 p-6 bg-blue-50 rounded-xl'>
-              <p className='text-gray-700 font-semibold mb-2'>
-								Why join early?
+              <p className='text-gray-700 font-semibold mb-3'>
+                Why join early?
               </p>
-              <div className='text-gray-600 text-sm space-y-1'>
-                <div>
-									• Free access to premium features for 3 months and unlimited
-									access to global resources
-                </div>
+              <div className='text-gray-600 text-sm space-y-2'>
+                <div>• Shape the platform before it launches</div>
+                <div>• Get early access to your verified skill portfolio</div>
+                <div>• Be first to become visible to employers on Ednux</div>
               </div>
             </div>
           </div>

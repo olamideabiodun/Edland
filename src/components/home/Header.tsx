@@ -76,7 +76,7 @@ const Header: React.FC = () => {
 		>
 			{/* Logo */}
 			<Box sx={{ display: "flex", alignItems: "center", minWidth: 100 }}>
-				<EdnuxLogo size={70} />
+				<Link href="/"><EdnuxLogo size={70} /></Link>
 			</Box>
 
 			{/* Navigation - Desktop */}

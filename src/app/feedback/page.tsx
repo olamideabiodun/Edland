@@ -109,9 +109,17 @@ export default function FeedbackPage() {
 
       {/* Hero banner */}
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-700 pt-[70px]">
-        <div className="pointer-events-none absolute inset-0">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          {/* Original circles */}
           <div className="absolute -top-32 -left-20 h-80 w-80 rounded-full bg-white opacity-5 blur-3xl" />
           <div className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-white opacity-5 blur-3xl" />
+          {/* Subtle box elements */}
+          <div className="absolute top-8 left-10 w-16 h-16 border border-white/10 rounded-lg rotate-12" />
+          <div className="absolute top-12 right-14 w-10 h-10 border border-white/8 rounded-lg rotate-45" />
+          <div className="absolute bottom-8 left-1/4 w-8 h-8 bg-white/5 rounded-lg rotate-12" />
+          <div className="absolute bottom-6 right-10 w-14 h-14 border border-white/8 rounded-lg -rotate-12" />
+          <div className="absolute top-1/3 right-1/3 w-5 h-5 border border-white/8 rounded-md -rotate-6" />
+          <div className="absolute bottom-1/3 left-1/3 w-12 h-12 border border-white/6 rounded-xl rotate-6" />
         </div>
         <div className="relative z-10 mx-auto max-w-[1240px] px-4 py-16 sm:px-6 lg:px-8">
           <span className="inline-block rounded-full bg-white/15 px-4 py-1.5 text-[13px] font-medium text-white/90 mb-5">
@@ -168,7 +176,7 @@ export default function FeedbackPage() {
               <div className="mt-8 flex flex-col gap-3">
                 <Link
                   href="/waitlist"
-                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-3 text-[14px] font-medium text-white shadow-md shadow-blue-500/25 transition-all hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-[14px] font-medium text-white transition-all hover:bg-blue-700 hover:-translate-y-0.5"
                 >
                   Join the Waitlist
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

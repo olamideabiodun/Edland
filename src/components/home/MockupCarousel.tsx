@@ -9,9 +9,11 @@ const image3 = "/assets/images/Ednux(7).png";
 const image4 = "/assets/images/Ednux(8).png";
 const image5 = "/assets/images/Ednux(9).png";
 const image6 = "/assets/images/Ednux(10).png";
+const image7 = "/assets/images/Ednux(4).png";
+const image8 = "/assets/images/Ednux(3).png";
 
-const row1 = [image1, image2, image3];
-const row2 = [image4, image5, image6];
+const row1 = [image1, image2, image3, image7];
+const row2 = [image4, image5, image6, image8];
 
 const MockupCarousel = () => {
   const ref = useRef<HTMLDivElement>(null);
