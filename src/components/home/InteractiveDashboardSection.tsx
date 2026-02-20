@@ -1,406 +1,250 @@
-import React, { useEffect, useState } from "react";
+"use client";
+
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const dashboardItems = [
-	{
-		id: 1,
-		title: "Interactive Dashboard",
-		subtitle: "A smarter way to learn, track, and grow.",
-		description:
-			"The Ednux Student Dashboard is the central hub for every learner using the platform. Built for clarity, accessibility, and motivation, it brings together everything students need to stay organized, engaged, and in control of their learning journey.",
-		features: [
-			"Unified Learning Space",
-			"Personalized Experience",
-			"Real-Time Progress Tracking",
-			"Smart Notifications & Reminders",
-		],
-		mockupImage: "/assets/images/dashboard-mockup.png",
-	},
-	{
-		id: 2,
-		title: "Classroom",
-		subtitle: "Interactive learning environments.",
-		description:
-			"Join virtual classrooms with seamless video conferencing, interactive whiteboards, revisit missed live sessions, downloadable for offline access. Experience education that adapts to your learning style.",
-		features: [
-			"Virtual Classrooms",
-			"Interactive Whiteboards",
-			"Live Collaboration",
-			"Recording & Playback",
-		],
-		mockupImage: "/assets/images/classroom-mockup.png",
-	},
-	{
-		id: 3,
-		title: "Messages and Notifications",
-		subtitle: "Stay connected and informed.",
-		description:
-			"Communicate seamlessly with instructors and peers through our integrated messaging system. Receive smart notifications that keep you on track with your learning goals.",
-		features: [
-			"Direct Messaging",
-			"Group Conversations",
-			"Smart Notifications",
-			"Assignment Reminders",
-		],
-		mockupImage: "/assets/images/messages-mockup.png",
-	},
-	{
-		id: 4,
-		title: "Courses",
-		subtitle: "Comprehensive course management.",
-		description:
-			"Access all your enrolled courses in one place. Track progress, view materials, submit assignments, and engage with course content through our intuitive interface.",
-		features: [
-			"Course Materials",
-			"Assignment Tracking",
-			"Progress Monitoring",
-			"Interactive Content",
-		],
-		mockupImage: "/assets/images/courses-mockup.png",
-	},
-	{
-		id: 5,
-		title: "Grades and Performance Trends",
-		subtitle: "Track your academic progress.",
-		description:
-			"Monitor your academic performance with detailed analytics and visual trends. Identify strengths and areas for improvement with AI-powered insights.",
-		features: [
-			"Grade Analytics",
-			"Performance Trends",
-			"AI Insights",
-			"Progress Reports",
-		],
-		mockupImage: "/assets/images/grades-mockup.png",
-	},
-	{
-		id: 6,
-		title: "Social Feed",
-		subtitle: "Connect with your learning community.",
-		description:
-			"Engage with fellow learners, share insights, and participate in academic discussions. Build meaningful connections within your educational network.",
-		features: [
-			"Academic Discussions",
-			"Peer Connections",
-			"Study Groups",
-			"Guided Learning Experience (LXP)",
-		],
-		mockupImage: "/assets/images/social-mockup.png",
-	},
-	{
-		id: 7,
-		title: "Global Learning Ecosystem (GLE)",
-		subtitle: "Learn beyond boundaries.",
-		description:
-			"Connect with students and educators across Africa and beyond. Access diverse perspectives, collaborative projects, and cross-cultural learning opportunities.",
-		features: [
-			"Global Connections",
-			"Cross-Cultural Learning",
-			"Collaborative Projects",
-			"International Perspectives",
-		],
-		mockupImage: "/assets/images/gle-mockup.png",
-	},
-	{
-		id: 8,
-		title: "Projects and Files",
-		subtitle: "Organize your academic work.",
-		description:
-			"Manage all your projects, assignments, and files in one secure location. Collaborate on group projects and access your work from anywhere.",
-		features: [
-			"File Management",
-			"Project Collaboration",
-			"Cloud Storage",
-			"Version Control",
-		],
-		mockupImage: "/assets/images/projects-mockup.png",
-	},
+  {
+    id: 1,
+    title: "Interactive Dashboard",
+    subtitle: "A smarter way to learn, track, and grow.",
+    description:
+      "The Ednux Student Dashboard is the central hub for every learner. Built for clarity, accessibility, and motivation, it brings together everything you need to stay organized, engaged, and in control of your learning journey.",
+    features: [
+      "Unified Learning Space",
+      "Personalized Experience",
+      "Real-Time Progress Tracking",
+      "Smart Notifications & Reminders",
+    ],
+    mockupImage: "/assets/images/dashboard-mockup.png",
+  },
+  {
+    id: 2,
+    title: "Virtual Classroom",
+    subtitle: "Interactive learning environments.",
+    description:
+      "Join virtual classrooms with seamless video conferencing, interactive whiteboards, and live collaboration. Revisit missed sessions with on-demand recordings, experience education that adapts to your schedule.",
+    features: [
+      "Live Video Sessions",
+      "Interactive Whiteboards",
+      "Live Collaboration",
+      "Recording & Playback",
+    ],
+    mockupImage: "/assets/images/classroom-mockup.png",
+  },
+  {
+    id: 3,
+    title: "Messages & Notifications",
+    subtitle: "Stay connected and informed.",
+    description:
+      "Communicate seamlessly with instructors and peers through our integrated messaging system. Receive smart notifications that keep you on track without the noise.",
+    features: [
+      "Direct Messaging",
+      "Group Conversations",
+      "Smart Notifications",
+      "Assignment Reminders",
+    ],
+    mockupImage: "/assets/images/messages-mockup.png",
+  },
+  {
+    id: 4,
+    title: "Courses",
+    subtitle: "Comprehensive course management.",
+    description:
+      "Access all your enrolled courses in one place. Track progress, view materials, submit assignments, and engage with rich course content through an intuitive interface.",
+    features: [
+      "Course Materials",
+      "Assignment Tracking",
+      "Progress Monitoring",
+      "Interactive Content",
+    ],
+    mockupImage: "/assets/images/courses-mockup.png",
+  },
+  {
+    id: 5,
+    title: "Grades & Performance",
+    subtitle: "Track your academic progress.",
+    description:
+      "Monitor your academic performance with detailed analytics and visual trends. Identify strengths and areas for growth with AI-powered insights tailored to you.",
+    features: [
+      "Grade Analytics",
+      "Performance Trends",
+      "AI Insights",
+      "Progress Reports",
+    ],
+    mockupImage: "/assets/images/grades-mockup.png",
+  },
+  {
+    id: 6,
+    title: "Social Feed",
+    subtitle: "Connect with your learning community.",
+    description:
+      "Engage with fellow learners, share insights, and participate in academic discussions. Build meaningful connections within your growing educational network.",
+    features: [
+      "Academic Discussions",
+      "Peer Connections",
+      "Study Groups",
+      "Guided Learning (LXP)",
+    ],
+    mockupImage: "/assets/images/social-mockup.png",
+  },
+  {
+    id: 7,
+    title: "Global Learning Ecosystem",
+    subtitle: "Learn beyond boundaries.",
+    description:
+      "Connect with students and educators across Africa and beyond. Access diverse perspectives, collaborative projects, and cross-cultural learning opportunities in our global ecosystem.",
+    features: [
+      "Global Connections",
+      "Cross-Cultural Learning",
+      "Collaborative Projects",
+      "International Perspectives",
+    ],
+    mockupImage: "/assets/images/gle-mockup.png",
+  },
+  {
+    id: 8,
+    title: "Projects & Files",
+    subtitle: "Organize your academic work.",
+    description:
+      "Manage all your projects, assignments, and files in one secure location. Collaborate on group projects and access your work from any device, anywhere.",
+    features: [
+      "File Management",
+      "Project Collaboration",
+      "Cloud Storage",
+      "Version Control",
+    ],
+    mockupImage: "/assets/images/projects-mockup.png",
+  },
 ];
 
 const InteractiveDashboardSection = () => {
-	const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setActiveIndex((prevIndex) => (prevIndex + 1) % dashboardItems.length);
-		}, 4000); // Change every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % dashboardItems.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, []);
 
-		return () => clearInterval(interval);
-	}, []);
+  const current = dashboardItems[activeIndex];
 
-	const currentItem = dashboardItems[activeIndex];
+  return (
+    <section className="w-full bg-slate-50 py-24" id="how-it-works">
+      <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
 
-	return (
-		<div className="interactive-dashboard-section" id="how-it-works">
-			<div className="container">
-				{/* Left side - Mockup */}
-				<div className="mockup-container">
-					<div className="mockup-wrapper">
-						<img
-							src={currentItem.mockupImage}
-							alt={currentItem.title}
-							className="laptop-mockup"
-						/>
-					</div>
-				</div>
+        {/* Section header */}
+        <div className="mb-14 text-center">
+          <span className="mb-4 inline-block rounded-full bg-blue-50 px-4 py-1.5 text-[13px] font-medium text-blue-700">
+            Inside the platform
+          </span>
+          <h2 className="font-poppins text-[2.2rem] font-semibold leading-tight tracking-tight text-slate-900 sm:text-[2.8rem]">
+            Everything in one place
+          </h2>
+          <p className="mx-auto mt-3 max-w-lg text-[1rem] leading-relaxed text-slate-500">
+            Explore the features that make Ednux the most complete learning platform for African students.
+          </p>
+        </div>
 
-				{/* Right side - Content */}
-				<div className="content-container">
-					<div className="content-card">
-						<h1 className="main-title">{currentItem.title}</h1>
-						<p className="subtitle">{currentItem.subtitle}</p>
-						<p className="description">{currentItem.description}</p>
+        {/* Tab Navigation */}
+        <div className="mb-10 flex flex-wrap justify-center gap-2">
+          {dashboardItems.map((item, index) => (
+            <button
+              key={item.id}
+              onClick={() => setActiveIndex(index)}
+              className={`rounded-full px-4 py-2 text-[13px] font-medium transition-all duration-200 ${
+                index === activeIndex
+                  ? "bg-blue-600 text-white shadow-md shadow-blue-500/25"
+                  : "bg-white text-slate-600 border border-slate-200 hover:border-blue-300 hover:text-blue-600"
+              }`}
+            >
+              {item.title}
+            </button>
+          ))}
+        </div>
 
-						<div className="features-grid">
-							{currentItem.features.map((feature, index) => (
-								<div key={index} className="feature-item">
-									<div className="feature-icon-small">
-										<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-											<circle cx="8" cy="8" r="3" fill="currentColor" />
-										</svg>
-									</div>
-									<span>{feature}</span>
-								</div>
-							))}
-						</div>
-					</div>
+        {/* Content Area */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12 items-center">
 
-					{/* Progress dots */}
-					<div className="progress-dots">
-						{dashboardItems.map((_, index) => (
-							<button
-								key={index}
-								className={`dot ${index === activeIndex ? "active" : ""}`}
-								onClick={() => setActiveIndex(index)}
-							/>
-						))}
-					</div>
-				</div>
-			</div>
+          {/* Left, Mockup Image */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current.id + "-img"}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.45 }}
+              className="relative"
+            >
+              <div className="absolute inset-0 -m-4 rounded-3xl bg-gradient-to-br from-blue-100 to-indigo-100 opacity-40 blur-2xl" />
+              <div className="relative rounded-2xl border border-slate-200 bg-white shadow-xl overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={current.mockupImage}
+                  alt={current.title}
+                  className="w-full h-auto object-cover"
+                  style={{ perspective: "1000px", transform: "perspective(1000px) rotateY(-3deg) rotateX(1deg)" }}
+                />
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
-			<style jsx>{`
-        .interactive-dashboard-section {
-          width: 100vw;
-          position: relative;
-          left: 50%;
-          right: 50%;
-          margin-left: -50vw;
-          margin-right: -50vw;
-          padding: 120px 0;
-          background: radial-gradient(circle at 30% 70%, #f0f0f5 0%, #f9f8f7 80%);
-          overflow: hidden;
-        }
+          {/* Right, Content Card */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current.id + "-content"}
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -30 }}
+              transition={{ duration: 0.45 }}
+            >
+              <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-lg">
+                <h3 className="font-poppins bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-[2rem] font-bold text-transparent">
+                  {current.title}
+                </h3>
+                <p className="mt-1 text-[1rem] font-medium text-slate-600">
+                  {current.subtitle}
+                </p>
+                <p className="mt-4 text-[0.95rem] leading-relaxed text-slate-500">
+                  {current.description}
+                </p>
 
-        .container {
-          max-width: 1400px;
-          margin: 0 auto;
-          padding: 0 40px;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 80px;
-          align-items: center;
-          min-height: 600px;
-        }
+                <div className="mt-6 grid grid-cols-2 gap-3">
+                  {current.features.map((feature) => (
+                    <div key={feature} className="flex items-center gap-2">
+                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-50">
+                        <svg className="h-3.5 w-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                      </div>
+                      <span className="text-[0.88rem] text-slate-700">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-        .mockup-container {
-          position: relative;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+              {/* Progress dots */}
+              <div className="mt-5 flex justify-center gap-2">
+                {dashboardItems.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveIndex(index)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      index === activeIndex
+                        ? "w-6 bg-blue-600"
+                        : "w-2 bg-slate-300 hover:bg-slate-400"
+                    }`}
+                  />
+                ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
-        .mockup-wrapper {
-          position: relative;
-          padding: 40px;
-          transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
-          transition: all 0.6s ease;
-        }
-
-        .laptop-mockup {
-          width: 100%;
-          max-width: 800px;
-          height: auto;
-          opacity: 0;
-          animation: fadeInUp 0.8s ease forwards;
-        }
-
-        .content-container {
-          color: white;
-          animation: slideInRight 0.8s ease forwards;
-        }
-
-        .content-card {
-          background: rgba(255, 255, 255, 0.8); /* semi-transparent, bright card like UsePDFX */
-          border-radius: 32px;
-          padding: 60px; /* slightly more spacious padding */
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08); /* lighter shadow for a cleaner look */
-          position: relative;
-        }
-
-        .content-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          border-radius: inherit;
-          padding: 2px;
-          background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(0,0,0,0.6) 50%, rgba(255,255,255,0.8) 100%);
-          -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-          -webkit-mask-composite: exclude;
-          mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-          mask-composite: exclude;
-          z-index: -1;
-        }
-
-        .main-title {
-          font-size: 52px;
-          font-weight: 700;
-          margin: 0 0 20px 0;
-          background: linear-gradient(90deg, #4f46e5 0%, #6b7280 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          font-family: 'Questrial', sans-serif;
-        }
-
-        .subtitle {
-          font-size: 24px;
-          font-weight: 500;
-          color: #4b5563;
-          margin: 0 0 24px 0;
-          font-family: 'Questrial', sans-serif;
-        }
-
-        .description {
-          font-size: 18px;
-          line-height: 1.6;
-          color: #6b7280;
-          margin: 0 0 32px 0;
-          font-family: 'Questrial', sans-serif;
-        }
-
-        .features-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 16px;
-        }
-
-        .feature-item {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          font-size: 16px;
-          color: rgba(255, 255, 255, 0.9);
-          font-family: 'Questrial', sans-serif;
-        }
-
-        .feature-icon-small {
-          color: #f9f8fbff;
-          flex-shrink: 0;
-        }
-
-        .progress-dots {
-          display: flex;
-          gap: 12px;
-          margin-top: 40px;
-          justify-content: center;
-        }
-
-        .dot {
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          border: none;
-          background: rgba(255, 255, 255, 0.3);
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-
-        .dot.active {
-          background: #4f46e5;
-          transform: scale(1.2);
-        }
-
-        .dot:hover {
-          background: rgba(255, 255, 255, 0.5);
-        }
-
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slideInRight {
-          from {
-            opacity: 0;
-            transform: translateX(50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @media (max-width: 1200px) {
-          .container {
-            padding: 0 24px;
-            gap: 60px;
-          }
-          
-          .main-title {
-            font-size: 40px;
-          }
-        }
-
-        @media (max-width: 900px) {
-          .container {
-            grid-template-columns: 1fr;
-            gap: 40px;
-            padding: 0 20px;
-          }
-          
-          .content-card {
-            padding: 32px;
-          }
-          
-          .main-title {
-            font-size: 32px;
-          }
-          
-          .subtitle {
-            font-size: 20px;
-          }
-          
-          .features-grid {
-            grid-template-columns: 1fr;
-          }
-        }
-
-        @media (max-width: 600px) {
-          .interactive-dashboard-section {
-            padding: 60px 0;
-          }
-          
-          .content-card {
-            padding: 24px;
-          }
-          
-          .main-title {
-            font-size: 28px;
-          }
-          
-          .mockup-wrapper {
-            padding: 20px;
-          }
-        }
-      `}</style>
-		</div>
-	);
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default InteractiveDashboardSection;

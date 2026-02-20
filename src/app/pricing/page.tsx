@@ -1,290 +1,199 @@
 'use client';
 
-import React from 'react';
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  Chip,
-  Container,
-  Grid,
-  Stack,
-  Typography,
-  useTheme
-} from '@mui/material';
-import CheckIcon from '@mui/icons-material/Check';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import Header from '@/components/home/Header';
 import Footer from '@/components/home/Footer';
 
+const plans = [
+  {
+    name: 'Free',
+    price: null,
+    subtitle: 'For individuals getting started',
+    cta: 'Get Started',
+    ctaHref: '/waitlist',
+    highlight: false,
+    features: [
+      'AI-assisted study tools',
+      'Basic social learning access',
+      'Limited storage (1GB)',
+      'Community support',
+      'Mobile & web access',
+    ],
+  },
+  {
+    name: 'Pro',
+    price: 'Coming Soon',
+    subtitle: 'For serious learners',
+    cta: 'Join Waitlist',
+    ctaHref: '/waitlist',
+    highlight: true,
+    badge: 'Most Popular',
+    features: [
+      'Everything in Free',
+      'Unlimited AI assistance',
+      'Advanced analytics & insights',
+      'Workspace & task manager',
+      'Unlimited cloud storage',
+      'Priority support',
+    ],
+  },
+  {
+    name: 'Enterprise',
+    price: 'Custom',
+    subtitle: 'For schools & organizations',
+    cta: 'Contact Sales',
+    ctaHref: '/contact',
+    highlight: false,
+    features: [
+      'Everything in Pro',
+      'Institution dashboards',
+      'Team management tools',
+      'Custom LMS integrations',
+      'Dedicated account manager',
+      'White-label options',
+    ],
+  },
+];
+
+const CheckIcon = () => (
+  <svg className="h-4 w-4 flex-shrink-0 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+  </svg>
+);
+
 export default function PricingPage() {
-  const theme = useTheme();
-
-  const plans = [
-    {
-      name: 'Free',
-      subtitle: 'For individuals getting started',
-      cta: 'Get Started',
-      highlight: false,
-      features: [
-        'AI-assisted study tools',
-        'Basic social learning access',
-        'Limited storage',
-        'Community support'
-      ]
-    },
-    {
-      name: 'Pro',
-      subtitle: 'For serious learners',
-      cta: 'Start Free Trial',
-      highlight: true,
-      features: [
-        'Everything in Free',
-        'Unlimited AI assistance',
-        'Advanced analytics',
-        'Workspace & task manager',
-        'Priority support'
-      ]
-    },
-    {
-      name: 'Enterprise',
-      price: 'Custom',
-      subtitle: 'For schools & organizations',
-      cta: 'Contact Sales',
-      highlight: false,
-      features: [
-        'Everything in Pro',
-        'Institution dashboards',
-        'Team management',
-        'Custom integrations',
-        'Dedicated account manager'
-      ]
-    }
-  ];
-
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: '#ffffff', fontFamily: 'Questrial' }}>
+    <div className="min-h-screen bg-white font-poppins">
       <Header />
 
-      {/* ================= HERO ================= */}
-      <Box
-        sx={{
-          bgcolor: '#090c11',
-          color: 'white',
-          py: { xs: 8, md: 12 },
-          position: 'relative',
-          overflow: 'hidden'
-        }}
-      >
-        <Container maxWidth="lg">
-          <Chip
-            label="Pricing"
-            sx={{
-              bgcolor: 'rgba(255,255,255,0.1)',
-              color: 'white',
-              borderRadius: 5,
-              px: 2,
-              py: 1,
-              mb: 4
-            }}
-          />
-
-          <Typography
-            variant="h1"
-            sx={{
-              fontWeight: 'bold',
-              fontSize: { xs: '2.5rem', md: '4rem' },
-              lineHeight: 1.1,
-              mb: 3
-            }}
-          >
-            Simple & Transparent
-            <Box
-              component="span"
-              sx={{
-                ml: 2,
-                background: '#2196F3',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
-              }}
-            >
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800 pt-[70px]">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-blue-600 opacity-10 blur-3xl" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-[1240px] px-4 py-24 text-center sm:px-6 lg:px-8">
+          <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-[13px] font-medium text-white/80 mb-6">
+            Pricing
+          </span>
+          <h1 className="text-[2.8rem] font-semibold leading-tight text-white sm:text-[3.4rem]">
+            Simple &amp; Transparent{' '}
+            <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
               Pricing
-            </Box>
-          </Typography>
+            </span>
+          </h1>
+          <p className="mx-auto mt-5 max-w-xl text-[1.05rem] leading-relaxed text-slate-300">
+            Choose the plan that fits your learning journey. Upgrade, downgrade, or cancel anytime.
+          </p>
+        </div>
+      </section>
 
-          <Typography
-            variant="h5"
-            sx={{
-              color: 'rgba(255,255,255,0.8)',
-              maxWidth: 600,
-              lineHeight: 1.6
-            }}
-          >
-            Choose the plan that fits your learning journey. Upgrade, downgrade,
-            or cancel anytime.
-          </Typography>
-        </Container>
+      {/* Plans */}
+      <section className="py-24">
+        <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+            {plans.map((plan, i) => (
+              <motion.div
+                key={plan.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className={`relative flex flex-col rounded-2xl border p-8 transition-shadow duration-300 ${
+                  plan.highlight
+                    ? 'border-blue-500 bg-white shadow-2xl shadow-blue-500/15 scale-[1.02]'
+                    : 'border-slate-200 bg-white hover:shadow-lg'
+                }`}
+              >
+                {plan.badge && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-1 text-[12px] font-semibold text-white shadow-md">
+                    {plan.badge}
+                  </span>
+                )}
 
-        {/* Glow */}
-        <Box
-          sx={{
-            position: 'absolute',
-            top: -120,
-            right: -120,
-            width: 400,
-            height: 400,
-            borderRadius: '50%',
-            background:
-              'linear-gradient(45deg, rgba(70,47,245,0.15), rgba(33,150,243,0.15))',
-            filter: 'blur(120px)'
-          }}
-        />
-      </Box>
+                <div>
+                  <h3 className="text-[1.1rem] font-semibold text-slate-900">{plan.name}</h3>
+                  <p className="mt-1 text-[0.88rem] text-slate-500">{plan.subtitle}</p>
 
-      {/* ================= PRICING ================= */}
-      <Box sx={{ py: { xs: 8, md: 12 } }}>
-        <Container maxWidth="lg">
-          <Grid container spacing={6}>
-            {plans.map((plan, index) => (
-              <Grid item xs={12} md={4} key={index}>
-                <Card
-                  sx={{
-                    height: '100%',
-                    borderRadius: 4,
-                    p: 1,
-                    bgcolor: '#f8f9fa',
-                    border: plan.highlight
-                      ? `2px solid ${theme.palette.primary.main}`
-                      : '1px solid #e5e7eb',
-                    boxShadow: plan.highlight
-                      ? '0 25px 50px rgba(33,150,243,0.25)'
-                      : '0 10px 30px rgba(0,0,0,0.05)',
-                    transform: plan.highlight ? 'translateY(-8px)' : 'none',
-                    transition: 'all 0.3s ease'
-                  }}
-                >
-                  <CardContent sx={{ p: 4 }}>
-                    {plan.highlight && (
-                      <Chip
-                        label="Most Popular"
-                        color="primary"
-                        sx={{ mb: 2 }}
-                      />
+                  <div className="mt-5 mb-6">
+                    {plan.price ? (
+                      <p className="text-[1.5rem] font-bold text-slate-900">{plan.price}</p>
+                    ) : (
+                      <p className="text-[1.5rem] font-bold text-slate-900">
+                        Free <span className="text-[1rem] font-normal text-slate-400">forever</span>
+                      </p>
                     )}
+                  </div>
 
-                    <Typography variant="h4" fontWeight="bold" mb={1}>
-                      {plan.name}
-                    </Typography>
+                  <Link
+                    href={plan.ctaHref}
+                    className={`block w-full rounded-xl py-3 text-center text-[14px] font-semibold transition-all duration-200 hover:-translate-y-0.5 ${
+                      plan.highlight
+                        ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/25 hover:shadow-xl'
+                        : 'border border-slate-200 bg-slate-50 text-slate-800 hover:border-slate-300 hover:bg-slate-100'
+                    }`}
+                  >
+                    {plan.cta}
+                  </Link>
+                </div>
 
-                    <Typography color="#666" mb={3}>
-                      {plan.subtitle}
-                    </Typography>
-
-                    <Stack direction="row" alignItems="baseline" mb={4}>
-                      <Typography variant="h2" fontWeight={800}>
-                        {plan.price}
-                      </Typography>
-                      {plan.price !== 'Custom'}
-                    </Stack>
-
-                    <Button
-                      component={Link}
-                      href={
-                        plan.name === 'Enterprise'
-                          ? '/contact'
-                          : '/waitlist'
-                      }
-                      fullWidth
-                      variant={plan.highlight ? 'contained' : 'outlined'}
-                      size="large"
-                      sx={{
-                        mb: 4,
-                        py: 1.5,
-                        borderRadius: 3,
-                        fontWeight: 600,
-                        textTransform: 'none'
-                      }}
-                    >
-                      {plan.cta}
-                    </Button>
-
-                    <Stack spacing={2}>
-                      {plan.features.map((feature, i) => (
-                        <Stack
-                          key={i}
-                          direction="row"
-                          spacing={1.5}
-                          alignItems="center"
-                        >
-                          <CheckIcon
-                            sx={{
-                              color: theme.palette.primary.main,
-                              fontSize: 20
-                            }}
-                          />
-                          <Typography>{feature}</Typography>
-                        </Stack>
-                      ))}
-                    </Stack>
-                  </CardContent>
-                </Card>
-              </Grid>
+                <ul className="mt-8 space-y-3">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-center gap-3">
+                      <CheckIcon />
+                      <span className="text-[0.9rem] text-slate-600">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
             ))}
-          </Grid>
-        </Container>
-      </Box>
+          </div>
 
-      {/* ================= CTA ================= */}
-      <Box
-        sx={{
-          py: { xs: 8, md: 12 },
-          bgcolor: '#0f172a',
-          color: 'white',
-          textAlign: 'center'
-        }}
-      >
-        <Container maxWidth="md">
-          <Typography
-            variant="h2"
-            fontWeight="bold"
-            mb={3}
-            sx={{ fontSize: { xs: '2rem', md: '2.5rem' } }}
-          >
-          </Typography>
+          <p className="mt-10 text-center text-[0.9rem] text-slate-400">
+            All prices will be announced at launch. Waitlist members get early access &amp; exclusive benefits.
+          </p>
+        </div>
+      </section>
 
-          <Typography
-            sx={{ color: 'rgba(255,255,255,0.8)', mb: 4 }}
-          >
-            Join thousands of learners using Ednux to achieve more.
-          </Typography>
+      {/* FAQ quick answers */}
+      <section className="bg-slate-50 py-20">
+        <div className="mx-auto max-w-[760px] px-4 sm:px-6 text-center">
+          <h2 className="text-[1.8rem] font-semibold text-slate-900">Still have questions?</h2>
+          <p className="mt-3 text-[0.95rem] text-slate-500">
+            We&apos;re happy to walk you through the right plan for your institution or use case.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-7 py-3.5 text-[15px] font-medium text-slate-700 hover:bg-slate-50 transition-colors"
+            >
+              Contact Sales
+            </Link>
+            <Link
+              href="/waitlist"
+              className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-7 py-3.5 text-[15px] font-medium text-white shadow-md shadow-blue-500/25 hover:-translate-y-0.5 hover:shadow-lg transition-all"
+            >
+              Join Waitlist
+            </Link>
+          </div>
+        </div>
+      </section>
 
-          <Button
-            component={Link}
-            href="/waitlist"
-            variant="contained"
-            size="large"
-            sx={{
-              bgcolor: 'white',
-              color: '#0f172a',
-              px: 5,
-              py: 1.8,
-              borderRadius: 3,
-              fontWeight: 600,
-              textTransform: 'none',
-              '&:hover': {
-                bgcolor: '#f1f5f9',
-                transform: 'translateY(-2px)'
-              },
-              transition: 'all 0.3s ease'
-            }}
-          >
-            Join Waitlist
-          </Button>
-        </Container>
-      </Box>
+      {/* Bottom CTA */}
+      <section className="bg-gradient-to-br from-blue-600 to-indigo-700 py-20 text-center">
+        <h2 className="text-[2rem] font-semibold text-white">Join thousands of learners using Ednux</h2>
+        <p className="mx-auto mt-4 max-w-md text-[1rem] text-blue-100">
+          Start for free. Upgrade when you&apos;re ready. No pressure.
+        </p>
+        <Link
+          href="/waitlist"
+          className="mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-[15px] font-semibold text-blue-700 shadow-lg transition-all hover:-translate-y-0.5"
+        >
+          Get Started Free
+        </Link>
+      </section>
 
       <Footer />
-    </Box>
+    </div>
   );
 }

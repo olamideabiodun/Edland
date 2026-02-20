@@ -1,271 +1,191 @@
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import {
-	Accordion,
-	AccordionDetails,
-	AccordionSummary,
-	alpha,
-	Box,
-	Container,
-	Grid,
-	Typography,
-} from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import type React from "react";
+"use client";
+
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqData = [
-	{
-		category: "General Questions",
-		items: [
-			{
-				q: "What is Ednux?",
-				a: "Ednux is an AI-powered Social LMS designed for African students, educators, and professionals. It streamlines access to personalized, practical learning across institutions.",
-			},
-			{
-				q: "Who can use Ednux?",
-				a: "Students, teachers, institutions, and professionals across Africa—and beyond—who want a smarter, localized learning experience.",
-			},
-			{
-				q: "How does Ednux work?",
-				a: "Ednux uses AI to organize course materials, track learning progress, and personalize content. It’s accessible via browser and mobile.",
-			},
-		],
-	},
-	{
-		category: "For Educators",
-		items: [
-			{
-				q: "Can I upload my own materials?",
-				a: "Yes. Ednux lets you upload documents, videos, quizzes, and slides with support for popular formats.",
-			},
-			{
-				q: "Does Ednux support grading and assessments?",
-				a: "Absolutely. You can create assignments, set criteria, and manage grading workflows directly.",
-			},
-			{
-				q: "What languages does Ednux support?",
-				a: "English-first, with local language expansions underway for key African regions.",
-			},
-		],
-	},
-	{
-		category: "For Students",
-		items: [
-			{
-				q: "Can I access Ednux offline?",
-				a: "Yes, selected modules can be downloaded and accessed offline.",
-			},
-			{
-				q: "Will Ednux help me stay on track?",
-				a: "Definitely. Smart reminders, progress trackers, and personalized suggestions help you stay motivated.",
-			},
-			{
-				q: "Are my data and progress secure?",
-				a: "Yes. Ednux uses secure protocols and adheres to local data privacy regulations.",
-			},
-		],
-	},
-	{
-		category: "For Institutions",
-		items: [
-			{
-				q: "Can Ednux integrate with our existing systems?",
-				a: "Yes. API-based integration is available for student records, payments, and internal platforms.",
-			},
-			{
-				q: "What is the pricing model for institutions?",
-				a: "Flexible. We offer tiered plans based on student count, features, and customization needs.",
-			},
-			{
-				q: "Can we white-label Ednux for our campus?",
-				a: "That’s possible. Contact us for branding options and technical setup details.",
-			},
-		],
-	},
-	{
-		category: "Technical & Support",
-		items: [
-			{
-				q: "What if I encounter a bug or issue?",
-				a: "You can report it via our Help Center or reach support via contact page.",
-			},
-			{
-				q: "Is Ednux mobile-friendly?",
-				a: "Yes. The platform is optimized for mobile, tablet, and desktop, with adaptive UI across devices.",
-			},
-			{
-				q: "How often is Ednux updated?",
-				a: "Weekly improvements, with major releases every quarter based on user feedback.",
-			},
-		],
-	},
-	{
-		category: "EDnux GLE & Social Learning",
-		items: [
-			{
-				q: "What is the EDnux GLE?",
-				a: "The EDnux Global Learning Ecosystem (GLE) is a shared social space where students and educators across Africa connect, exchange ideas, and collaborate on projects. It’s designed to foster community-driven learning.",
-			},
-			{
-				q: "How do social feeds work on Ednux?",
-				a: "Each user gets a personalized social dashboard—think of it as your academic timeline. You can post questions, share resources, follow educators, and join conversations on trending topics or learning goals.",
-			},
-			{
-				q: "Can institutions manage what appears on social feeds?",
-				a: "Yes. Institutions have moderation tools and can curate feeds for academic relevance while still allowing organic student interaction.",
-			},
-			{
-				q: "Does GLE support collaborative study groups?",
-				a: "Definitely. Users can form or join virtual learning circles, participate in shared quizzes, and follow mentors for guided pathways.",
-			},
-			{
-				q: "Is GLE safe and moderated?",
-				a: "Very. Content is filtered using AI-powered moderation and local policy guidelines. Plus, users can report anything that feels off.",
-			},
-		],
-	},
+  {
+    category: "General",
+    items: [
+      {
+        q: "What is Ednux?",
+        a: "Ednux is the Career Operating System for African students, a social learning management system that helps students learn collaboratively, build verified career portfolios automatically, and get discovered by employers. It turns every class, project, assignment, and activity into career evidence that grows from year one to graduation.",
+      },
+      {
+        q: "Who is Ednux built for?",
+        a: "Ednux is built for three groups: students who want to turn their learning into employment proof, universities that want to modernise learning and track student outcomes, and employers who need to find and verify real student talent.",
+      },
+      {
+        q: "What problem does Ednux solve?",
+        a: "Africa's higher education system produces millions of graduates every year, but employers cannot trust their skills. CVs are easy to exaggerate and hard to verify. Ednux fixes the documentation problem, the visibility problem, and the proof problem, connecting learning, skills, evidence, and opportunity in one platform.",
+      },
+    ],
+  },
+  {
+    category: "For Students",
+    items: [
+      {
+        q: "How does Ednux build my portfolio?",
+        a: "Automatically. Every class you attend, every assignment you submit, every leadership role you take, and every club you join is recorded and converted into verified skill data. By graduation, you have a living career timeline, not a one-page CV.",
+      },
+      {
+        q: "How is Ednux different from LinkedIn?",
+        a: "LinkedIn assumes you are already a professional. Students on LinkedIn lack work experience to post and cannot showcase class projects, micro-certificates, or coursework. Ednux is built specifically for students, tracking who you are becoming, not just who you are today.",
+      },
+      {
+        q: "Can employers actually see my Ednux profile?",
+        a: "Yes. Employers on Ednux can search for vetted student talent and review real work, real activity records, and verified skill signals, not empty CVs.",
+      },
+      {
+        q: "Will Ednux help me stay organised?",
+        a: "Yes. All your lectures, files, team chats, assignments, and course materials live in one structured hub, replacing the chaos of WhatsApp groups and scattered drives.",
+      },
+    ],
+  },
+  {
+    category: "For Educators and Institutions",
+    items: [
+      {
+        q: "How does Ednux help universities?",
+        a: "Ednux helps institutions modernise learning, track student competence rather than just course completion, and connect their students directly to employment opportunities, improving graduate outcome data.",
+      },
+      {
+        q: "Can lecturers manage assignments and grading on Ednux?",
+        a: "Yes. Lecturers can upload course materials, set assignments, manage grading workflows, and endorse student skills, with their endorsements contributing directly to a student's verified portfolio.",
+      },
+      {
+        q: "Can Ednux integrate with existing institutional systems?",
+        a: "Yes. API-based integration is available for student records and internal platforms. Contact us for technical details.",
+      },
+    ],
+  },
+  {
+    category: "Platform and Access",
+    items: [
+      {
+        q: "When will Ednux launch?",
+        a: "Ednux is currently in pre-launch development. Join the waitlist to be among the first to access the platform and receive exclusive early access benefits.",
+      },
+      {
+        q: "Is Ednux available on mobile?",
+        a: "Yes. Ednux is being built for both web and mobile, with offline access planned for selected modules, important for students in areas with limited connectivity.",
+      },
+      {
+        q: "Is my data secure on Ednux?",
+        a: "Yes. Ednux uses secure protocols and adheres to data privacy regulations. Your learning data and career evidence belong to you.",
+      },
+    ],
+  },
 ];
 
+interface AccordionItemProps {
+  q: string;
+  a: string;
+  isOpen: boolean;
+  onToggle: () => void;
+}
+
+const AccordionItem = ({ q, a, isOpen, onToggle }: AccordionItemProps) => (
+  <div className="border border-slate-200 rounded-xl overflow-hidden mb-2">
+    <button
+      onClick={onToggle}
+      className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-slate-50"
+    >
+      <span className="text-[0.95rem] font-medium text-slate-800 pr-4">{q}</span>
+      <span
+        className={`flex-shrink-0 ml-3 flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 transition-transform duration-300 ${
+          isOpen ? "rotate-180 bg-blue-600 border-blue-600" : "bg-white"
+        }`}
+      >
+        <svg
+          className={`h-3.5 w-3.5 ${isOpen ? "text-white" : "text-slate-500"}`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2.5}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </span>
+    </button>
+
+    <AnimatePresence initial={false}>
+      {isOpen && (
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{ duration: 0.25, ease: "easeInOut" }}
+          className="overflow-hidden"
+        >
+          <div className="px-5 pb-4 pt-1 text-[0.9rem] leading-relaxed text-slate-500 border-t border-slate-100">
+            {a}
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </div>
+);
+
 const FaqSection = () => {
-	const theme = useTheme();
-	const [expanded, setExpanded] = useState<string | false>(false);
+  const [openItem, setOpenItem] = useState<string | null>(null);
 
-	const handleChange =
-		(panel: string) => (_event: React.SyntheticEvent, isExpanded: boolean) => {
-			setExpanded(isExpanded ? panel : false);
-		};
+  const toggle = (key: string) => setOpenItem((prev) => (prev === key ? null : key));
 
-	return (
-		<Box
-			sx={{
-				width: "100%",
-				bgcolor:
-					theme.palette.mode === "dark" ? alpha("#1b1a18ff", 0.95) : "#fff",
-				borderTop: `1px solid ${theme.palette.mode === "dark" ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.04)"}`,
-				borderBottom: `1px solid ${theme.palette.mode === "dark" ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.04)"}`,
-				py: { xs: 8, md: 12 },
-				px: { xs: 0, md: 0 },
-				position: "relative",
-				zIndex: 2,
-			}}
-			id="faq"
-		>
-			<Container maxWidth="md" sx={{ position: "relative", zIndex: 2 }}>
-				<Typography
-					variant="h2"
-					align="center"
-					fontWeight={500}
-					fontFamily="Questrial"
-					sx={{
-						mb: 3,
-						fontSize: { xs: "1.3rem", sm: "1.7rem", md: "2.1rem" },
-						background: "linear-gradient(90deg, #2563eb 0%, #000000 100%)",
+  return (
+    <section className="w-full bg-white py-24" id="faq">
+      <div className="mx-auto max-w-[860px] px-4 sm:px-6 lg:px-8">
 
-						WebkitBackgroundClip: "text",
-						WebkitTextFillColor: "transparent",
-						letterSpacing: "-1px",
-					}}
-				>
-					Frequently Asked Questions
-				</Typography>
-				<Grid container spacing={2}>
-					{faqData.map((section, idx) => (
-						<Grid item xs={12} key={section.category}>
-							<Typography
-								variant="h6"
-								fontWeight={600}
-								sx={{
-									mb: 1,
-									color: theme.palette.text.primary,
-									letterSpacing: "-0.5px",
-									fontSize: { xs: "1.05rem", sm: "1.15rem", md: "1.2rem" },
-								}}
-							>
-								{section.category}
-							</Typography>
-							{section.items.map((item, qidx) => (
-								<Accordion
-									key={item.q}
-									expanded={expanded === `${idx}-${qidx}`}
-									onChange={handleChange(`${idx}-${qidx}`)}
-									sx={{
-										mb: 1.2,
-										borderRadius: "30px",
-										boxShadow: "none",
-										border: `1px solid ${theme.palette.mode === "dark" ? "rgba(108,99,255,0.25)" : "rgba(192, 67, 238, 0.25)"}`,
-										background: "none",
-										"&:before": { display: "none" },
-										transition: "box-shadow 0.2s",
-										position: "relative",
-										overflow: "hidden",
-									}}
-								>
-									<AccordionSummary
-										expandIcon={
-											<ExpandMoreIcon
-												sx={{ color: theme.palette.primary.main, fontSize: 22 }}
-											/>
-										}
-										aria-controls={`faq-content-${idx}-${qidx}`}
-										id={`faq-header-${idx}-${qidx}`}
-										sx={{
-											px: 2,
-											py: 1.1,
-											fontWeight: 600,
-											fontSize: 15,
-											color: theme.palette.text.primary,
-											letterSpacing: "-0.5px",
-											minHeight: 0,
-										}}
-									>
-										{item.q}
-									</AccordionSummary>
-									<AccordionDetails
-										sx={{
-											px: 2,
-											pb: 1.2,
-											pt: 0,
-											color: theme.palette.text.secondary,
-											fontSize: 14,
-											minHeight: 0,
-										}}
-									>
-										{item.a}
-									</AccordionDetails>
-								</Accordion>
-							))}
-						</Grid>
-					))}
-				</Grid>
-			</Container>
-			<Box
-				sx={{
-					display: "flex",
-					justifyContent: "center",
-					mt: 4,
-					position: "relative",
-					zIndex: 2,
-				}}
-			>
-				<Typography
-					variant="body2"
-					sx={{
-						color: theme.palette.text.secondary,
-						fontSize: { xs: "0.9rem", md: "1rem" },
-						maxWidth: 600,
-						textAlign: "center",
-						px: 2,
-					}}
-				>
-					If you have more questions, feel free to reach out via our{" "}
-					<a href="/contact" style={{ color: theme.palette.primary.main }}>
-						Contact Page
-					</a>
-					.
-				</Typography>
-			</Box>
-		</Box>
-	);
+        {/* Header */}
+        <div className="mb-12 text-center">
+          <span className="mb-4 inline-block rounded-full bg-blue-50 px-4 py-1.5 text-[13px] font-medium text-blue-700">
+            Got questions?
+          </span>
+          <h2 className="font-poppins text-[2.2rem] font-semibold leading-tight tracking-tight text-slate-900 sm:text-[2.6rem]">
+            Frequently Asked{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              Questions
+            </span>
+          </h2>
+          <p className="mx-auto mt-3 max-w-md text-[0.95rem] text-slate-500">
+            Everything you need to know about Ednux, for students, educators, and institutions.
+          </p>
+        </div>
+
+        {/* FAQ Groups */}
+        <div className="space-y-10">
+          {faqData.map((group) => (
+            <div key={group.category}>
+              <h3 className="mb-3 text-[0.85rem] font-semibold uppercase tracking-widest text-slate-400">
+                {group.category}
+              </h3>
+              {group.items.map((item, i) => {
+                const key = `${group.category}-${i}`;
+                return (
+                  <AccordionItem
+                    key={key}
+                    q={item.q}
+                    a={item.a}
+                    isOpen={openItem === key}
+                    onToggle={() => toggle(key)}
+                  />
+                );
+              })}
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom note */}
+        <p className="mt-10 text-center text-[0.9rem] text-slate-400">
+          More questions?{" "}
+          <a href="/contact" className="text-blue-600 underline hover:text-blue-700 transition-colors">
+            Reach out on our Contact page
+          </a>
+          .
+        </p>
+      </div>
+    </section>
+  );
 };
 
 export default FaqSection;

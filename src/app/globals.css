@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -49,7 +49,7 @@
    BASE
 ========================================================= */
 body {
-	font-family: "Questrial", Arial, Helvetica, sans-serif;
+	font-family: "Poppins", Arial, Helvetica, sans-serif;
 	color: rgb(var(--foreground-rgb));
 	background: linear-gradient(
 		180deg,

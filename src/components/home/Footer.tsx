@@ -1,7 +1,5 @@
-import GitHubIcon from "@mui/icons-material/GitHub";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import TwitterIcon from "@mui/icons-material/Twitter";
+'use client';
+
 import {
 	Box,
 	Button,
@@ -15,6 +13,26 @@ import Link from "next/link";
 import React from "react";
 import EdnuxLogo from "../common/EdnuxLogo";
 
+const XIcon = () => (
+	<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+		<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.677l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+	</svg>
+);
+
+const InstaIcon = () => (
+	<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+		<rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+		<circle cx="12" cy="12" r="4" />
+		<circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+	</svg>
+);
+
+const LIIcon = () => (
+	<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+		<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+	</svg>
+);
+
 const Footer = () => {
 	const theme = useTheme();
 
@@ -22,7 +40,7 @@ const Footer = () => {
 		{
 			title: "Product",
 			links: [
-				{ label: "Features", href: "/#productivity-section" },
+				{ label: "Features", href: "/#features-section" },
 				{ label: "Support", href: "mailto:support@ednux.com" },
 			],
 		},
@@ -36,17 +54,9 @@ const Footer = () => {
 	];
 
 	const socialLinks = [
-		{ icon: <TwitterIcon />, href: "https://x.com/ednuxofficial", label: "X" },
-		{
-			icon: <InstagramIcon />,
-			href: "https://instagram.com/ednux_official",
-			label: "Instagram",
-		},
-		{
-			icon: <LinkedInIcon />,
-			href: "https://linkedin.com/in/ednux-mobile-b8200635b",
-			label: "LinkedIn",
-		},
+		{ icon: <XIcon />, href: "https://x.com/ednuxofficial", label: "X" },
+		{ icon: <InstaIcon />, href: "https://instagram.com/ednux_official", label: "Instagram" },
+		{ icon: <LIIcon />, href: "https://linkedin.com/in/ednux-mobile-b8200635b", label: "LinkedIn" },
 	];
 
 	return (
@@ -81,7 +91,7 @@ const Footer = () => {
 		>
 			<Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
 				<Grid container spacing={6}>
-					{/* Logo and Description Section */}
+					{/* Logo and Description */}
 					<Grid item xs={12} md={4}>
 						<Box sx={{ mb: 1 }}>
 							<EdnuxLogo size={120} />
@@ -99,15 +109,13 @@ const Footer = () => {
 								maxWidth: "280px",
 							}}
 						>
-							Ednux enables users to track their learning progress, access
-							powerful learning tools and personalized insights.
+							Ednux is the career operating system for African students, turning every class and activity into verified employment proof.
 						</Typography>
 
-						{/* Social Links */}
 						<Box sx={{ display: "flex", gap: 1 }}>
-							{socialLinks.map((social, index) => (
+							{socialLinks.map((social) => (
 								<IconButton
-									key={index}
+									key={social.label}
 									component={Link}
 									href={social.href}
 									target="_blank"
@@ -135,8 +143,8 @@ const Footer = () => {
 					</Grid>
 
 					{/* Navigation Sections */}
-					{footerSections.map((section, index) => (
-						<Grid item xs={6} sm={4} md={2} key={index}>
+					{footerSections.map((section) => (
+						<Grid item xs={6} sm={4} md={2} key={section.title}>
 							<Typography
 								variant="h6"
 								sx={{
@@ -152,9 +160,9 @@ const Footer = () => {
 								{section.title}
 							</Typography>
 							<Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-								{section.links.map((link, linkIndex) => (
+								{section.links.map((link) => (
 									<Button
-										key={linkIndex}
+										key={link.label}
 										component={Link}
 										href={link.href}
 										sx={{
@@ -182,7 +190,7 @@ const Footer = () => {
 						</Grid>
 					))}
 
-					{/* Join Waitlist Section */}
+					{/* Get Started */}
 					<Grid item xs={12} md={2}>
 						<Typography
 							variant="h6"
@@ -212,7 +220,7 @@ const Footer = () => {
 								color: "#fff",
 								boxShadow: "0 2px 12px 0 rgba(42,92,255,0.10)",
 								textTransform: "none",
-								fontFamily: "Questrial, sans-serif",
+								fontFamily: "Poppins, sans-serif",
 								minWidth: 0,
 								"&:hover": {
 									bgcolor: "#1741b6",
@@ -248,66 +256,41 @@ const Footer = () => {
 							fontSize: "0.9rem",
 						}}
 					>
-						© 2025 Ednux. All rights reserved.
+						2025 Ednux. All rights reserved.
 					</Typography>
 
-					<Box
-						sx={{
-							display: "flex",
-							gap: { xs: 2, sm: 4 },
-							flexWrap: "wrap",
-						}}
-					>
-						<Button
-							component={Link}
-							href="/privacy-policy"
-							sx={{
-								textTransform: "none",
-								color:
-									theme.palette.mode === "dark"
-										? "rgba(255,255,255,0.6)"
-										: "rgba(100,116,139,1)",
-								fontSize: "0.9rem",
-								fontWeight: 400,
-								padding: 0,
-								minWidth: "auto",
-								textDecoration: "underline",
-								textDecorationColor: "transparent",
-								"&:hover": {
-									color: theme.palette.primary.main,
-									bgcolor: "transparent",
-									textDecorationColor: "currentColor",
-								},
-								transition: "all 0.2s ease-in-out",
-							}}
-						>
-							Privacy Policy
-						</Button>
-						<Button
-							component={Link}
-							href="/terms-of-service"
-							sx={{
-								textTransform: "none",
-								color:
-									theme.palette.mode === "dark"
-										? "rgba(255,255,255,0.6)"
-										: "rgba(100,116,139,1)",
-								fontSize: "0.9rem",
-								fontWeight: 400,
-								padding: 0,
-								minWidth: "auto",
-								textDecoration: "underline",
-								textDecorationColor: "transparent",
-								"&:hover": {
-									color: theme.palette.primary.main,
-									bgcolor: "transparent",
-									textDecorationColor: "currentColor",
-								},
-								transition: "all 0.2s ease-in-out",
-							}}
-						>
-							Terms of Service
-						</Button>
+					<Box sx={{ display: "flex", gap: { xs: 2, sm: 4 }, flexWrap: "wrap" }}>
+						{[
+							{ label: "Privacy Policy", href: "/privacy-policy" },
+							{ label: "Terms of Service", href: "/terms-of-service" },
+						].map((item) => (
+							<Button
+								key={item.label}
+								component={Link}
+								href={item.href}
+								sx={{
+									textTransform: "none",
+									color:
+										theme.palette.mode === "dark"
+											? "rgba(255,255,255,0.6)"
+											: "rgba(100,116,139,1)",
+									fontSize: "0.9rem",
+									fontWeight: 400,
+									padding: 0,
+									minWidth: "auto",
+									textDecoration: "underline",
+									textDecorationColor: "transparent",
+									"&:hover": {
+										color: theme.palette.primary.main,
+										bgcolor: "transparent",
+										textDecorationColor: "currentColor",
+									},
+									transition: "all 0.2s ease-in-out",
+								}}
+							>
+								{item.label}
+							</Button>
+						))}
 					</Box>
 				</Box>
 			</Container>

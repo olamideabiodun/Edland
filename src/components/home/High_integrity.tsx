@@ -1,352 +1,81 @@
-import Image from "next/image";
+"use client";
 
+import { motion } from "framer-motion";
 
-const High_integrity = () => {
-	return (
-		<section className="solve-section" id="high-integrity-section">
+const features = [
+  {
+    title: "Verified Skill Identity",
+    description:
+      "Every assignment you complete, every project you lead, every endorsement you receive becomes real, verifiable proof. Employers see evidence, not empty claims. When your lecturer endorses you, Ednux records it with institutional authentication. No one can fake this.",
+  },
+  {
+    title: "Living Portfolio Builder",
+    description:
+      "Your portfolio grows automatically as you learn. Class projects, presentations, club activities, certifications, all timestamped and verified. By graduation, you have a complete talent graph showing exactly what you have done and who you have become.",
+  },
+  {
+    title: "Organized Learning Spaces",
+    description:
+      "All your lectures, files, teams, chats, tasks, and feedback live in one structured hub. No more scattered WhatsApp groups where information goes to die. Everything is organized by course, team, or project, and everything contributes to your growing career proof.",
+  },
+  {
+    title: "Student Identity Layer",
+    description:
+      "Ednux becomes your living digital profile that grows from Year 1 to graduation and beyond. Unlike one page CVs that barely capture your real capabilities, Ednux documents your entire journey.",
+  },
+  {
+    title: "Collaborative Learning Tools",
+    description:
+      "Create study groups, share resources, work on team projects, and learn together. When you lead a group project, Ednux records leadership skill. When you solve problems together, Ednux tracks collaboration. Every interaction builds your verified record.",
+  },
+  {
+    title: "Real Time Skill Tracking",
+    description:
+      "Learn Excel, Python, writing, or any skill, and watch your competency graph update with real abilities, not self reported claims. See exactly which skills you are developing and how you compare to industry standards.",
+  },
+];
 
-			{/* Features Grid Section */}
-			<div className="features-grid-section">
-				<div className="features-container">
-					<p className="features-title">High-Integrity Assessment and Personalized Learning</p>
-					<div className="features-grid">
-						<div className="feature-card feature-card-small">
-							<div className="feature-card-bg"></div>
-							<div className="feature-card-content">
-								<div className="feature-text">
-									<p className="feature-title-text">Verifiable Competency Mastery (CBE) </p>
-									<p className="feature-description">The is an analytics interface that translates a user's performance data into a set of objective, auditable competency scores.
+const BentoFeaturesSection = () => (
+  <section className="w-full bg-white py-24" id="features-section">
+    <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
 
-Instead of displaying traditional grades, this dashboard visualizes a user's proficiency in specific skills.
+      {/* Section header */}
+      <div className="mb-14 text-center">
+        <span className="mb-4 inline-block rounded-full bg-blue-50 px-4 py-1.5 text-[13px] font-medium text-blue-700">
+          What Ednux does
+        </span>
+        <h2 className="font-poppins text-[2.2rem] font-semibold leading-tight tracking-tight text-slate-900 sm:text-[2.8rem]">
+          From learning to{" "}
+          <span className="text-blue-600">employability</span>
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-[1rem] leading-relaxed text-slate-500">
+          An advanced learning management system that replaces traditional skill tracking
+          with real-world skill verification. Every skill you learn generates a lifelong
+          data asset that you own entirely.
+        </p>
+      </div>
 
-It serves as the user's primary interface for tracking their skill development, allowing users to provably demonstrate their mastery to third parties.</p>
-								</div>
-							</div>
-							<div className="feature-card-outline"></div>
-						</div>
-						
-						<div className="feature-card feature-card-small">
-							<div className="feature-card-bg"></div>
-							<div className="feature-card-content">
-								<div className="feature-text">
-									<p className="feature-title-text">Adaptive Social Learning Loop</p>
-									<p className="feature-description">Ednux's core pedagogical and technological mechanism that continuously gathers data from user interactions to personalize content, guide learning paths.
+      {/* Feature Cards Grid */}
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {features.map((feature, i) => (
+          <motion.div
+            key={feature.title}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.45, delay: i * 0.06 }}
+            className="flex flex-col rounded-2xl border border-slate-200 bg-white p-7 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+          >
+            <h3 className="text-[1rem] font-semibold text-slate-900">{feature.title}</h3>
+            <p className="mt-2 text-[0.88rem] leading-relaxed text-slate-500 flex-1">
+              {feature.description}
+            </p>
+          </motion.div>
+        ))}
+      </div>
 
-It is a closed-loop system where social interaction is treated as a critical data source for adaptation and assessment, effectively moving the learning environment beyond static content delivery.</p>
-								</div>
-							</div>
-							<div className="feature-card-outline"></div>
-						</div>
-						
-						<div className="feature-card feature-card-small">
-							<div className="feature-card-bg"></div>
-							<div className="feature-card-content">
-								<div className="feature-text">
-									<p className="feature-title-text">Gamified Engagement</p>
-									<p className="feature-description">We integrate personalized gamification (points, badges, quests) that adapt to individual motivations, making the learning journey more engaging and encouraging continuous risk-taking and self-correction without penalty.</p>
-								</div>
-							</div>
-							<div className="feature-card-outline"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			
+    </div>
+  </section>
+);
 
-			<style jsx>{`
-				.solve-section {
-					width: 100%;
-					padding: 45px 0 20px ;
-					background: #f9fafb;
-					position: relative;
-				}
-
-
-
-				/* Features Grid Section */
-				.features-grid-section {
-					background: #f9fafb;
-					padding: 40px 0 20px 0;
-					margin-bottom: 20px;
-					width: 100%;
-				}
-				
-				.features-container {
-					width: 100%;
-					max-width: 1240px;
-					margin: 0 auto;
-					padding: 0 24px; 
-				}
-				
-
-				
-				.features-title {
-					margin: 8px auto 0;
-					max-width: 512px;
-					text-align: center;
-					font-size: 36px;
-					font-weight: 600;
-					line-height: 1.1;
-					color: #0f172a;
-					font-family: 'Questrial', sans-serif;
-				}
-				
-				.features-grid {
-					margin-top: 40px;
-					margin-bottom: 40px; 
-					display: grid;
-					gap: 16px;
-					grid-template-columns: 1fr 1fr 1fr;
-					grid-template-rows: 1fr;
-				}
-				
-				.feature-card {
-					position: relative;
-					border-radius: 12px;
-					overflow: hidden;
-					transition: transform 0.3s ease, box-shadow 0.3s ease;
-				}
-				
-				.feature-card:hover {
-					transform: translateY(-4px);
-					box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-				}
-				
-
-				.feature-card-small {
-					grid-row: span 1;
-				}
-				
-				.feature-card-bg {
-					position: absolute;
-					inset: 1px;
-					border-radius: 12px;
-					background: white;
-				}
-				
-				.feature-card-content {
-					position: relative;
-					display: flex;
-					flex-direction: column;
-					height: 100%;
-					overflow: hidden;
-					border-radius: 12px;
-				}
-				
-				.feature-text {
-					padding: 32px 32px 12px;
-				}
-				
-				.feature-title-text {
-					margin: 8px 0;
-					font-size: 18px;
-					font-weight: 500;
-					line-height: 1.2;
-					color: #0f172a;
-					font-family: 'Questrial', sans-serif;
-				}
-				
-				.feature-description {
-					margin: 8px 0;
-					max-width: 512px;
-					font-size: 14px;
-					line-height: 1.5;
-					color: #64748b;
-					font-family: 'Questrial', sans-serif;
-				}
-				
-				.feature-image-container {
-					position: relative;
-					min-height: 480px;
-					width: 100%;
-					flex-grow: 1;
-					margin: 0 auto;
-					max-width: 384px;
-				}
-				
-				.feature-image-wrapper {
-					position: absolute;
-					inset: 40px 40px 0;
-					overflow: hidden;
-					border-radius: 48px 0 0 0;
-					border: 3px solid #374151;
-					border-bottom: 3px solid #374151;
-					border-top: 3px solid #374151;
-					background: #111827;
-					box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-				}
-				
-				.feature-image {
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
-					object-position: top;
-				}
-				
-				.feature-image-container-small {
-					display: flex;
-					flex: 1;
-					align-items: center;
-					justify-content: center;
-					padding: 0;
-				}
-				
-				.feature-image-small {
-					width: 100%;
-					max-width: 320px;
-				}
-				
-
-				
-				.feature-code-container-small {
-					display: flex;
-					flex: 1;
-					align-items: center;
-					justify-content: center;
-					padding: 32px;
-				}
-				
-
-				
-				.code-window-small {
-					width: 100%;
-					max-width: 320px;
-					overflow: hidden;
-					border-radius: 8px;
-					background: #111827;
-					box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-					outline: 1px solid rgba(255, 255, 255, 0.1);
-				}
-				
-
-				
-				.code-tabs-small {
-					display: flex;
-					background: #111827;
-					outline: 1px solid rgba(255, 255, 255, 0.05);
-				}
-				
-				.code-tab {
-					border-right: 1px solid rgba(255, 255, 255, 0.1);
-					border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-					background: rgba(255, 255, 255, 0.05);
-					padding: 8px 16px;
-					font-size: 14px;
-					line-height: 1.5;
-					font-weight: 500;
-					color: #9ca3af;
-					font-family: 'Questrial', sans-serif;
-				}
-				
-				.code-tab-small {
-					border-right: 1px solid rgba(255, 255, 255, 0.1);
-					border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-					background: rgba(255, 255, 255, 0.05);
-					padding: 6px 12px;
-					font-size: 12px;
-					line-height: 1.4;
-					font-weight: 500;
-					color: #9ca3af;
-					font-family: 'Questrial', sans-serif;
-				}
-				
-				.code-tab.active {
-					color: white;
-					background: rgba(255, 255, 255, 0.1);
-				}
-				
-				.code-tab-small.active {
-					color: white;
-					background: rgba(255, 255, 255, 0.1);
-				}
-				
-
-				
-				.code-content-small {
-					padding: 16px;
-				}
-				
-				.code-block {
-					color: #e5e7eb;
-					font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-					font-size: 14px;
-					line-height: 1.5;
-					margin: 0;
-					white-space: pre-wrap;
-				}
-				
-				.code-block-small {
-					color: #e5e7eb;
-					font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-					font-size: 12px;
-					line-height: 1.4;
-					margin: 0;
-					white-space: pre-wrap;
-				}
-				
-				.feature-card-outline {
-					pointer-events: none;
-					position: absolute;
-					inset: 1px;
-					border-radius: 12px;
-					box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-					outline: 1px solid rgba(0, 0, 0, 0.05);
-				}
-
-				/* Standalone image */
-				.standalone-hero {
-					width: 100%;
-					margin: 48px auto 0;
-					padding: 0 24px;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-				}
-				
-				.standalone-img {
-					width: 70%;
-					height: auto;
-					display: block;
-					border-radius: 18px;
-				}
-
-				@media (max-width: 1024px) {
-					.features-container { padding: 0 16px; }
-					.features-grid { 
-						grid-template-columns: 1fr; 
-						grid-template-rows: auto;
-						gap: 12px;
-					}
-					.features-title { font-size: 28px; }
-					.feature-text { padding: 20px; }
-					.feature-title-text { font-size: 16px; }
-					.feature-description { font-size: 13px; }
-					.feature-image-container { min-height: 0; }
-					.feature-code-container-small { padding: 16px; }
-					.code-window-small { max-width: 100%; }
-					.standalone-hero { 
-						margin: -16px auto 0;
-						padding: 0 16px 32px;
-					}
-					.standalone-img { 
-						width: 100%;
-						border-radius: 12px;
-					}
-				}
-				
-				@media (max-width: 768px) {
-					.features-title { font-size: 24px; }
-					.feature-text { padding: 16px; }
-					.feature-code-container-small { padding: 12px; }
-					.standalone-hero { 
-						margin: -12px auto 0;
-						padding: 0 12px 24px;
-					}
-				}
-			`}</style>
-		</section>
-	);
-};
-
-export default High_integrity;
+export default BentoFeaturesSection;

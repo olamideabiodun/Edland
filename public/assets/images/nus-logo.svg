@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100">
-  <rect width="200" height="100" fill="#003D7C"/>
-  <rect x="40" y="30" width="120" height="40" fill="#F7A81B" rx="5"/>
-  <text x="100" y="57" font-family="Arial" font-size="20" font-weight="bold" fill="#003D7C" text-anchor="middle">NUS</text>
-</svg> 

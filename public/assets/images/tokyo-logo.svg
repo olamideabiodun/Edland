@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100">
-  <rect width="200" height="100" fill="#0C2D83"/>
-  <circle cx="100" cy="50" r="30" fill="#FFFFFF"/>
-  <text x="100" y="45" font-family="Arial" font-size="12" fill="#0C2D83" text-anchor="middle">UNIVERSITY OF</text>
-  <text x="100" y="60" font-family="Arial" font-size="14" font-weight="bold" fill="#0C2D83" text-anchor="middle">TOKYO</text>
-</svg> 

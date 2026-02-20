@@ -1,444 +1,96 @@
 'use client';
 
-import { keyframes } from '@emotion/react';
-import {
-  ArrowForward,
-  ArticleOutlined,
-  ChatBubbleOutlineRounded,
-  CheckCircleOutline,
-  FolderOutlined,
-  GroupsOutlined,
-  Psychology,
-  SchoolOutlined,
-  TrackChangesOutlined
-} from '@mui/icons-material';
-import {
-  alpha,
-  Backdrop,
-  Box,
-  Button,
-  Container,
-  Fade,
-  Grid,
-  Modal,
-  Paper,
-  Stack,
-  Typography
-} from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import Link from 'next/link';
 import Script from 'next/script';
-import React, { useState } from 'react';
-import EdnuxLogo from '../components/common/EdnuxLogo';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 import FaqSection from '../components/home/FaqSection';
 import Footer from '../components/home/Footer';
 import Header from '../components/home/Header';
 import Hero from '../components/home/Hero';
-import InteractiveDashboardSection from '../components/home/InteractiveDashboardSection';
-import ProductivitySection from '../components/home/ProductivitySection';
 import High_integrity from '../components/home/High_integrity';
-import WhyEdnux from '../components/home/WhyEdnux';
-import WorkspaceToolsSection from '../components/home/WorkspaceToolsSection';
-import SSI_Section from '../components/home/SSI_Section';
-import CardLMS from '../components/home/CardLMS';
+import MockupCarousel from '../components/home/MockupCarousel';
 
-// Define animations
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+/* ────────────────────────────────────────────────
+   CTA Section
+──────────────────────────────────────────────── */
+const CTASection = () => (
+  <section className="w-full overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-700 py-24 relative">
+    <div className="pointer-events-none absolute inset-0">
+      <div className="absolute -top-32 -right-32 h-80 w-80 rounded-full bg-white opacity-5" />
+      <div className="absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-white opacity-5" />
+    </div>
 
-const fadeInUp = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-const pulse = keyframes`
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.03);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-`;
-
-const float = keyframes`
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-`;
-
-// Feature details for the modals
-const featureDetails = [
-  {
-    title: 'Collaborative Learning Environment',
-    content: `
-      <h3>Interactive Virtual Classrooms</h3>
-      <p>Engage in real-time collaborative learning sessions with classmates and educators. Our platform supports interactive discussions, group activities, and live presentations.</p>
-      <h3>Knowledge Sharing Tools</h3>
-      <p>Easily share insights, resources, and study materials with your academic network. Highlight key concepts and annotate shared content for better understanding.</p>
-      <h3>Study Group Formation</h3>
-      <p>Create or join study groups based on courses, interests, or projects. Schedule group study sessions and track collective progress toward learning goals.</p>
-      <h3>Peer Review System</h3>
-      <p>Improve your work through structured peer feedback. Our system facilitates anonymous reviews and constructive feedback exchanges between students.</p>
-    `,
-    image:
-			'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80',
-    icon: <GroupsOutlined />
-  },
-  {
-    title: 'Smart Project Management',
-    content: `
-      <h3>Project Planning & Scheduling</h3>
-      <p>Create comprehensive project plans with milestones, deadlines, and task assignments. Our intuitive interface makes complex project management simple for students.</p>
-      <h3>Team Collaboration Tools</h3>
-      <p>Work seamlessly with team members on group projects. Assign roles, track contributions, and maintain clear communication throughout the project lifecycle.</p>
-      <h3>Progress Tracking</h3>
-      <p>Monitor individual and team progress with visual dashboards and automated reminders. Stay on schedule with intelligent task prioritization based on deadlines.</p>
-      <h3>Integration with Academic Calendar</h3>
-      <p>Sync project deadlines with your academic calendar to manage your workload efficiently. Receive smart scheduling suggestions to balance project work with other coursework.</p>
-    `,
-    image: '/assets/images/progress-tracking-illustration.png',
-    icon: <ArticleOutlined />
-  },
-  {
-    title: 'Advanced Learning Tools',
-    content: `
-      <h3>AI-Powered Study Assistance</h3>
-      <p>Enhance your learning with personalized AI study tools that adapt to your learning style. Get help with research, writing, and problem-solving tailored to your academic needs.</p>
-      <h3>Interactive Learning Materials</h3>
-      <p>Access engaging, multimedia learning resources designed for better comprehension and retention. Practice concepts with interactive exercises and simulations.</p>
-      <h3>Custom Learning Paths</h3>
-      <p>Follow personalized learning paths based on your goals, strengths, and areas for improvement. Our system adapts content recommendations to optimize your learning journey.</p>
-      <h3>Cross-Reference System</h3>
-      <p>Connect concepts across different courses and subjects for deeper understanding. Our platform highlights relationships between topics to build comprehensive knowledge.</p>
-    `,
-    image: '/assets/images/chat-illustration.png',
-    icon: <Psychology />
-  },
-  {
-    title: 'Vibrant Social Feed & Community',
-    content: `
-      <h3>Dynamic Academic Community</h3>
-      <p>Connect with your broader educational network. Share achievements, ask questions, and exchange insights with fellow students and instructors.</p>
-      <h3>Effortless Knowledge Sharing</h3>
-      <p>Post educational content, interesting findings, and academic resources. Our platform encourages the exchange of knowledge in a supportive environment.</p>
-      <h3>Personalized Content Stream</h3>
-      <p>Your feed is tailored to your academic interests and connections, showing relevant posts from instructors, classmates, and trusted educational sources.</p>
-      <h3>Collaborative Discussion Groups</h3>
-      <p>Participate in subject-specific discussion groups moderated by educators and field experts. Expand your understanding through diverse perspectives.</p>
-    `,
-    image: '/assets/images/posts-news-illustration.png',
-    icon: <GroupsOutlined />
-  },
-  {
-    title: 'Personalized Learning Dashboard',
-    content: `
-      <h3>Customized Welcome Experience</h3>
-      <p>Begin your day with a quick access to your most important activities and resources.</p>
-      <h3>At-a-Glance Class Schedule</h3>
-      <p>Instantly see your classes for the day, with quick links to join sessions, access materials, or contact instructors.</p>
-      <h3>Holistic Progress Visualization</h3>
-      <p>Track your overall academic progress with intuitive visual indicators, including completion percentages, skill development metrics, and performance analytics.</p>
-      <h3>Smart Reminders & Prioritization</h3>
-      <p>Receive intelligent notifications about upcoming deadlines and suggested tasks based on your schedule and learning priorities.</p>
-    `,
-    image: '/assets/images/learning-management-illustration.png',
-    icon: <TrackChangesOutlined />
-  },
-  {
-    title: 'Advanced Educational File Management',
-    content: `
-      <h3>Specialized Academic Organization</h3>
-      <p>Organize course materials, research, and project files in a system designed specifically for educational content. Create folders, tag files, and use custom categorization for easy access.</p>
-      <h3>Academic Version Control</h3>
-      <p>Never lose track of document changes with built-in version tracking. Access previous versions of papers and projects, compare changes, and restore earlier drafts.</p>
-      <h3>Secure Academic Sharing</h3>
-      <p>Share files securely with instructors, classmates, or project teammates. Set precise permissions to control who can view, edit, or comment on your academic work.</p>
-      <h3>Cross-Platform Compatibility</h3>
-      <p>Work with documents, presentations, spreadsheets, research data, and code. Preview files directly in the browser without needing to download or switch applications.</p>
-    `,
-    image: '/assets/images/file-management-illustration.png',
-    icon: <FolderOutlined />
-  }
-];
-
-const HomeContent = () => {
-  const theme = useTheme();
-  const [openModal, setOpenModal] = useState<number | null>(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const handleMobileMenuOpen = () => {
-    setMobileMenuOpen(true);
-  };
-
-  const handleMobileMenuClose = () => {
-    setMobileMenuOpen(false);
-  };
-
-  const handleOpenModal = (index: number) => {
-    setOpenModal(index);
-  };
-
-  const handleCloseModal = () => {
-    setOpenModal(null);
-  };
-
-  const coreFeaturesList = [
-    {
-      title: 'Collaborative Learning Environment',
-      description:
-				'Connect with classmates and educators in a shared digital workspace designed for interactive learning and knowledge sharing.',
-      icon: (
-        <GroupsOutlined
-          sx={{ fontSize: 40, color: theme.palette.primary.main }}
-        />
-      )
-    },
-    {
-      title: 'Smart Project Management',
-      description:
-				'Organize your academic projects with intuitive tools for planning, tracking, and collaborating with team members.',
-      icon: (
-        <ArticleOutlined
-          sx={{ fontSize: 40, color: theme.palette.secondary.main }}
-        />
-      )
-    },
-    {
-      title: 'Personalized Learning Path',
-      description:
-				'Access customized course recommendations and learning materials tailored to your educational goals and learning style.',
-      icon: (
-        <SchoolOutlined
-          sx={{ fontSize: 40, color: theme.palette.primary.main }}
-        />
-      )
-    },
-    {
-      title: 'Integrated Resource Library',
-      description:
-				'Store, organize, and share educational resources in one centralized location with powerful search capabilities.',
-      icon: (
-        <FolderOutlined
-          sx={{ fontSize: 40, color: theme.palette.secondary.main }}
-        />
-      )
-    },
-    {
-      title: 'Real-time Communication Tools',
-      description:
-				'Engage in discussions, receive instant feedback, and collaborate with peers through integrated messaging and video tools.',
-      icon: (
-        <ChatBubbleOutlineRounded
-          sx={{ fontSize: 40, color: theme.palette.primary.main }}
-        />
-      )
-    },
-    {
-      title: 'Comprehensive Progress Tracking',
-      description:
-				'Monitor your academic progress with detailed analytics, performance insights, and achievement tracking.',
-      icon: (
-        <TrackChangesOutlined
-          sx={{ fontSize: 40, color: theme.palette.secondary.main }}
-        />
-      )
-    }
-  ];
-
-    return (
-      <>
-        {/* Google tag (gtag.js)  */}
-        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-49F66DF463" async />
-        <Script id="ga-init-home" strategy="afterInteractive">{`
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-49F66DF463');
-`}</Script>
-      <Header />
-
-      <Hero />
-      {/*<WhyEdnux />*/}
-      {/*<CardLMS />*/}
-      <High_integrity />
-      {/* <SSI_Section /> */}
-      {/* <ProductivitySection /> */}
-      <InteractiveDashboardSection />
-      {/*<WorkspaceToolsSection />*/}
-
-      
-      {/* Call to Action Section */}
-      <Box
-        sx={{
-          py: { xs: 8, md: 12 },
-          px: { xs: 3, md: 6 },
-          textAlign: 'center',
-          position: 'relative',
-          background:
-						theme.palette.mode === 'dark'
-						  ? 'linear-gradient(135deg, #1a2a4a 0%, #2d3561 100%)'
-						  : 'linear-gradient(135deg, #f8f9fd 0%, #e8ecff 100%)',
-          overflow: 'hidden'
-        }}
+    <div className="relative z-10 mx-auto max-w-[760px] px-4 text-center sm:px-6">
+      <motion.h2
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="font-poppins text-[2.2rem] font-semibold leading-tight text-white sm:text-[2.8rem]"
       >
-        {/* Background decoration */}
-        <Box
-          sx={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background:
-							theme.palette.mode === 'dark'
-							  ? 'radial-gradient(circle at 50% 50%, rgba(67, 97, 238, 0.1), transparent 70%)'
-							  : 'radial-gradient(circle at 50% 50%, rgba(67, 97, 238, 0.05), transparent 70%)',
-            zIndex: 0
-          }}
-        />
+        Be Part of Africa&apos;s Learning Revolution!
+      </motion.h2>
+      <motion.p
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.15 }}
+        className="mx-auto mt-5 max-w-[560px] text-[1rem] leading-relaxed text-blue-100"
+      >
+        Ednux is gathering the voices of thousands of African students to build something
+        that truly serves. Tell us what you want, what you need. Be the first to experience
+        it when we launch.
+      </motion.p>
 
-        <Box
-          sx={{
-            position: 'relative',
-            zIndex: 1,
-            maxWidth: '800px',
-            mx: 'auto'
-          }}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+        className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center"
+      >
+        <Link
+          href="/waitlist"
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-7 py-3.5 text-[15px] font-semibold text-blue-700 shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
         >
-          <Typography
-            variant='h2'
-            component='h2'
-            fontWeight='500'
-            fontFamily={'Questrial'}
-            sx={{
-              mb: 3,
-              background: 'linear-gradient(90deg, #4361ee 0%, #a56ef4 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
-              animation: `${fadeIn} 0.8s ease-out`
-            }}
-          >
-						Be Part of Africa’s Learning Revolution!
-          </Typography>
-          <Typography
-            variant='h6'
-            sx={{
-              mb: 5,
-              color:
-								theme.palette.mode === 'dark'
-								  ? '#ffffff'
-								  : theme.palette.text.secondary,
-              fontSize: { xs: '1rem', sm: '1.1rem', md: '1.25rem' },
-              lineHeight: 1.6,
-              animation: `${fadeIn} 0.8s ease-out`,
-              animationDelay: '0.2s'
-            }}
-          >
-						Ednux is still a work in progress — and we are listening. We're
-						gathering the voices of thousands of African students to build
-						something that truly serves. Tell us what you want, what you need.
-						Be the first to try it when we launch!
-          </Typography>
+          Join Waitlist
+          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </Link>
+        <Link
+          href="/feedback"
+          className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-7 py-3.5 text-[15px] font-medium text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/20"
+        >
+          Share Feedback
+        </Link>
+      </motion.div>
+    </div>
+  </section>
+);
 
-          <Stack
-            direction={{ xs: 'column', sm: 'row' }}
-            spacing={3}
-            justifyContent='center'
-            alignItems='center'
-            sx={{
-              animation: `${fadeIn} 0.8s ease-out`,
-              animationDelay: '0.4s'
-            }}
-          >
-            <Button
-              component={Link}
-              href='/waitlist'
-              variant='contained'
-              endIcon={<ArrowForward />}
-              sx={{
-                borderRadius: 999,
-                px: 2,
-                py: 0.7,
-                fontWeight: 500,
-                fontSize: 14,
-                bgcolor: '#2a5cff',
-                color: '#fff',
-                boxShadow: '0 2px 12px 0 rgba(42,92,255,0.10)',
-                textTransform: 'none',
-                fontFamily: 'Questrial, sans-serif',
-                minWidth: 0,
-                '&:hover': {
-                  bgcolor: '#1741b6',
-                  color: '#fff'
-                }
-              }}
-            >
-							Join waitlist
-            </Button>
+/* ────────────────────────────────────────────────
+   Home page
+──────────────────────────────────────────────── */
+export default function Home() {
+  return (
+    <>
+      {/* Analytics */}
+      <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-49F66DF463" async />
+      <Script id="ga-init-home" strategy="afterInteractive">{`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-49F66DF463');
+      `}</Script>
 
-            <Button
-              component={Link}
-              href='/feedback'
-              variant='outlined'
-              sx={{
-                borderRadius: 999,
-                px: 1.8,
-                py: 0.6,
-                fontWeight: 500,
-                fontSize: 13,
-                color: '#232946',
-                borderColor: '#2a5cff',
-                textTransform: 'none',
-                background: 'rgba(255, 255, 255, 0.03)',
-                boxShadow: 'none',
-                fontFamily: 'Questrial, sans-serif',
-                minWidth: 0,
-                '&:hover': {
-                  background: 'rgba(240,240,255,0.7)',
-                  borderColor: '#232946'
-                }
-              }}
-            >
-							feedback
-            </Button>
-          </Stack>
-        </Box>
-      </Box>
+      <Header />
+      <Hero />
+      <High_integrity />
+      <MockupCarousel />
+      <CTASection />
       <FaqSection />
-
       <Footer />
     </>
   );
-};
-
-export default function Home() {
-  return <HomeContent />;
 }

@@ -1,192 +1,93 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+"use client";
+
 import { motion } from "framer-motion";
-import type React from "react";
+import Link from "next/link";
 import RotatingWord from "@/components/common/RotatingWord";
-import Container from "@/components/Layout/Container";
 
-const Hero: React.FC = () => (
-  <Box
-    sx={{
-      width: "100%",
-      position: "relative",
-      overflow: "hidden",
-      fontFamily: "Questrial",
+const Hero = () => (
+  <section className="relative w-full overflow-hidden bg-white pt-[70px]">
 
-     background: {
-  xs: `
-    radial-gradient(circle at 20% 20%, rgba(125, 153, 196, 0.6), transparent 70%),
-    #fefefe
-  `,
-  md: `
-    radial-gradient(circle at 30% 30%, rgba(125,153, 196, 0.6), transparent 70%),
-    #fefefe
-  `,
-},
+    {/* Faded grid background */}
+    <div
+      className="pointer-events-none absolute inset-0"
+      style={{
+        backgroundImage: `linear-gradient(rgba(37,99,235,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,0.07) 1px, transparent 1px)`,
+        backgroundSize: "48px 48px",
+        maskImage: "radial-gradient(ellipse 80% 70% at 50% 30%, black 40%, transparent 100%)",
+        WebkitMaskImage: "radial-gradient(ellipse 80% 70% at 50% 30%, black 40%, transparent 100%)",
+      }}
+    />
 
+    {/* Soft glow blobs */}
+    <div className="pointer-events-none absolute inset-0">
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[700px] rounded-full bg-blue-100 opacity-40 blur-3xl" />
+      <div className="absolute bottom-0 right-0 h-[300px] w-[400px] rounded-full bg-indigo-50 opacity-30 blur-3xl" />
+    </div>
 
+    <div className="relative z-10 mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col items-center justify-start pt-16 pb-20 text-center">
 
-
-    }}
-  >
-    <Container>
-      <Box
-        sx={{
-          minHeight: "100vh",
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          alignItems: "center",
-          justifyContent: "space-between",
-          pt: { xs: 12, md: 16 },
-          pb: { xs: 10, md: 14 },
-        }}
-      >
-        {/* LEFT CONTENT */}
-        <Box
-          sx={{
-            flex: 1,
-            maxWidth: { xs: "100%", md: "50%" },
-			mx: "auto",
-            display: "flex",
-            flexDirection: "column",
-			alignItems: "center",
-			textAlign: "center",
-            justifyContent: "center",
-            zIndex: 2,
-          }}
+        {/* Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5"
         >
-          {/* Headline */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-          >
-            <Typography
-              sx={{
-                fontWeight: 600,
-                letterSpacing: "-0.03em",
-                fontSize: {
-                  xs: "2.4rem",
-                  sm: "3.2rem",
-                  md: "3.8rem",
-                  lg: "4.2rem",
-                },
-                lineHeight: 1.05,
-                mb: 2.5,
-                color: "#0f172a",
-				maxWidth: 680,
-				mx: "auto",
-			}}
-            >
-              Redefining{" "}
-              <Box
-                component="span"
-                sx={{
-                  background:
-                    "linear-gradient(135deg,#2563eb,#4f46e5)",
-                  color: "#fff",
-                  px: 1.4,
-                  py: 0.4,
-                  borderRadius: "12px",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  mx: 0.5,
-                  boxShadow:
-                    "0 8px 24px rgba(37,99,235,0.35)",
-                }}
-              >
-                <RotatingWord
-                  words={[
-                    "Education",
-                    "Assessment",
-                    "Verification",
-                    "Collaboration",
-                  ]}
-                />
-              </Box>{" "} <br/>
-              For Every Learner.
-            </Typography>
-          </motion.div>
+          <span className="text-[13px] font-medium text-blue-700">
+            Career OS for African Students
+          </span>
+        </motion.div>
 
-          {/* Subtitle */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-          >
-            <Typography
-              sx={{
-                color: "#475569",
-                fontWeight: 400,
-                mb: 4,
-                fontSize: { xs: "1.05rem", md: "1.15rem" },
-                maxWidth: 520,
-                lineHeight: 1.6,
-              }}
-            >
-              Empowering institutions, educators, and students
-              with AI-driven simplicity and localized relevance.
-            </Typography>
-          </motion.div>
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="font-poppins max-w-[860px] text-[2.6rem] font-semibold leading-[1.1] tracking-tight text-slate-900 sm:text-[3.4rem] md:text-[4rem]"
+        >
+          Redefining{" "}
+          <span className="inline-flex items-center rounded-xl bg-blue-600 px-3 py-1 text-white mx-1">
+            <RotatingWord
+              words={["Assessment", "Learning", "Verification", "Education"]}
+            />
+          </span>
+          <br className="hidden sm:block" />
+          For Every Learner
+        </motion.h1>
 
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-          >
-            <Stack direction="row" spacing={2} justifyContent="center">
-              <Button
-                href="/waitlist"
-                sx={{
-                  background:
-                    "linear-gradient(135deg,#2563eb,#4f46e5)",
-                  color: "#fff",
-                  px: 4,
-                  py: 1.3,
-                  borderRadius: 2,
-                  textTransform: "none",
-                  fontSize: 15,
-                  fontWeight: 500,
-                  boxShadow:
-                    "0 12px 30px rgba(37,99,235,0.35)",
-                  transition: "all .2s ease",
-                  "&:hover": {
-                    transform: "translateY(-2px)",
-                    background:
-                      "linear-gradient(135deg,#1d4ed8,#4338ca)",
-                  },
-                }}
-              >
-                Get Started Free
-              </Button>
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.25 }}
+          className="mt-6 max-w-[600px] text-[1.05rem] leading-relaxed text-slate-500 md:text-[1.1rem]"
+        >
+          A social learning management system that helps African students learn
+          collaboratively and build career ready portfolios automatically.
+        </motion.p>
 
-              <Button
-                href="/#how-it-works"
-                sx={{
-                  color: "#0f172a",
-                  px: 3,
-                  py: 1.3,
-                  borderRadius: 2,
-                  textTransform: "none",
-                  fontSize: 15,
-                  fontWeight: 500,
-                  backgroundColor: "transparent",
-                  transition: "all .2s ease",
-                  "&:hover": {
-                    transform: "translateY(-2px)",
-                    backgroundColor: "rgba(15,23,42,0.05)",
-                  },
-                }}
-              >
-                View Features
-              </Button>
-            </Stack>
-          </motion.div>
-        </Box>
-        
-      </Box>
-    </Container>
-  </Box>
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-8"
+        >
+          <Link
+            href="/waitlist"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-8 py-4 text-[15px] font-medium text-white transition-all duration-200 hover:bg-blue-700 hover:-translate-y-0.5"
+          >
+            Join Waitlist
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </motion.div>
+
+      </div>
+    </div>
+  </section>
 );
 
 export default Hero;

@@ -1,61 +1,21 @@
 'use client';
 
-import Footer from '../../components/home/Footer';
-import Header from '../../components/home/Header';
-import { keyframes } from '@emotion/react';
-import {
-  CheckCircleOutline
-} from '@mui/icons-material';
-import {
-  alpha,
-  Box,
-  Container,
-  Grid,
-  Paper,
-  Typography,
-  useTheme
-} from '@mui/material';
 import Link from 'next/link';
-import type React from 'react';
 import { useEffect } from 'react';
-
-// Animation keyframes
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-const float = keyframes`
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-`;
+import Header from '@/components/home/Header';
+import Footer from '@/components/home/Footer';
 
 export default function FeedbackPage() {
-  const theme = useTheme();
   useEffect(() => {
-    // Load Zoho form script
     const script = document.createElement('script');
     script.type = 'text/javascript';
     script.innerHTML = `
       (function() {
         try{
           var f = document.createElement("iframe");
-          
+
           var ifrmSrc = 'https://forms.zohopublic.eu/olamidesokunbi15gm1/form/ShapetheFutureofLearningEdnuxFeedbackSurvey/formperma/-eK_xS2V39NEl514RFVZMFyMu-WMc_H5-DC3eA3RbXA?zf_rszfm=1';
-          
+
           try{
             if ( typeof ZFAdvLead != "undefined" && typeof zfutm_zfAdvLead != "undefined" ) {
               for( var prmIdx = 0 ; prmIdx < ZFAdvLead.utmPNameArr.length ; prmIdx ++ ) {
@@ -89,7 +49,7 @@ export default function FeedbackPage() {
               }
             }
           }catch(e){}
-          
+
           f.src = ifrmSrc;
           f.style.border="none";
           f.style.height="600px";
@@ -97,12 +57,12 @@ export default function FeedbackPage() {
           f.style.transition="all 0.5s ease";
           f.style.borderRadius="12px";
           f.setAttribute("aria-label", 'Shape the Future of Learning | Ednux Feedback Survey');
-          
+
           var d = document.getElementById("zf_div_-eK_xS2V39NEl514RFVZMFyMu-WMc_H5-DC3eA3RbXA");
           if (d) {
             d.appendChild(f);
           }
-          
+
           window.addEventListener('message', function (event){
             var evntData = event.data;
             if( evntData && evntData.constructor == String ){
@@ -118,7 +78,6 @@ export default function FeedbackPage() {
                       iframe.scrollIntoView();
                       zf_tout = true;
                   }
-
                   if ( prevIframeHeight != zf_ifrm_ht_nw ) {
                     if( zf_tout ) {
                         setTimeout(function(){
@@ -135,234 +94,115 @@ export default function FeedbackPage() {
         }catch(e){}
       })();
     `;
-    
+
     document.head.appendChild(script);
-    
     return () => {
-      // Cleanup script on unmount
-      document.head.removeChild(script);
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
     };
   }, []);
 
   return (
-    <>
+    <div className="min-h-screen bg-white font-poppins">
       <Header />
-      <Box
-        sx={{
-          minHeight: '100vh',
-          bgcolor: 'background.default',
-          py: 4,
-          position: 'relative',
-          fontFamily: 'Questrial',
-          overflow: 'hidden'
-        }}
-      >
-        {/* Decorative background elements */}
-        <Box
-          sx={{
-            position: 'absolute',
-            top: '10%',
-            left: '5%',
-            width: '300px',
-            height: '300px',
-            borderRadius: '50%',
-            background: `linear-gradient(135deg, ${alpha(theme.palette.primary.main, 0.2)} 0%, ${alpha(theme.palette.primary.light, 0.1)} 100%)`,
-            filter: 'blur(60px)',
-            zIndex: 0,
-            animation: `${float} 8s infinite ease-in-out`
-          }}
-        />
-        <Box
-          sx={{
-            position: 'absolute',
-            bottom: '15%',
-            right: '10%',
-            width: '250px',
-            height: '250px',
-            borderRadius: '50%',
-            background: `linear-gradient(135deg, ${alpha(theme.palette.secondary.main, 0.2)} 0%, ${alpha(theme.palette.secondary.light, 0.1)} 100%)`,
-            filter: 'blur(60px)',
-            zIndex: 0,
-            animation: `${float} 10s infinite ease-in-out`,
-            animationDelay: '1s'
-          }}
-        />
 
-        {/* Main Content */}
-        <Container maxWidth='lg'>
-          <Grid
-            container
-            spacing={4}
-            sx={{
-              position: 'relative',
-              zIndex: 1,
-              pt: 7,
-              fontFamily: 'Questrial'
-            }}
-          >
-            {/* Left side - Information */}
-            <Grid
-              item
-              xs={12}
-              md={5}
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center'
-              }}
-            >
-              <Box sx={{ animation: `${fadeIn} 0.6s ease-out` }}>
-                <Typography
-                  variant='h3'
-                  component='h1'
-                  fontWeight={700}
-                  gutterBottom
-                  sx={{
-                    fontFamily: 'Questrial',
-                    color:
-                      theme.palette.mode === 'dark'
-                        ? '#ffffff'
-                        : 'text.primary'
-                  }}
-                >
-                  We're Building Something Special
-                </Typography>
+      {/* Hero banner */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-700 pt-[70px]">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -top-32 -left-20 h-80 w-80 rounded-full bg-white opacity-5 blur-3xl" />
+          <div className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-white opacity-5 blur-3xl" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-[1240px] px-4 py-16 sm:px-6 lg:px-8">
+          <span className="inline-block rounded-full bg-white/15 px-4 py-1.5 text-[13px] font-medium text-white/90 mb-5">
+            Your Voice Matters
+          </span>
+          <h1 className="text-[2.4rem] font-semibold leading-tight text-white sm:text-[3rem]">
+            We&apos;re Building Something Special
+          </h1>
+          <p className="mt-4 max-w-xl text-[1.05rem] leading-relaxed text-blue-100">
+            Ednux is under development. Your feedback directly shapes Africa&apos;s next-generation
+            learning platform. Help us get it right.
+          </p>
+        </div>
+      </section>
 
-                <Typography
-                  variant='body1'
-                  paragraph
-                  sx={{
-                    mb: 3,
-                    fontSize: '1.1rem',
-                    fontFamily: 'Questrial',
-                    color:
-                      theme.palette.mode === 'dark'
-                        ? 'rgba(255, 255, 255, 0.9)'
-                        : 'text.primary'
-                  }}
-                >
-                  Ednux is currently under development, and we're working hard
-                  to bring you the best educational platform experience.
-                </Typography>
+      {/* Main content */}
+      <section className="py-16">
+        <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-5 lg:gap-16">
 
-                <Typography
-                  variant='body1'
-                  paragraph
-                  sx={{
-                    mb: 3,
-                    fontSize: '1.1rem',
-                    fontFamily: 'Questrial',
-                    color:
-                      theme.palette.mode === 'dark'
-                        ? 'rgba(255, 255, 255, 0.9)'
-                        : 'text.primary'
-                  }}
-                >
-                  Your feedback is invaluable to us! Help shape the future of
-                  Ednux by sharing your thoughts, ideas, and expectations.
-                </Typography>
+            {/* Left, Info */}
+            <div className="lg:col-span-2 flex flex-col justify-start">
+              <h2 className="text-[1.5rem] font-semibold text-slate-900">
+                Shape the Future of Learning
+              </h2>
+              <p className="mt-4 text-[0.95rem] leading-relaxed text-slate-600">
+                Ednux is currently under development, and we&apos;re working hard to bring you
+                the best educational platform experience.
+              </p>
+              <p className="mt-3 text-[0.95rem] leading-relaxed text-slate-600">
+                Your feedback is invaluable. Help shape the future of Ednux by sharing
+                your thoughts, ideas, and expectations.
+              </p>
+              <p className="mt-3 text-[0.95rem] leading-relaxed text-slate-600">
+                Subscribe to our newsletter to stay updated on our progress and be the
+                first to know when we launch.
+              </p>
 
-                <Typography
-                  variant='body1'
-                  paragraph
-                  sx={{
-                    fontSize: '1.1rem',
-                    fontFamily: 'Questrial',
-                    color:
-                      theme.palette.mode === 'dark'
-                        ? 'rgba(255, 255, 255, 0.9)'
-                        : 'text.primary'
-                  }}
-                >
-                  Subscribe to our newsletter to stay updated on our progress
-                  and be the first to know when we launch.
-                </Typography>
+              {/* Benefit callout */}
+              <div className="mt-8 flex gap-3 rounded-xl border border-blue-100 bg-blue-50 p-4">
+                <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 mt-0.5">
+                  <svg className="h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </div>
+                <p className="text-[0.88rem] leading-relaxed text-slate-700">
+                  Early contributors will receive{' '}
+                  <strong className="text-blue-700">exclusive access</strong> to our beta
+                  version and special launch benefits!
+                </p>
+              </div>
 
-                <Box
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    mt: 4,
-                    p: 2,
-                    fontFamily: 'Questrial',
-                    borderRadius: 2,
-                    bgcolor: alpha(
-                      theme.palette.primary.main,
-                      theme.palette.mode === 'dark' ? 0.1 : 0.05
-                    ),
-                    border: `1px solid ${alpha(theme.palette.primary.main, theme.palette.mode === 'dark' ? 0.2 : 0.1)}`
-                  }}
+              {/* Links */}
+              <div className="mt-8 flex flex-col gap-3">
+                <Link
+                  href="/waitlist"
+                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-3 text-[14px] font-medium text-white shadow-md shadow-blue-500/25 transition-all hover:-translate-y-0.5"
                 >
-                  <CheckCircleOutline color='primary' sx={{ mr: 2 }} />
-                  <Typography
-                    variant='body2'
-                    sx={{
-                      color:
-                        theme.palette.mode === 'dark'
-                          ? 'rgba(255, 255, 255, 0.9)'
-                          : 'text.primary'
-                    }}
-                  >
-                    Early subscribers will receive{' '}
-                    <strong>exclusive access</strong> to our beta version and
-                    special launch offers!
-                  </Typography>
-                </Box>
-              </Box>
-            </Grid>
+                  Join the Waitlist
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-[14px] font-medium text-slate-700 hover:bg-slate-50 transition-colors"
+                >
+                  Contact Us Directly
+                </Link>
+              </div>
+            </div>
 
-            {/* Right side - Zoho Form */}
-            <Grid item xs={12} md={7}>
-              <Paper
-                elevation={0}
-                sx={{
-                  animation: `${fadeIn} 0.8s ease-out`,
-                  animationDelay: '0.2s'
-                }}
-              >
-                <Typography
-                  variant='h5'
-                  component='h2'
-                  fontWeight={600}
-                  gutterBottom
-                  sx={{
-                    fontFamily: 'Questrial',
-                    color: theme.palette.mode === 'dark' ? '#ffffff' : 'text.primary',
-                    mb: 3
-                  }}
-                >
-                  Share Your Feedback
-                </Typography>
-
-                <Typography
-                  variant='body2'
-                  sx={{
-                    mb: 3,
-                    color: theme.palette.mode === 'dark'
-                      ? 'rgba(255, 255, 255, 0.7)'
-                      : 'text.secondary'
-                  }}
-                >
+            {/* Right, Zoho Form */}
+            <div className="lg:col-span-3">
+              <div className="mb-4">
+                <h3 className="text-[1.2rem] font-semibold text-slate-900">Share Your Feedback</h3>
+                <p className="mt-1 text-[0.88rem] text-slate-500">
                   Help us create the perfect educational experience for you
-                </Typography>
+                </p>
+              </div>
+              <div
+                id="zf_div_-eK_xS2V39NEl514RFVZMFyMu-WMc_H5-DC3eA3RbXA"
+                className="w-full min-h-[500px] rounded-2xl border border-slate-200 bg-slate-50 overflow-hidden"
+              />
+            </div>
 
-                {/* Zoho Form Container */}
-                <Box
-                  id="zf_div_-eK_xS2V39NEl514RFVZMFyMu-WMc_H5-DC3eA3RbXA"
-                  sx={{
-                    width: '100%',
-                    minHeight: '500px',
-                    '& iframe': {
-                      boxShadow: theme.shadows[1]
-                    }
-                  }}
-                />
-              </Paper>
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
+          </div>
+        </div>
+      </section>
+
       <Footer />
-    </>
+    </div>
   );
 }
