@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
             <h1 className="font-poppins text-[2.4rem] font-semibold leading-tight tracking-tight text-slate-900 sm:text-[3rem]">
               Privacy Policy
             </h1>
-            <p className="mt-4 text-[0.95rem] text-slate-500">Effective Date: October 10, 2025</p>
+            <p className="mt-4 text-[0.95rem] text-slate-500">Effective Date: January 1, 2026</p>
           </div>
         </div>
       </section>
@@ -41,165 +41,153 @@ export default function PrivacyPolicyPage() {
 
         <section>
           <p className="text-[0.97rem] leading-[1.85] text-slate-600">
-            This Privacy Policy details how Ednux processes Personal Data related to the operation of the LMS and the VCL. We are committed to processing data in accordance with GDPR and CCPA principles, emphasizing privacy-by-design and Self-Sovereign Identity (SSI) principles.
+            At Ednux, your data is not a product. It is the foundation of something you own: your verified career identity. This Privacy Policy explains what information we collect, why we collect it, how we use it, and the rights you have over it. We built Ednux because African students deserve better tools. We protect your data with the same seriousness.
           </p>
         </section>
 
         <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">1. Data Controller and Legal Framework</h2>
-          <div className="space-y-3 text-[0.97rem] leading-[1.85] text-slate-600">
-            <p><span className="font-medium text-slate-800">Data Controller:</span> Ednux Technology Services.</p>
-            <p><span className="font-medium text-slate-800">Joint Controllership:</span> Where you are enrolled through an institution (Issuer), Ednux and the Issuer may operate as joint controllers for the purposes of educational data processing, with responsibilities delineated by separate agreement.</p>
-            <p><span className="font-medium text-slate-800">Legal Basis:</span> Processing is primarily based on Contractual Necessity (Article 6(1)(b) of GDPR) to deliver the LMS and VCL, and Legitimate Interest (Article 6(1)(f) of GDPR) for auditing and refining the Interpretable ML Engine's fairness.</p>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">2. Categories of Personal Data Processed</h2>
-          <div className="overflow-x-auto rounded-2xl border border-slate-200">
-            <table className="w-full border-collapse text-[0.93rem]">
-              <thead className="bg-slate-50">
-                <tr>
-                  <th className="px-5 py-3.5 text-left font-semibold text-slate-800 border-b border-slate-200">Data Category</th>
-                  <th className="px-5 py-3.5 text-left font-semibold text-slate-800 border-b border-slate-200">Specific Data Points</th>
-                  <th className="px-5 py-3.5 text-left font-semibold text-slate-800 border-b border-slate-200">Purpose of Processing</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                <tr className="hover:bg-slate-50 transition-colors">
-                  <td className="px-5 py-4 font-medium text-slate-700">A. Identity & Account Data</td>
-                  <td className="px-5 py-4 text-slate-600">Full Name, Email, Institutional ID, Hashed Password, Decentralized Identifier (DID).</td>
-                  <td className="px-5 py-4 text-slate-600">Account provisioning, identity resolution for VC issuance, and secure access via Clerk.</td>
-                </tr>
-                <tr className="hover:bg-slate-50 transition-colors">
-                  <td className="px-5 py-4 font-medium text-slate-700">B. Performance & Interaction Data</td>
-                  <td className="px-5 py-4 text-slate-600">Course completion rates, assessment results, submission frequency, collaborative efficacy metrics, time-on-task.</td>
-                  <td className="px-5 py-4 text-slate-600">Primary input for the Interpretable ML Engine to calculate objective competency metrics.</td>
-                </tr>
-                <tr className="hover:bg-slate-50 transition-colors">
-                  <td className="px-5 py-4 font-medium text-slate-700">C. Cryptographic Data</td>
-                  <td className="px-5 py-4 text-slate-600">Public Key, VC Hash, VC Revocation Status (on Stellar).</td>
-                  <td className="px-5 py-4 text-slate-600">Anchoring the proof of the VC on the Stellar Soroban VDR. This public data contains no direct identifying Personal Data.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">3. Purpose of Processing and Data Minimization</h2>
-          <div className="space-y-5">
-            <div>
-              <h3 className="font-medium text-slate-800 mb-1.5">3.1. Core Service Delivery</h3>
-              <p className="text-[0.97rem] leading-[1.85] text-slate-600">Data is processed to provide the personalized LMS experience and issue W3C-compliant VCs.</p>
-            </div>
-            <div>
-              <h3 className="font-medium text-slate-800 mb-1.5">3.2. Interpretable ML Engine Operation</h3>
-              <p className="text-[0.97rem] leading-[1.85] text-slate-600">Performance Data is used to train and run the Interpretable ML Engine. This process is continuously audited to ensure algorithmic fairness and mitigate bias in competency scoring, aligning with ethical data practices.</p>
-            </div>
-            <div>
-              <h3 className="font-medium text-slate-800 mb-1.5">3.3. Stellar VDR Usage (Data Minimization)</h3>
-              <p className="text-[0.97rem] leading-[1.85] text-slate-600">We adhere to strict data minimization. We only record the cryptographic hash and revocation status of the VC on the public Stellar Soroban ledger. Your name, scores, and private educational records remain securely in our off-chain database.</p>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">4. Data Sharing and Transfer</h2>
-          <div className="space-y-5">
-            <div>
-              <h3 className="font-medium text-slate-800 mb-1.5">4.1. Issuing Institutions</h3>
-              <p className="text-[0.97rem] leading-[1.85] text-slate-600">We share Performance and Identity Data with your Issuer to comply with their pedagogical and regulatory requirements and to enable them to issue VCs.</p>
-            </div>
-            <div>
-              <h3 className="font-medium text-slate-800 mb-1.5">4.2. Holder-Controlled Disclosure (SSI)</h3>
-              <p className="text-[0.97rem] leading-[1.85] text-slate-600">When you, the Holder, choose to present a VC to a third-party Verifier (e.g., an employer), the sharing is executed under your control. Ednux facilitates this by supporting the use of Zero-Knowledge Proofs (ZKP), allowing you to prove a claim without disclosing the underlying raw, sensitive metric.</p>
-            </div>
-            <div>
-              <h3 className="font-medium text-slate-800 mb-1.5">4.3. Data Transfer (International)</h3>
-              <p className="text-[0.97rem] leading-[1.85] text-slate-600">Data may be transferred to and processed in jurisdictions outside your country of residence. We ensure that any international data transfers are protected by adequate legal mechanisms (e.g., Standard Contractual Clauses, where applicable).</p>
-              <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-5 text-[0.93rem] leading-[1.8] text-slate-600 space-y-3">
-                <p><span className="font-medium text-slate-800">Outside the EU/EEA (including African countries):</span> Where Personal Data is processed in countries not subject to the GDPR, Ednux aligns its practices to local privacy frameworks while maintaining GDPR-level safeguards.</p>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li><span className="font-medium text-slate-700">Nigeria (NDPR):</span> We apply NDPR principles of lawfulness, purpose limitation, data minimization, and security, and execute appropriate Data Processing Agreements and DPIAs where required.</li>
-                  <li><span className="font-medium text-slate-700">Kenya (Data Protection Act, 2019):</span> We honor requirements on consent, purpose limitation, data subject rights, and registration of data controllers/processors where applicable.</li>
-                  <li><span className="font-medium text-slate-700">South Africa (POPIA):</span> We comply with conditions for lawful processing, information quality, openness, and security safeguards.</li>
-                  <li><span className="font-medium text-slate-700">Other African jurisdictions:</span> We map local obligations to our GDPR controls and ensure contractual and technical measures meet or exceed local standards.</li>
-                </ul>
-                <p>In all cases, we implement encryption in transit and at rest, strict access controls, and minimum-necessary processing.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">5. Your Data Rights (GDPR/CCPA Alignment)</h2>
-          <p className="text-[0.97rem] leading-[1.85] text-slate-600 mb-5">You maintain full control over your Personal Data, subject to the limitations imposed by the decentralized ledger:</p>
-          <div className="space-y-5">
-            {[
-              { n: '5.1', title: 'Right of Access and Portability', body: 'You have the right to obtain confirmation of whether your data is being processed. Since Ednux VCs are built on SSI, your core verifiable data is inherently portable and available in your digital wallet.' },
-              { n: '5.2', title: 'Right to Rectification', body: 'You can request the correction of inaccurate data in our centralized LMS records.' },
-              { n: '5.3', title: 'Right to Erasure ("Right to be Forgotten")', body: 'You may request the deletion of your Personal Data from the Ednux centralized database. Note: the cryptographic data anchored to the immutable Stellar Soroban VDR cannot be deleted or modified due to the core principles of Distributed Ledger Technology.' },
-              { n: '5.4', title: 'Restriction, Objection, and Direct Marketing Controls', body: 'You may request that we restrict processing in specific circumstances and you may object to processing based on legitimate interests, including profiling. You can opt out of direct marketing at any time.' },
-              { n: '5.5', title: 'Automated Decision-Making and Profiling Transparency', body: 'Ednux uses an Interpretable ML Engine to compute competency metrics. These scores are designed to be explainable and auditable. You have the right to obtain meaningful information about the logic involved and to request human review where legally required.' },
-              { n: '5.6', title: 'Withdrawal of Consent', body: 'Where processing is based on consent, you may withdraw consent at any time without affecting the lawfulness of processing before withdrawal.' },
-              { n: '5.8', title: 'Identity Verification and Response Times', body: 'To protect your data, we may need to verify your identity before acting on a request. We aim to respond within one month (or the timeframe required by local law).' },
-              { n: '5.9', title: 'How to Exercise Your Rights', body: null },
-            ].map((item) => (
-              <div key={item.n}>
-                <h3 className="font-medium text-slate-800 mb-1.5">{item.n}. {item.title}</h3>
-                {item.body ? (
-                  <p className="text-[0.97rem] leading-[1.85] text-slate-600">{item.body}</p>
-                ) : (
-                  <p className="text-[0.97rem] leading-[1.85] text-slate-600">
-                    You can submit requests via in-app privacy settings or by emailing{' '}
-                    <a href="mailto:support@ednux.com" className="text-blue-600 hover:underline">support@ednux.com</a>.
-                  </p>
-                )}
-              </div>
-            ))}
-            <div>
-              <h3 className="font-medium text-slate-800 mb-1.5">5.7. Complaints to Supervisory Authorities</h3>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-[0.93rem] leading-[1.8] text-slate-600">
-                <p className="mb-2">You may lodge a complaint with a data protection authority in your jurisdiction:</p>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li><span className="font-medium text-slate-700">EU/EEA:</span> Your local Data Protection Authority (DPA).</li>
-                  <li><span className="font-medium text-slate-700">Nigeria:</span> Nigeria Data Protection Commission (NDPC).</li>
-                  <li><span className="font-medium text-slate-700">Kenya:</span> Office of the Data Protection Commissioner (ODPC).</li>
-                  <li><span className="font-medium text-slate-700">South Africa:</span> Information Regulator (POPIA).</li>
-                  <li><span className="font-medium text-slate-700">Other regions:</span> The competent supervisory authority defined by applicable law.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">6. Data Security and Retention</h2>
-          <div className="space-y-5">
-            <div>
-              <h3 className="font-medium text-slate-800 mb-1.5">Data Security</h3>
-              <p className="text-[0.97rem] leading-[1.85] text-slate-600">We employ industry-standard technical and organizational measures, including encryption, pseudonymization, and tokenization, to protect Personal Data from unauthorized access or breach.</p>
-            </div>
-            <div>
-              <h3 className="font-medium text-slate-800 mb-1.5">Data Retention</h3>
-              <p className="text-[0.97rem] leading-[1.85] text-slate-600">We retain Personal Data for the duration of your active account relationship or as required by our agreement with your Issuer. Pseudonymized, non-identifiable data may be retained indefinitely for maintaining and auditing the historical integrity of the Interpretable ML Engine.</p>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">7. Contact Information</h2>
-          <p className="text-[0.97rem] leading-[1.85] text-slate-600 mb-4">If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-[0.95rem] text-slate-700">
-            <span className="font-medium">Email:</span>{' '}
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">1. Who We Are</h2>
+          <p className="text-[0.97rem] leading-[1.85] text-slate-600">
+            Ednux is a Career Operating System for African students. We operate a social learning management system that helps students learn collaboratively, track skills in real time, and build verified career portfolios automatically. We are the data controller for all personal information processed through the Ednux platform.
+          </p>
+          <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-[0.95rem] text-slate-700">
+            <span className="font-medium">Contact:</span>{' '}
             <a href="mailto:support@ednux.com" className="text-blue-600 hover:underline">support@ednux.com</a>
           </div>
         </section>
 
         <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">8. Updates to This Policy</h2>
-          <p className="text-[0.97rem] leading-[1.85] text-slate-600">We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new Privacy Policy on this page and updating the Effective Date.</p>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">2. What Information We Collect</h2>
+          <div className="space-y-5">
+            <div>
+              <h3 className="font-medium text-slate-800 mb-1.5">2.1. Account Information</h3>
+              <p className="text-[0.97rem] leading-[1.85] text-slate-600">When you create an account, we collect your full name, email address, institution name, and year of study. This is used to create your student identity on Ednux.</p>
+            </div>
+            <div>
+              <h3 className="font-medium text-slate-800 mb-1.5">2.2. Learning and Activity Data</h3>
+              <p className="text-[0.97rem] leading-[1.85] text-slate-600">We collect data about how you use the platform, including courses completed, assignments submitted, projects contributed to, skills endorsed by lecturers or peers, group activity, and time spent learning. This data powers your Living Portfolio and skill tracking features.</p>
+            </div>
+            <div>
+              <h3 className="font-medium text-slate-800 mb-1.5">2.3. Institution-Linked Data</h3>
+              <p className="text-[0.97rem] leading-[1.85] text-slate-600">If you are enrolled through an institution, your institution may share enrollment information with us to verify your student status and link institutional records to your Ednux profile.</p>
+            </div>
+            <div>
+              <h3 className="font-medium text-slate-800 mb-1.5">2.4. Communications</h3>
+              <p className="text-[0.97rem] leading-[1.85] text-slate-600">If you contact us via email or our feedback form, we collect the content of those communications to respond to you and improve the platform.</p>
+            </div>
+            <div>
+              <h3 className="font-medium text-slate-800 mb-1.5">2.5. Usage and Technical Data</h3>
+              <p className="text-[0.97rem] leading-[1.85] text-slate-600">We collect standard technical data including device type, browser type, IP address, and page interactions. This helps us keep the platform running reliably and improve the user experience.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">3. How We Use Your Information</h2>
+          <div className="space-y-3 text-[0.97rem] leading-[1.85] text-slate-600">
+            <p>We use your data only for purposes that serve you directly:</p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>To create and maintain your Ednux student identity and profile</li>
+              <li>To build and update your Living Portfolio automatically as you learn</li>
+              <li>To track your skills in real time and generate verified competency records</li>
+              <li>To power collaborative learning spaces, study groups, and team projects</li>
+              <li>To issue verified endorsements from lecturers and institutions</li>
+              <li>To make your verified skills discoverable to employers when you choose to share them</li>
+              <li>To improve the platform based on how students use it</li>
+              <li>To send you important account updates and platform notifications</li>
+            </ul>
+            <p>We do not sell your personal data. We do not use your data for advertising. Your career proof belongs to you.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">4. Sharing Your Information</h2>
+          <div className="space-y-5">
+            <div>
+              <h3 className="font-medium text-slate-800 mb-1.5">4.1. Institutions</h3>
+              <p className="text-[0.97rem] leading-[1.85] text-slate-600">We share relevant learning and performance data with your enrolled institution to support course management, assessment, and institutional verification of your skills. Institutions accessing your data do so under data processing agreements with Ednux.</p>
+            </div>
+            <div>
+              <h3 className="font-medium text-slate-800 mb-1.5">4.2. Employers</h3>
+              <p className="text-[0.97rem] leading-[1.85] text-slate-600">Your verified skills and portfolio are only visible to employers when you explicitly choose to share them. We will never surface your profile to an employer without your consent.</p>
+            </div>
+            <div>
+              <h3 className="font-medium text-slate-800 mb-1.5">4.3. Service Providers</h3>
+              <p className="text-[0.97rem] leading-[1.85] text-slate-600">We work with trusted third-party providers (including authentication, hosting, and analytics services) who process data on our behalf under strict confidentiality obligations. These providers are not permitted to use your data for their own purposes.</p>
+            </div>
+            <div>
+              <h3 className="font-medium text-slate-800 mb-1.5">4.4. Legal Requirements</h3>
+              <p className="text-[0.97rem] leading-[1.85] text-slate-600">We may disclose your information where required by law, court order, or to protect the rights, safety, or property of Ednux or others.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">5. Your Rights</h2>
+          <p className="text-[0.97rem] leading-[1.85] text-slate-600 mb-4">You have full control over your personal data. Depending on your jurisdiction, your rights include:</p>
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-[0.93rem] leading-[1.8] text-slate-600">
+            <ul className="space-y-2">
+              <li><span className="font-medium text-slate-700">Access:</span> Request a copy of the data we hold about you.</li>
+              <li><span className="font-medium text-slate-700">Correction:</span> Request that inaccurate data be corrected.</li>
+              <li><span className="font-medium text-slate-700">Deletion:</span> Request that your personal data be deleted from our systems.</li>
+              <li><span className="font-medium text-slate-700">Portability:</span> Request your data in a portable format so you can take it with you.</li>
+              <li><span className="font-medium text-slate-700">Objection:</span> Object to specific types of data processing, including profiling.</li>
+              <li><span className="font-medium text-slate-700">Withdrawal of Consent:</span> Where we rely on consent, you may withdraw it at any time.</li>
+            </ul>
+          </div>
+          <p className="mt-4 text-[0.97rem] leading-[1.85] text-slate-600">
+            To exercise any of these rights, email us at <a href="mailto:support@ednux.com" className="text-blue-600 hover:underline">support@ednux.com</a>. We will respond within 30 days.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">6. Data Security</h2>
+          <p className="text-[0.97rem] leading-[1.85] text-slate-600">
+            We use industry-standard security measures to protect your data, including encryption in transit and at rest, secure authentication, and strict access controls. Only authorised Ednux team members with a clear need can access personal data. We regularly review and improve our security practices.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">7. Data Retention</h2>
+          <p className="text-[0.97rem] leading-[1.85] text-slate-600">
+            We retain your personal data for as long as your account is active or as needed to provide our services. If you delete your account, we will delete or anonymize your personal data within 90 days, except where we are required by law to retain it longer. Your verified skill records and portfolio data, once generated, may be retained in anonymized form to maintain the integrity of institutional records.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">8. Cookies</h2>
+          <p className="text-[0.97rem] leading-[1.85] text-slate-600">
+            We use cookies and similar technologies to keep you logged in, remember your preferences, and understand how the platform is used. You can manage cookie preferences through your browser settings. Disabling certain cookies may affect platform functionality.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">9. Regional Privacy Rights</h2>
+          <p className="text-[0.97rem] leading-[1.85] text-slate-600 mb-4">
+            Ednux is built for African students. We take local data protection laws seriously across our primary markets:
+          </p>
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-[0.93rem] leading-[1.8] text-slate-600 space-y-2">
+            <p><span className="font-medium text-slate-700">Nigeria (NDPR/NDP Act):</span> We comply with principles of lawful processing, purpose limitation, data minimization, and data subject rights under the Nigeria Data Protection Regulation.</p>
+            <p><span className="font-medium text-slate-700">Kenya (Data Protection Act, 2019):</span> We honor consent requirements, purpose limitation, and the rights of data subjects as recognized by the Office of the Data Protection Commissioner.</p>
+            <p><span className="font-medium text-slate-700">South Africa (POPIA):</span> We comply with the conditions for lawful processing and security safeguards under the Protection of Personal Information Act.</p>
+            <p><span className="font-medium text-slate-700">Other African countries:</span> We apply GDPR-equivalent safeguards as a minimum standard across all jurisdictions where Ednux operates.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">10. Changes to This Policy</h2>
+          <p className="text-[0.97rem] leading-[1.85] text-slate-600">
+            We may update this Privacy Policy as the platform evolves. When we make material changes, we will notify you by email or through an in-app notice. The updated policy will always show the revised Effective Date at the top of this page.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">11. Contact Us</h2>
+          <p className="text-[0.97rem] leading-[1.85] text-slate-600 mb-4">Questions about this Privacy Policy or how we handle your data? We want to hear from you.</p>
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-[0.95rem] text-slate-700">
+            <span className="font-medium">Email:</span>{' '}
+            <a href="mailto:support@ednux.com" className="text-blue-600 hover:underline">support@ednux.com</a>
+          </div>
         </section>
 
       </div>

@@ -31,7 +31,7 @@ export default function TermsOfServicePage() {
             <h1 className="font-poppins text-[2.4rem] font-semibold leading-tight tracking-tight text-slate-900 sm:text-[3rem]">
               Terms of Service
             </h1>
-            <p className="mt-4 text-[0.95rem] text-slate-500">Effective Date: October 10, 2025</p>
+            <p className="mt-4 text-[0.95rem] text-slate-500">Effective Date: January 1, 2026</p>
           </div>
         </div>
       </section>
@@ -41,120 +41,122 @@ export default function TermsOfServicePage() {
 
         <section>
           <p className="text-[0.97rem] leading-[1.85] text-slate-600">
-            These Terms of Service ("Terms") constitute a legally binding agreement between you ("User," "Holder," or "Issuer") and Ednux Technology Services ("Ednux," "we," or "us") governing access to the Ednux Learning Management System (LMS) and the Verifiable Competency Loop (VCL), including all associated software, interfaces, APIs, and the use of the Stellar Soroban blockchain for credential anchoring. By accessing or utilizing the Services, you confirm your unqualified acceptance of these Terms.
+            These Terms of Service ("Terms") govern your access to and use of the Ednux platform, including the learning management system, skill tracking tools, portfolio builder, and all associated features ("Services"). By creating an account or using any part of Ednux, you agree to be bound by these Terms. If you are using Ednux on behalf of an institution, you confirm that you have authority to bind that institution.
           </p>
         </section>
 
         <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">1. Preamble and Acceptance</h2>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">1. What Ednux Is</h2>
           <p className="text-[0.97rem] leading-[1.85] text-slate-600">
-            If you are acting on behalf of an institution, you warrant that you have full legal authority to bind that entity. These Terms govern your use of all Services and supersede any prior agreements between you and Ednux relating to the subject matter herein.
+            Ednux is a Career Operating System for African students. We provide a social learning management system that turns every class, project, assignment, and endorsement into verified, tamper-proof career proof. Our goal is to solve the documentation and visibility problem that prevents talented African graduates from accessing opportunity.
+          </p>
+          <p className="mt-4 text-[0.97rem] leading-[1.85] text-slate-600">
+            Ednux is currently in pre-launch. By joining the waitlist or accessing any part of the platform, you agree to these Terms.
           </p>
         </section>
 
         <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">2. Definitions of Core Technology & Roles</h2>
-          <div className="overflow-x-auto rounded-2xl border border-slate-200">
-            <table className="w-full border-collapse text-[0.93rem]">
-              <thead className="bg-slate-50">
-                <tr>
-                  <th className="px-5 py-3.5 text-left font-semibold text-slate-800 border-b border-slate-200">Term</th>
-                  <th className="px-5 py-3.5 text-left font-semibold text-slate-800 border-b border-slate-200">Definition in the Context of Ednux</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {[
-                  { term: 'Verifiable Credential (VC)', def: 'A tamper-proof, cryptographic credential issued in accordance with the W3C Verifiable Credential Data Model.' },
-                  { term: 'Decentralized Identifier (DID)', def: 'A globally unique identifier controlled by the User, created and anchored utilizing the DID:STLLR method on the Soroban network.' },
-                  { term: 'Interpretable ML Engine', def: 'The proprietary software system utilizing models to generate auditable, objective competency metrics from user performance data.' },
-                  { term: 'Holder', def: 'The individual User who possesses and controls their DID and VCs within their digital wallet.' },
-                  { term: 'Issuer', def: 'An Institution or Organization (e.g., University) that legally attests to and issues a VC to a Holder via the Ednux platform.' },
-                  { term: 'Verifiable Data Registry (VDR)', def: 'The Stellar Soroban ledger, used solely to anchor the public keys, DID documents, and revocation status of VCs. No Personal Data is stored on the Stellar public ledger.' },
-                ].map((row) => (
-                  <tr key={row.term} className="hover:bg-slate-50 transition-colors">
-                    <td className="px-5 py-4 font-medium text-slate-700 align-top whitespace-nowrap">{row.term}</td>
-                    <td className="px-5 py-4 text-slate-600">{row.def}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">2. Eligibility</h2>
+          <p className="text-[0.97rem] leading-[1.85] text-slate-600">
+            You must be at least 16 years old to use Ednux. By using the platform, you confirm that the information you provide during registration is accurate and up to date. Ednux is primarily designed for students enrolled in African educational institutions, though use is not restricted to those regions.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">3. Your Account</h2>
+          <div className="space-y-4 text-[0.97rem] leading-[1.85] text-slate-600">
+            <p>You are responsible for maintaining the security of your account credentials. Do not share your password. Notify us immediately at <a href="mailto:support@ednux.com" className="text-blue-600 hover:underline">support@ednux.com</a> if you suspect unauthorized access to your account.</p>
+            <p>You are responsible for all activity that occurs under your account. Ednux will not be liable for any loss resulting from unauthorized use of your account due to your failure to keep credentials secure.</p>
           </div>
         </section>
 
         <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">3. Service Provision and Self-Sovereign Identity (SSI)</h2>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">4. Your Data and Your Portfolio</h2>
           <div className="space-y-5">
             <div>
-              <h3 className="font-medium text-slate-800 mb-1.5">3.1. Provision of Services</h3>
-              <p className="text-[0.97rem] leading-[1.85] text-slate-600">Ednux grants the User a limited, non-exclusive, non-transferable right to access and use the LMS and VCL.</p>
+              <h3 className="font-medium text-slate-800 mb-1.5">4.1. Ownership</h3>
+              <p className="text-[0.97rem] leading-[1.85] text-slate-600">You own your data. Your verified skill records, portfolio, and career proof belong to you. Ednux does not claim ownership over the content you create or the achievements you earn on the platform.</p>
             </div>
             <div>
-              <h3 className="font-medium text-slate-800 mb-1.5">3.2. SSI Acknowledgment</h3>
-              <p className="text-[0.97rem] leading-[1.85] text-slate-600">The User acknowledges and agrees that the Self-Sovereign Identity (SSI) model places control and responsibility for private cryptographic keys and the presentation of VCs entirely with the Holder. Ednux does not maintain custody of private keys and cannot recover lost or compromised DIDs.</p>
+              <h3 className="font-medium text-slate-800 mb-1.5">4.2. License to Operate</h3>
+              <p className="text-[0.97rem] leading-[1.85] text-slate-600">By using Ednux, you grant us a limited, non-exclusive license to process your learning and activity data for the sole purpose of generating your skill records, portfolio, and verified competency metrics. We use this data to provide the service to you, not to sell or monetize it independently.</p>
             </div>
             <div>
-              <h3 className="font-medium text-slate-800 mb-1.5">3.3. Credential Accuracy</h3>
-              <p className="text-[0.97rem] leading-[1.85] text-slate-600">Issuers are solely responsible for the factual accuracy of the claims contained within any VC they issue through the Ednux platform.</p>
+              <h3 className="font-medium text-slate-800 mb-1.5">4.3. Accuracy of Records</h3>
+              <p className="text-[0.97rem] leading-[1.85] text-slate-600">Where institutions or lecturers issue endorsements or verifications through Ednux, those parties are responsible for the accuracy of the claims they make. Ednux facilitates the recording and verification process but does not independently verify the underlying academic claims.</p>
             </div>
           </div>
         </section>
 
         <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">4. Data Integrity and Acceptable Use</h2>
-          <div className="space-y-5">
-            <div>
-              <h3 className="font-medium text-slate-800 mb-1.5">4.1. Data Input License</h3>
-              <p className="text-[0.97rem] leading-[1.85] text-slate-600">By using the LMS, the User grants Ednux a perpetual, royalty-free, and sub-licensable license to use User Performance Data for the express purposes of: (a) generating Verifiable Competency Metrics; and (b) training, auditing, and refining the Interpretable ML Engine to ensure fairness and accuracy.</p>
-            </div>
-            <div>
-              <h3 className="font-medium text-slate-800 mb-1.5">4.2. Prohibition of Fraud</h3>
-              <p className="text-[0.97rem] leading-[1.85] text-slate-600">Any attempt to manipulate performance data, game the ML Engine, or fraudulently alter a VC will constitute a material breach of these Terms, resulting in immediate suspension, termination, and the definitive anchoring of a Revocation Status on the Stellar VDR.</p>
-            </div>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">5. Acceptable Use</h2>
+          <p className="text-[0.97rem] leading-[1.85] text-slate-600 mb-4">You agree not to use Ednux in any way that:</p>
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-[0.93rem] leading-[1.8] text-slate-600">
+            <ul className="space-y-2 list-disc pl-5">
+              <li>Misrepresents your identity, academic record, or skills</li>
+              <li>Attempts to manipulate, falsify, or game the skill tracking or endorsement system</li>
+              <li>Infringes on the intellectual property rights of Ednux or any third party</li>
+              <li>Violates the privacy or rights of other users, students, or institutions</li>
+              <li>Uploads malicious code, engages in hacking, or attempts to disrupt platform infrastructure</li>
+              <li>Harasses, threatens, or abuses other users through Ednux's collaborative features</li>
+              <li>Uses the platform for any unlawful purpose under applicable law</li>
+            </ul>
           </div>
+          <p className="mt-4 text-[0.97rem] leading-[1.85] text-slate-600">Violations of this section may result in immediate suspension or permanent termination of your account. Fraudulent manipulation of skill records will be logged and cannot be reversed.</p>
         </section>
 
         <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">5. Disclaimer of Warranties and Limitation of Liability</h2>
-          <div className="space-y-5">
-            <div>
-              <h3 className="font-medium text-slate-800 mb-1.5">5.1. No Warranties</h3>
-              <p className="text-[0.97rem] leading-[1.85] text-slate-600">The Services, including the VCL and the underlying Stellar Soroban infrastructure, are provided on an "as-is" and "as-available" basis. Ednux expressly disclaims all warranties, whether express, implied, or statutory, including warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
-            </div>
-            <div>
-              <h3 className="font-medium text-slate-800 mb-1.5">5.2. Limitation of Liability</h3>
-              <p className="text-[0.97rem] leading-[1.85] text-slate-600">To the maximum extent permitted by law, Ednux shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits or loss of data, arising from the use of the Services or any failure of the Stellar network. In no event shall Ednux's total liability exceed the greater of (i) fifty U.S. Dollars ($50.00) or (ii) the amount paid by you to Ednux in the six (6) months preceding the claim.</p>
-            </div>
-          </div>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">6. Institutional Use</h2>
+          <p className="text-[0.97rem] leading-[1.85] text-slate-600">
+            Institutions that use Ednux to manage courses, issue endorsements, or verify student competencies do so under a separate institutional agreement with Ednux. Institutions are responsible for ensuring that their use of the platform complies with applicable student data protection laws in their jurisdiction. Institutions may not access student data beyond what is necessary for educational administration and verification.
+          </p>
         </section>
 
         <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">6. Indemnification</h2>
-          <p className="text-[0.97rem] leading-[1.85] text-slate-600">You agree to indemnify, defend, and hold harmless Ednux, its affiliates, directors, and employees from and against any and all claims, liabilities, damages, and costs (including reasonable attorneys' fees) arising out of or related to: (a) your use of the Services; (b) your breach of these Terms; or (c) your violation of any applicable law or the rights of any third party.</p>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">7. Intellectual Property</h2>
+          <p className="text-[0.97rem] leading-[1.85] text-slate-600">
+            The Ednux name, logo, platform design, software architecture, and all associated intellectual property are owned by Ednux Technology Services. Nothing in these Terms grants you a right to use any Ednux branding, trademarks, or proprietary technology outside of normal platform use. You may not copy, reproduce, or reverse-engineer any part of the Ednux platform without express written permission.
+          </p>
         </section>
 
         <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">7. Governing Law and Dispute Resolution</h2>
-          <p className="text-[0.97rem] leading-[1.85] text-slate-600">These Terms shall be governed by and construed in accordance with the laws of the State of Delaware, United States, without regard to its conflict of law principles. Any dispute arising from these Terms shall be resolved by binding arbitration in New York, New York, in accordance with the rules of the American Arbitration Association.</p>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">8. Platform Availability</h2>
+          <p className="text-[0.97rem] leading-[1.85] text-slate-600">
+            We aim to keep Ednux available and reliable, but we do not guarantee uninterrupted access. The platform may be temporarily unavailable due to maintenance, updates, or factors outside our control. Ednux is provided on an "as-is" and "as-available" basis, especially during the pre-launch and early access phases. We are actively building and improving the product.
+          </p>
         </section>
 
         <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">8. Intellectual Property Rights</h2>
-          <p className="text-[0.97rem] leading-[1.85] text-slate-600">The Ednux platform, including its software, architecture, and the design of the Interpretable ML Engine, is the exclusive property of Ednux Technology Services. All trademarks, service marks, and trade names used in connection with the Services are the property of Ednux or its licensors.</p>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">9. Limitation of Liability</h2>
+          <p className="text-[0.97rem] leading-[1.85] text-slate-600">
+            To the maximum extent permitted by law, Ednux shall not be liable for any indirect, incidental, or consequential damages arising from your use of the platform, including loss of data or missed employment opportunities. Our total liability to you for any claim arising from these Terms shall not exceed the amount you have paid to Ednux in the six months preceding the claim, or fifty US dollars ($50), whichever is greater.
+          </p>
         </section>
 
         <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">9. Termination and Suspension</h2>
-          <p className="text-[0.97rem] leading-[1.85] text-slate-600">Ednux reserves the right to suspend or terminate your access to the Services immediately, without prior notice, for any violation of these Terms, including but not limited to fraudulent activity, manipulation of data, or breach of security protocols. Upon termination, your right to use the Services will cease immediately.</p>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">10. Termination</h2>
+          <p className="text-[0.97rem] leading-[1.85] text-slate-600">
+            You may delete your account at any time by contacting us at <a href="mailto:support@ednux.com" className="text-blue-600 hover:underline">support@ednux.com</a>. Ednux reserves the right to suspend or permanently terminate any account that violates these Terms, with or without prior notice. Verified skill records generated prior to termination may be retained in anonymized form as part of institutional records.
+          </p>
         </section>
 
         <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">10. Modifications to Terms</h2>
-          <p className="text-[0.97rem] leading-[1.85] text-slate-600">Ednux reserves the right to modify these Terms at any time. We will notify users of material changes by posting the updated Terms on our website and updating the Effective Date. Your continued use of the Services after such modifications constitutes acceptance of the updated Terms.</p>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">11. Changes to These Terms</h2>
+          <p className="text-[0.97rem] leading-[1.85] text-slate-600">
+            We may update these Terms as the platform grows. When changes are material, we will notify you by email or through an in-app notice. Continued use of the platform after changes are posted constitutes acceptance of the updated Terms.
+          </p>
         </section>
 
         <section>
-          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">11. Contact Information</h2>
-          <p className="text-[0.97rem] leading-[1.85] text-slate-600 mb-4">If you have any questions about these Terms of Service, please contact us:</p>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">12. Governing Law</h2>
+          <p className="text-[0.97rem] leading-[1.85] text-slate-600">
+            These Terms are governed by applicable law. Where disputes arise, we will first attempt to resolve them through direct communication. If unresolved, disputes will be subject to the jurisdiction of the courts applicable to the registered operating entity of Ednux Technology Services.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-poppins text-[1.35rem] font-semibold text-slate-900 mb-4">13. Contact Us</h2>
+          <p className="text-[0.97rem] leading-[1.85] text-slate-600 mb-4">Questions about these Terms? Reach out directly.</p>
           <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-[0.95rem] text-slate-700">
             <span className="font-medium">Email:</span>{' '}
             <a href="mailto:support@ednux.com" className="text-blue-600 hover:underline">support@ednux.com</a>
