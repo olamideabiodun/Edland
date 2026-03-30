@@ -145,7 +145,7 @@ const Header: React.FC = () => {
 				</Button>
 				<Button
 					component={Link}
-					href="/waitlist#waitlist_info"
+					href="https://chat.whatsapp.com/HNzq6CVgYsXEn93ba9fR8E"
 					variant="contained"
 					sx={{
 						borderRadius: 999,
@@ -165,7 +165,7 @@ const Header: React.FC = () => {
 						},
 					}}
 				>
-					Join waitlist
+					Join Ednux Community
 				</Button>
 			</Stack>
 
