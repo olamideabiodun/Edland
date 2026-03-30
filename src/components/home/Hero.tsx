@@ -75,10 +75,10 @@ const Hero = () => (
           className="mt-8"
         >
           <Link
-            href="/waitlist"
+            href="https://chat.whatsapp.com/HNzq6CVgYsXEn93ba9fR8E"
             className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-8 py-4 text-[15px] font-medium text-white transition-all duration-200 hover:bg-blue-700 hover:-translate-y-0.5"
           >
-            Join Waitlist
+            Join Ednux Community
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
