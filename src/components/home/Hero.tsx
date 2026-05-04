@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import RotatingWord from "@/components/common/RotatingWord";
+import StoreBadges from "@/components/common/StoreBadges";
 
 const Hero = () => (
   <section className="relative w-full overflow-hidden bg-white pt-[70px]">
@@ -32,10 +33,26 @@ const Hero = () => (
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5"
+          className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5"
         >
           <span className="text-[13px] font-medium text-blue-700">
             Career OS for African Students
+          </span>
+        </motion.div>
+
+        {/* Live on stores badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+          </span>
+          <span className="text-[13px] font-medium text-emerald-700">
+            Mobile app now live on iOS &amp; Android
           </span>
         </motion.div>
 
@@ -67,12 +84,22 @@ const Hero = () => (
           collaboratively and build career ready portfolios automatically.
         </motion.p>
 
-        {/* CTA */}
+        {/* App Store / Play Store badges */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-8"
+        >
+          <StoreBadges variant="dark" showLabel label="Download the Ednux mobile app" />
+        </motion.div>
+
+        {/* Community CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.55 }}
+          className="mt-6"
         >
           <Link
             href="https://chat.whatsapp.com/HNzq6CVgYsXEn93ba9fR8E"

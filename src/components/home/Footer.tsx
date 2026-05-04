@@ -12,6 +12,7 @@ import { useTheme } from "@mui/material/styles";
 import Link from "next/link";
 import React from "react";
 import EdnuxLogo from "../common/EdnuxLogo";
+import StoreBadges from "../common/StoreBadges";
 
 const XIcon = () => (
 	<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -139,6 +140,24 @@ const Footer = () => {
 									{social.icon}
 								</IconButton>
 							))}
+						</Box>
+
+						<Box sx={{ mt: 4, display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 1.5 }}>
+							<Typography
+								variant="overline"
+								sx={{
+									fontSize: "0.72rem",
+									fontWeight: 600,
+									letterSpacing: "0.12em",
+									color:
+										theme.palette.mode === "dark"
+											? "rgba(255,255,255,0.7)"
+											: "rgba(71,85,105,1)",
+								}}
+							>
+								Get the app
+							</Typography>
+							<StoreBadges variant="dark" />
 						</Box>
 					</Grid>
 

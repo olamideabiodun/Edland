@@ -9,6 +9,7 @@ import Header from '../components/home/Header';
 import Hero from '../components/home/Hero';
 import High_integrity from '../components/home/High_integrity';
 import MockupCarousel from '../components/home/MockupCarousel';
+import StoreBadges from '../components/common/StoreBadges';
 
 /* ────────────────────────────────────────────────
    CTA Section
@@ -72,6 +73,23 @@ const CTASection = () => (
         >
           Share Feedback
         </Link>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.45 }}
+        className="mt-10 flex flex-col items-center gap-4"
+      >
+        <div className="flex items-center gap-3">
+          <span className="h-px w-10 bg-white/25" />
+          <span className="text-[12px] font-medium uppercase tracking-[0.18em] text-blue-100">
+            Or download the app
+          </span>
+          <span className="h-px w-10 bg-white/25" />
+        </div>
+        <StoreBadges variant="light" />
       </motion.div>
     </div>
   </section>

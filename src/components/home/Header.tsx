@@ -17,6 +17,7 @@ import Link from "next/link";
 import type React from "react";
 import { useState } from "react";
 import EdnuxLogo from "../common/EdnuxLogo";
+import StoreBadges from "../common/StoreBadges";
 
 const XIcon = () => (
 	<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -117,56 +118,8 @@ const Header: React.FC = () => {
 			</Stack>
 
 			{/* Buttons - Desktop */}
-			<Stack direction="row" spacing={2} sx={{ display: { xs: "none", md: "flex" } }}>
-				<Button
-					component={Link}
-					href="/feedback"
-					variant="outlined"
-					sx={{
-						borderRadius: 999,
-						px: 1.8,
-						py: 0.6,
-						fontWeight: 500,
-						fontSize: 13,
-						color: "#232946",
-						borderColor: "#232946",
-						textTransform: "none",
-						background: "rgba(255,255,255,0.5)",
-						boxShadow: "none",
-						fontFamily: "Poppins, sans-serif",
-						minWidth: 0,
-						"&:hover": {
-							background: "rgba(240,240,255,0.7)",
-							borderColor: "#232946",
-						},
-					}}
-				>
-					feedback
-				</Button>
-				<Button
-					component={Link}
-					href="https://chat.whatsapp.com/HNzq6CVgYsXEn93ba9fR8E"
-					variant="contained"
-					sx={{
-						borderRadius: 999,
-						px: 2,
-						py: 0.7,
-						fontWeight: 500,
-						fontSize: 14,
-						bgcolor: "#2a5cff",
-						color: "#fff",
-						boxShadow: "0 2px 12px 0 rgba(42,92,255,0.10)",
-						textTransform: "none",
-						fontFamily: "Poppins, sans-serif",
-						minWidth: 0,
-						"&:hover": {
-							bgcolor: "#1741b6",
-							color: "#fff",
-						},
-					}}
-				>
-					Join Ednux Community
-				</Button>
+			<Stack direction="row" spacing={2} alignItems="center" sx={{ display: { xs: "none", md: "flex" } }}>
+				<StoreBadges variant="dark" compact />
 			</Stack>
 
 			{/* Hamburger Icon - Mobile */}
@@ -228,6 +181,24 @@ const Header: React.FC = () => {
 				<Divider sx={{ my: 1 }} />
 
 				<Box sx={{ px: 2, pb: 2, display: "flex", flexDirection: "column", gap: 2 }}>
+					<Box
+						sx={{
+							display: "flex",
+							flexDirection: "column",
+							alignItems: "flex-start",
+							gap: 1.25,
+							pb: 1,
+						}}
+						onClick={handleDrawerClose}
+					>
+						<span style={{ fontSize: 12, fontWeight: 500, color: "#64748b", letterSpacing: 0.5, textTransform: "uppercase" }}>
+							Get the app
+						</span>
+						<StoreBadges variant="dark" />
+					</Box>
+
+					<Divider sx={{ my: 0.5 }} />
+
 					<Button
 						component={Link}
 						href="/feedback"

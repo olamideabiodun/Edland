@@ -1,3 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-  <path d="M7 5v14l11-7z"/>
-</svg> 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+  <path fill="#00C3FF" d="M3.6 1.8a1 1 0 0 0-.6.9v18.6a1 1 0 0 0 .6.9L13.8 12 3.6 1.8z"/>
+  <path fill="#FFC107" d="M17.5 8.6 14.3 10.4 13.8 12l3.7 3.4 3.1-1.8a1.6 1.6 0 0 0 0-2.8l-3.1-1.7z"/>
+  <path fill="#FF3D44" d="M3.6 22.2a1 1 0 0 0 1.1.1l13-7.4-3.7-3.4L3.6 22.2z"/>
+  <path fill="#00E676" d="M14 11.7l3.5-3.1-13-7.4a1 1 0 0 0-1.1.1L14 11.7z"/>
+</svg>
